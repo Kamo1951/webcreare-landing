@@ -5,6 +5,7 @@
   --foreground: #000000;
   --accent-color: #3F5AF3;
   --accent-color-hover: #657BF5;
+  --background-box-color: #F2F3F4;
 }
 
 @theme inline {
