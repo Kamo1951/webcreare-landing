@@ -8,6 +8,7 @@
   --accent-color-hover: #657BF5;
   --background-box-color: #F2F3F4;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --webcreare-logo: url('/webcreare-logo-white.png');
 }
 
 @theme inline {
@@ -25,6 +26,7 @@
     --accent-color-hover: #657BF5;
     --background-box-color: #11151C;
     --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --webcreare-logo: url('/webcreare-logo-dark.png');
   }
 }
 
