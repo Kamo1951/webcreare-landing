@@ -33,6 +33,14 @@ const Navbar = () => {
     }
   };
 
+  const navItems = [
+    { href: "#", label: "Webcreare" },
+    { href: "#ueberuns", label: "Über Uns" },
+    { href: "#referenzen", label: "Referenzen" },
+    { href: "#preise", label: "Preise" },
+    { href: "#unserteam", label: "Unser Team" },
+  ];
+
   return (
     <div className="w-full">
       {/* Top navbar */}
@@ -111,42 +119,11 @@ const Navbar = () => {
           className="flex justify-center space-x-10 py-4 bg-transparent"
           aria-label="Main navigation"
         >
-          <Link
-            href="/"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
-          >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/services"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
-          >
-            Services
-          </Link>
-          <Link
-            href="/portfolio"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
-          >
-            Portfolio
-          </Link>
-          <Link
-            href="/blog"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
-          >
-            Blog
-          </Link>
-          <Link
-            href="/contact"
-            className="text-gray-800 hover:text-blue-600 transition-colors"
-          >
-            Contact
-          </Link>
+          {navItems.map(({ href, label }) => (
+            <Link key={href} href={href} className="">
+              <span>{label}</span>
+            </Link>
+          ))}
         </nav>
       )}
 
@@ -163,78 +140,38 @@ const Navbar = () => {
         {/* Sidebar */}
         <div
           ref={sidebarRef}
-          className={`fixed top-0 right-0 w-80 h-full bg-white z-50 overflow-y-auto shadow-lg cursor-default transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 right-0 w-80 h-full bg-[var(--background-box-color)] z-50 overflow-y-auto shadow-lg cursor-default transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "transform-none" : "transform translate-x-full"
           }`}
           aria-modal="true"
           role="dialog"
           aria-hidden={!isMenuOpen}
         >
-          <div className="flex justify-between items-center px-6 pt-4 mb-6">
+          <div className="flex justify-between items-center px-6 pt-4 mb-6 ">
             <Image src="/next.svg" alt="Logo" width={120} height={80} />
             <button
               onClick={toggleMenu}
-              className="p-2"
+              className="p-2 border border-white/5 rounded-full hover:bg-[var(--accent-color)] hover:cursor-pointer"
               aria-label="Close menu"
             >
-              <FaTimes className="text-2xl" />
+              <FaTimes className="text-xl" />
             </button>
           </div>
 
           {/* Mobile navigation links */}
           <nav className="px-4" aria-label="Mobile navigation">
-            <Link
-              href="/"
-              onClick={toggleMenu}
-              className="block py-4 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              Home
-            </Link>
-            <div className="h-px w-full bg-gray-200" aria-hidden="true"></div>
-
-            <Link
-              href="/about"
-              onClick={toggleMenu}
-              className="block py-4 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              About
-            </Link>
-            <div className="h-px w-full bg-gray-200" aria-hidden="true"></div>
-
-            <Link
-              href="/services"
-              onClick={toggleMenu}
-              className="block py-4 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              Services
-            </Link>
-            <div className="h-px w-full bg-gray-200" aria-hidden="true"></div>
-
-            <Link
-              href="/portfolio"
-              onClick={toggleMenu}
-              className="block py-4 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              Portfolio
-            </Link>
-            <div className="h-px w-full bg-gray-200" aria-hidden="true"></div>
-
-            <Link
-              href="/blog"
-              onClick={toggleMenu}
-              className="block py-4 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              Blog
-            </Link>
-            <div className="h-px w-full bg-gray-200" aria-hidden="true"></div>
-
-            <Link
-              href="/contact"
-              onClick={toggleMenu}
-              className="block py-4 text-gray-800 hover:text-blue-600 transition-colors"
-            >
-              Contact
-            </Link>
+            <ul className="list-none">
+              {navItems.map(({ href, label }) => (
+                <li key={href} className="py-2 border-b border-gray-200">
+                  <Link
+                    href={href}
+                    className="block w-full hover:text-[var(--accent-color)] transition-colors"
+                  >
+                    <span>{label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
 
           {/* Contact info */}
