@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #000000;
@@ -8,7 +7,7 @@
   --accent-color-hover: #657BF5;
   --background-box-color: #F2F3F4;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-  --webcreare-logo: url('/webcreare-logo-white.png');
+  --webcreare-logo: url('/webcreare-logo-white.webp');
 }
 
 @theme inline {
@@ -26,7 +25,7 @@
     --accent-color-hover: #657BF5;
     --background-box-color: #11151C;
     --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-    --webcreare-logo: url('/webcreare-logo-dark.png');
+    --webcreare-logo: url('/webcreare-logo-dark.webp');
   }
 }
 
