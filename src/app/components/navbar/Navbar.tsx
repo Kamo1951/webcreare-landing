@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import logoLight from "../navbar/imgs/webcreare-logo-white.webp";
 import logoBlack from "../navbar/imgs/webcreare-logo-black.webp";
+import gsap from "gsap";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -144,8 +145,46 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-          <Link href="kontakt" className="p-5 px-8 bg-[var(--accent-color)]">
-            Jetzt Anfragen
+          <Link
+            href="kontakt"
+            className="p-5 px-8 bg-[var(--accent-color)] relative overflow-hidden"
+            ref={(el) => {
+              if (el) {
+                // Create overlay for left-to-right animation
+                const overlay = document.createElement("span");
+                overlay.className =
+                  "absolute inset-0 bg-white/10 -translate-x-full";
+                el.appendChild(overlay);
+
+                // Set up hover animations
+                el.addEventListener("mouseenter", () => {
+                  gsap.to(el, {
+                    backgroundColor: "var(--accent-color-hover)",
+                    duration: 0.4,
+                    ease: "power2.out",
+                  });
+                  gsap.to(overlay, {
+                    x: 0,
+                    duration: 0.6,
+                    ease: "power2.out",
+                  });
+                });
+                el.addEventListener("mouseleave", () => {
+                  gsap.to(el, {
+                    backgroundColor: "var(--accent-color)",
+                    duration: 0.4,
+                    ease: "power2.in",
+                  });
+                  gsap.to(overlay, {
+                    x: "100%",
+                    duration: 0.6,
+                    ease: "power2.in",
+                  });
+                });
+              }
+            }}
+          >
+            <span className="relative z-10">Jetzt Anfragen</span>
           </Link>
         </nav>
       )}
