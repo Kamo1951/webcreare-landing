@@ -25,7 +25,7 @@
     --accent-color-hover: #657BF5;
     --background-box-color: #11151C;
     --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-    --webcreare-logo: url('/webcreare-logo-dark.webp');
+    --webcreare-logo: '/webcreare-logo-dark.webp';
   }
 }
 
