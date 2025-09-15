@@ -55,28 +55,36 @@ const Navbar = () => {
     <div className="w-full">
       {/* Top navbar */}
       <div className="bg-transparent flex flex-col md:flex-row justify-between items-center py-4 px-4 lg:px-0">
-        <div className="flex w-full justify-between items-center">
-          {/* Logo */}
-          <div className="ml-2 lg:ml-[200px]">
-            <Image src={src} alt="Logo" width={150} height={100} />
-          </div>
+        {!isTablet && (
+          <div className="flex w-full justify-between items-center">
+            {/* Logo */}
+            <div className="ml-2 lg:ml-[200px]">
+              <Image src={src} alt="Logo" width={150} height={100} />
+            </div>
 
-          {/* Hamburger menu for mobile/tablet */}
-          {(isMobile || isTablet) && (
-            <button
-              onClick={toggleMenu}
-              className="p-2 mr-2 lg:mr-[200px]"
-              aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
-            >
-              <FaBars className="text-2xl" />
-            </button>
-          )}
-        </div>
+            {/* Hamburger menu for mobile only (not tablet) */}
+            {isMobile && (
+              <button
+                onClick={toggleMenu}
+                className="p-2 mr-2 lg:mr-[200px]"
+                aria-label="Toggle menu"
+                aria-expanded={isMenuOpen}
+              >
+                <FaBars className="text-2xl" />
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Right side info - Only shown on desktop or tablet with menu closed */}
         {!isMobile && !isMenuOpen && (
-          <div className="flex items-center mr-2 lg:mr-[200px] w-full justify-end mt-4 md:mt-0">
+          <div
+            className={`flex items-center ${
+              isTablet
+                ? "w-full justify-center"
+                : "mr-2 lg:mr-[200px] w-full justify-end"
+            } mt-4 md:mt-0`}
+          >
             {/* Clock section */}
             <div className="flex items-center">
               <div className="p-3 bg-[var(--background-box-color)] mr-4 border border-white/10">
@@ -126,7 +134,7 @@ const Navbar = () => {
       {/* Navigation links - only shown on desktop or when not in mobile/tablet with menu closed */}
       {!isMobile && !isTablet && !isMenuOpen && (
         <nav
-          className="flex justify-center space-x-10 py-4 bg-transparent"
+          className="flex ml-[205px] space-x-10 py-4 bg-transparent"
           aria-label="Main navigation"
         >
           {navItems.map(({ href, label }) => (
@@ -158,7 +166,7 @@ const Navbar = () => {
           aria-hidden={!isMenuOpen}
         >
           <div className="flex justify-between items-center px-6 pt-4 mb-6 ">
-            <Image src="/next.svg" alt="Logo" width={120} height={80} />
+            <Image src={src} alt="Logo" width={120} height={80} />
             <button
               onClick={toggleMenu}
               className="p-2 border border-white/5 rounded-full hover:bg-[var(--accent-color)] hover:cursor-pointer"
@@ -172,7 +180,7 @@ const Navbar = () => {
           <nav className="px-4" aria-label="Mobile navigation">
             <ul className="list-none">
               {navItems.map(({ href, label }) => (
-                <li key={href} className="py-2 border-b border-gray-200">
+                <li key={href} className="py-4 border-b border-white/5">
                   <Link
                     href={href}
                     className="block w-full hover:text-[var(--accent-color)] transition-colors"
@@ -220,6 +228,22 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      {/* Additional row for tablet view with logo and hamburger menu */}
+      {isTablet && (
+        <div className="w-full bg-transparent flex justify-between items-center px-4 py-3">
+          <div className="ml-2">
+            <Image src={src} alt="Logo" width={150} height={100} />
+          </div>
+          <button
+            onClick={toggleMenu}
+            className="p-2 mr-2"
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <FaBars className="text-2xl" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };
