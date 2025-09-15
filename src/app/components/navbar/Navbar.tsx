@@ -45,7 +45,7 @@ const Navbar = () => {
     { href: "#ueberuns", label: "Über Uns" },
     { href: "#referenzen", label: "Referenzen" },
     { href: "#preise", label: "Preise" },
-    { href: "#unserteam", label: "Unser Team" },
+    { href: "#team", label: "Unser Team" },
   ];
 
   const src = mounted && resolvedTheme === "dark" ? logoBlack : logoLight;
@@ -134,14 +134,19 @@ const Navbar = () => {
       {/* Navigation links - only shown on desktop or when not in mobile/tablet with menu closed */}
       {!isMobile && !isTablet && !isMenuOpen && (
         <nav
-          className="flex ml-[205px] space-x-10 py-4 bg-transparent"
+          className="flex -ml-[130px] justify-around bg-transparent"
           aria-label="Main navigation"
         >
-          {navItems.map(({ href, label }) => (
-            <Link key={href} href={href} className="">
-              <span>{label}</span>
-            </Link>
-          ))}
+          <div className="space-x-10 py-4">
+            {navItems.map(({ href, label }) => (
+              <Link key={href} href={href} className="">
+                <span>{label}</span>
+              </Link>
+            ))}
+          </div>
+          <Link href="kontakt" className="p-5 px-8 bg-[var(--accent-color)]">
+            Jetzt Anfragen
+          </Link>
         </nav>
       )}
 
