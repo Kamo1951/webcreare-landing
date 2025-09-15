@@ -3,12 +3,19 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FaClock, FaPhone, FaEnvelope, FaTimes, FaBars } from "react-icons/fa";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import logoLight from "../navbar/imgs/webcreare-logo-white.webp";
+import logoBlack from "../navbar/imgs/webcreare-logo-black.webp";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const sidebarRef = useRef<HTMLDivElement>(null);
+
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   // Handle responsive design
   useEffect(() => {
@@ -41,6 +48,9 @@ const Navbar = () => {
     { href: "#unserteam", label: "Unser Team" },
   ];
 
+  const src = mounted && resolvedTheme === "dark" ? logoBlack : logoLight;
+  console.log("Das Theme ist: " + mounted);
+
   return (
     <div className="w-full">
       {/* Top navbar */}
@@ -48,7 +58,7 @@ const Navbar = () => {
         <div className="flex w-full justify-between items-center">
           {/* Logo */}
           <div className="ml-2 lg:ml-[200px]">
-            <Image src="/next.svg" alt="Logo" width={150} height={100} />
+            <Image src={src} alt="Logo" width={150} height={100} />
           </div>
 
           {/* Hamburger menu for mobile/tablet */}
