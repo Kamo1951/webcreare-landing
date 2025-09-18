@@ -49,7 +49,7 @@ const Navbar = () => {
     { href: "#team", label: "Unser Team" },
   ];
 
-  const src = mounted && resolvedTheme === "dark" ? logoBlack : logoLight;
+  const src = mounted && resolvedTheme === "dark" ? logoLight : logoBlack;
   console.log("Das Theme ist: " + mounted);
 
   return (
@@ -140,14 +140,14 @@ const Navbar = () => {
         >
           <div className="space-x-10 py-4">
             {navItems.map(({ href, label }) => (
-              <Link key={href} href={href} className="">
+              <Link key={href} href={href} className="font-semibold">
                 <span>{label}</span>
               </Link>
             ))}
           </div>
           <Link
             href="kontakt"
-            className="p-5 px-8 bg-[var(--accent-color)] relative overflow-hidden"
+            className="p-5 px-8 bg-[var(--accent-color)] relative overflow-hidden "
             ref={(el) => {
               if (el) {
                 // Create overlay for left-to-right animation
@@ -184,7 +184,9 @@ const Navbar = () => {
               }
             }}
           >
-            <span className="relative z-10">Jetzt Anfragen</span>
+            <span className="relative z-10 text-white font-semibold">
+              Jetzt Anfragen
+            </span>
           </Link>
         </nav>
       )}
