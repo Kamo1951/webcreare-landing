@@ -248,7 +248,7 @@ const Navbar = () => {
       {!isMobile && !isTablet && !isMenuOpen && (
         <nav
           className={`flex -ml-[130px] justify-around bg-transparent transition-[padding,background-color] duration-300 ${
-            isCollapsed ? "py-2" : ""
+            isCollapsed ? "py-4" : ""
           }`}
           aria-label="Main navigation"
         >
