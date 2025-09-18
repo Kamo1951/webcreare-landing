@@ -58,6 +58,23 @@ const Navbar = () => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   const src = mounted && resolvedTheme === "dark" ? logoLight : logoBlack;
+  // Body scroll lock when menu open
+  useEffect(() => {
+    if (isMenuOpen) {
+      const scrollBarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      const previousOverflow = document.body.style.overflow;
+      const previousPaddingRight = document.body.style.paddingRight;
+      document.body.style.overflow = "hidden";
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+      }
+      return () => {
+        document.body.style.overflow = previousOverflow;
+        document.body.style.paddingRight = previousPaddingRight;
+      };
+    }
+  }, [isMenuOpen]);
   // Measure top section height for smooth collapse (desktop)
   useEffect(() => {
     const measure = () => {
