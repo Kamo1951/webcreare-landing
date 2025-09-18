@@ -39,11 +39,55 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen((o) => !o);
 
   // Close sidebar when clicking outside (overlay) - but ignore clicks inside sidebar
+  // Show custom rotated X cursor when hovering the dark overlay (outside the sidebar)
   const handleOverlayClick = (e: React.MouseEvent) => {
     if (sidebarRef.current && !sidebarRef.current.contains(e.target as Node)) {
       setIsMenuOpen(false);
     }
   };
+
+  // Inject custom cursor style once
+  useEffect(() => {
+    const styleId = "wc-overlay-xcursor-style";
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement("style");
+      style.id = styleId;
+      const xCursorSvg = encodeURIComponent(
+        `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+          <line x1="6" y1="6" x2="26" y2="26" stroke="white" stroke-width="3" stroke-linecap="round"/>
+          <line x1="26" y1="6" x2="6" y2="26" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        </svg>`
+      );
+      style.textContent = `
+        body.wc-overlay-xcursor {
+          cursor: url("data:image/svg+xml,${xCursorSvg}") 16 16, pointer;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }, []);
+
+  // Toggle cursor class depending on hover position while menu (overlay) is open
+  useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.classList.remove("wc-overlay-xcursor");
+      return;
+    }
+    const onMove = (e: MouseEvent) => {
+      const target = e.target as Node;
+      const insideSidebar = sidebarRef.current?.contains(target);
+      if (!insideSidebar) {
+        document.body.classList.add("wc-overlay-xcursor");
+      } else {
+        document.body.classList.remove("wc-overlay-xcursor");
+      }
+    };
+    window.addEventListener("mousemove", onMove);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      document.body.classList.remove("wc-overlay-xcursor");
+    };
+  }, [isMenuOpen]);
 
   const navItems: { href: string; label: string }[] = [
     { href: "#", label: "Webcreare" },
