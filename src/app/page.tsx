@@ -10,6 +10,7 @@ export default function Home() {
           <Image src={HeroShape} alt="Logo" width={1200} height={1200} />
         </div>
         <Navbar />
+        <div className="h-[2000px]"></div>
       </div>
     </>
   );
