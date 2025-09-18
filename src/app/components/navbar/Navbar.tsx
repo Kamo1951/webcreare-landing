@@ -15,7 +15,6 @@ const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false); // Desktop: top info hidden
   const [isHiddenSmall, setIsHiddenSmall] = useState(false); // Mobile/Tablet: whole header hidden on scroll down
   const topSectionRef = useRef<HTMLDivElement>(null);
-  const initialTopHeightRef = useRef<number>(0);
   const [topHeight, setTopHeight] = useState<number | null>(null);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const { scrollDir } = useDetectScroll(); // expected values often: 'down' | 'up'
