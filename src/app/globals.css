@@ -7,7 +7,7 @@
   --accent-color-hover: #657BF5;
   --background-box-color: #F2F3F4;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-  --webcreare-logo: url('/webcreare-logo-white.webp');
+  --webcreare-logo: url('/webcreare-logo-dark.webp');
 }
 
 @theme inline {
@@ -17,16 +17,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #02050A;
-    --foreground: #ededed;
-    --accent-color: #3F5AF3;
-    --accent-color-hover: #657BF5;
-    --background-box-color: #11151C;
-    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-    --webcreare-logo: '/webcreare-logo-dark.webp';
-  }
+[data-theme="dark"] {
+  --background: #02050A;
+  --foreground: #ededed;
+  --accent-color: #3F5AF3;
+  --accent-color-hover: #657BF5;
+  --background-box-color: #11151C;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --webcreare-logo: url('/webcreare-logo-white.webp');
 }
 
 body {
