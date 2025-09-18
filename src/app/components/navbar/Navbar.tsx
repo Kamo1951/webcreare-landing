@@ -115,7 +115,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`w-full sticky top-0 z-50 transition-[box-shadow,backdrop-filter,background-color,transform] duration-300 ${
+        className={`w-full sticky top-0 z-40 transition-[box-shadow,backdrop-filter,background-color,transform] duration-300 ${
           !isMobile && !isTablet && isCollapsed
             ? "shadow-md backdrop-blur bg-[var(--navbar-background-color)]"
             : "bg-transparent"
@@ -157,7 +157,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Hamburger menu for mobile only (not tablet) */}
-                {isMobile && (
+                {isMobile && !isMenuOpen && (
                   <button
                     onClick={toggleMenu}
                     className="p-2 mr-2 lg:mr-[200px]"
@@ -263,20 +263,22 @@ const Navbar = () => {
             <div className="ml-2">
               <Image src={src} alt="Logo" width={150} height={100} />
             </div>
-            <button
-              onClick={toggleMenu}
-              className="p-2 mr-2"
-              aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
-            >
-              <FaBars className="text-2xl" />
-            </button>
+            {!isMenuOpen && (
+              <button
+                onClick={toggleMenu}
+                className="p-2 mr-2"
+                aria-label="Toggle menu"
+                aria-expanded={isMenuOpen}
+              >
+                <FaBars className="text-2xl" />
+              </button>
+            )}
           </div>
         )}
       </header>
       {/* Sidebar & Overlay (outside header) */}
       <div
-        className={`fixed inset-0 z-40 transition-opacity duration-300 ease-in-out ${
+        className={`fixed inset-0 z-50 transition-opacity duration-300 ease-in-out ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -295,11 +297,11 @@ const Navbar = () => {
           aria-label="Mobile menu"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="flex justify-between items-center px-6 pt-4 mb-6">
+          <div className="flex justify-between items-center px-6 pt-4 mb-6 relative z-10">
             <Image src={src} alt="Logo" width={120} height={80} />
             <button
               onClick={toggleMenu}
-              className="p-2 border border-white/5 rounded-full hover:bg-[var(--accent-color)]"
+              className="p-2 border border-white/5 rounded-full hover:bg-[var(--accent-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-2 focus:ring-offset-transparent transition-colors"
               aria-label="Close menu"
             >
               <FaTimes className="text-xl" />
