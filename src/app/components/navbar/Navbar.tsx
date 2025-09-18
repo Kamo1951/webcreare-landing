@@ -6,7 +6,6 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import logoLight from "../navbar/imgs/webcreare-logo-white.webp";
 import logoBlack from "../navbar/imgs/webcreare-logo-black.webp";
-import gsap from "gsap";
 import useDetectScroll from "@smakss/react-scroll-direction";
 
 const Navbar = () => {
@@ -14,9 +13,10 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false); // Desktop: top info hidden
+  const [isHiddenSmall, setIsHiddenSmall] = useState(false); // Mobile/Tablet: whole header hidden on scroll down
   const topSectionRef = useRef<HTMLDivElement>(null);
   const initialTopHeightRef = useRef<number>(0);
-  const lastActionRef = useRef<number>(0); // timestamp for debounce
+  const [topHeight, setTopHeight] = useState<number | null>(null);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const { scrollDir } = useDetectScroll(); // expected values often: 'down' | 'up'
   const lastScrollYManualRef = useRef<number>(0); // fallback manual detection
@@ -30,6 +30,8 @@ const Navbar = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
       setIsTablet(window.innerWidth >= 768 && window.innerWidth < 1024);
+      const nowDesktop = window.innerWidth >= 1024;
+      if (nowDesktop) setIsHiddenSmall(false);
     };
 
     handleResize();
@@ -59,98 +61,106 @@ const Navbar = () => {
   const src = mounted && resolvedTheme === "dark" ? logoLight : logoBlack;
   // Theme switching handled via resolvedTheme
 
-  // Measure top section once mounted
+  // Measure top section once mounted & on resize (when expanded)
   useEffect(() => {
-    if (topSectionRef.current) {
-      initialTopHeightRef.current = topSectionRef.current.scrollHeight;
-      topSectionRef.current.style.height = `${initialTopHeightRef.current}px`;
-      topSectionRef.current.style.overflow = "hidden";
-    }
-  }, []);
+    const measure = () => {
+      if (topSectionRef.current && !isCollapsed) {
+        const h = topSectionRef.current.scrollHeight;
+        initialTopHeightRef.current = h;
+        setTopHeight(h);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [isCollapsed]);
 
   const collapseTop = () => {
-    if (!topSectionRef.current || isCollapsed) return;
-    const el = topSectionRef.current;
-    gsap.killTweensOf(el);
-    gsap.to(el, {
-      height: 0,
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.inOut",
-      onComplete: () => setIsCollapsed(true),
-    });
+    if (isCollapsed) return;
+    setIsCollapsed(true);
   };
 
   const expandTop = () => {
-    if (!topSectionRef.current || !isCollapsed) return;
-    const el = topSectionRef.current;
-    gsap.killTweensOf(el);
-    gsap.to(el, {
-      height: initialTopHeightRef.current || el.scrollHeight,
-      opacity: 1,
-      duration: 0.5,
-      ease: "power2.inOut",
-      onStart: () => setIsCollapsed(false),
-    });
+    if (!isCollapsed) return;
+    // ensure we have fresh height before expanding
+    if (topSectionRef.current) {
+      const h = topSectionRef.current.scrollHeight;
+      initialTopHeightRef.current = h;
+      setTopHeight(h);
+    }
+    setIsCollapsed(false);
   };
 
-  // Unified Scroll Handling: library direction + fallback manual detection
+  // Scroll: rAF throttled, direction + manual fallback (all breakpoints)
   useEffect(() => {
-    if (isMobile || isTablet) return; // only desktop behavior
-
+    let ticking = false;
     const handle = () => {
-      const now = Date.now();
-      if (now - lastActionRef.current < 110) return; // debounce
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const lastManual = lastScrollYManualRef.current;
+        const dirNormalized = (scrollDir || "").toString().toLowerCase();
+        let goingDown: boolean;
+        if (dirNormalized === "down" || dirNormalized === "d") goingDown = true;
+        else if (dirNormalized === "up" || dirNormalized === "u")
+          goingDown = false;
+        else goingDown = currentY > lastManual;
 
-      const currentY = window.scrollY;
-      const lastManual = lastScrollYManualRef.current;
-
-      // Normalize library value (could be 'Down', 'down', 'DOWN', etc.)
-      const dirNormalized = (scrollDir || "").toString().toLowerCase();
-      let goingDown: boolean;
-
-      if (dirNormalized === "down" || dirNormalized === "d") {
-        goingDown = true;
-      } else if (dirNormalized === "up" || dirNormalized === "u") {
-        goingDown = false;
-      } else {
-        // Fallback manual direction detection
-        goingDown = currentY > lastManual;
-      }
-
-      // Collapse threshold
-      if (goingDown && currentY > 140) {
-        collapseTop();
-        lastActionRef.current = now;
-      } else if (!goingDown) {
-        // Expand when scrolling up sufficiently or near top
-        if (currentY < 40 || currentY < lastManual - 8) {
-          expandTop();
-          lastActionRef.current = now;
+        if (!isMobile && !isTablet) {
+          // Desktop behaviour: collapse only top section
+          if (goingDown && currentY > 140) collapseTop();
+          else if (!goingDown && (currentY < 40 || currentY < lastManual - 12))
+            expandTop();
+        } else {
+          // Mobile / Tablet behaviour: hide entire header (except when menu open)
+          if (isMenuOpen) {
+            if (isHiddenSmall) setIsHiddenSmall(false);
+          } else {
+            if (goingDown && currentY > 40) {
+              if (!isHiddenSmall) setIsHiddenSmall(true);
+            } else if (!goingDown) {
+              if (currentY < lastManual - 10 || currentY < 10) {
+                if (isHiddenSmall) setIsHiddenSmall(false);
+              }
+            }
+          }
         }
-      }
-
-      lastScrollYManualRef.current = currentY;
+        lastScrollYManualRef.current = currentY;
+        ticking = false;
+      });
     };
-
-    // Use scroll event for continuous evaluation (library only fires on direction change)
     window.addEventListener("scroll", handle, { passive: true });
     return () => window.removeEventListener("scroll", handle);
-  }, [scrollDir, isMobile, isTablet, isCollapsed]);
+  }, [scrollDir, isMobile, isTablet, isCollapsed, isHiddenSmall, isMenuOpen]);
 
   return (
     <header
-      className={`w-full sticky top-0 z-50 transition-[box-shadow,backdrop-filter] duration-300 ${
+      className={`w-full sticky top-0 z-50 transition-[box-shadow,backdrop-filter,background-color,transform] duration-300 ${
         !isMobile && !isTablet && isCollapsed
-          ? "shadow-md backdrop-blur bg-[var(--background)]/85"
+          ? "shadow-md backdrop-blur bg-[var(--navbar-background-color)]"
           : "bg-transparent"
       }`}
+      style={{
+        transform:
+          (isMobile || isTablet) && isHiddenSmall
+            ? "translateY(-100%)"
+            : "translateY(0)",
+        willChange: isMobile || isTablet ? "transform" : undefined,
+      }}
       role="banner"
     >
       {/* Collapsible top section (desktop) */}
       <div
         ref={topSectionRef}
         aria-hidden={isCollapsed}
+        style={{
+          height: isCollapsed ? 0 : topHeight !== null ? topHeight : undefined,
+          opacity: isCollapsed ? 0 : 1,
+          overflow: "hidden",
+          transition:
+            "height 380ms cubic-bezier(0.65,0.05,0.36,1), opacity 240ms ease",
+        }}
         className={`bg-transparent ${isCollapsed ? "pointer-events-none" : ""}`}
       >
         <div className="flex flex-col md:flex-row justify-between items-center py-4 px-4 lg:px-0">
@@ -251,43 +261,9 @@ const Navbar = () => {
           </div>
           <Link
             href="kontakt"
-            className="p-5 px-8 bg-[var(--accent-color)] relative overflow-hidden "
-            ref={(el) => {
-              if (el) {
-                // Create overlay for left-to-right animation
-                const overlay = document.createElement("span");
-                overlay.className =
-                  "absolute inset-0 bg-white/10 -translate-x-full";
-                el.appendChild(overlay);
-
-                // Set up hover animations
-                el.addEventListener("mouseenter", () => {
-                  gsap.to(el, {
-                    backgroundColor: "var(--accent-color-hover)",
-                    duration: 0.4,
-                    ease: "power2.out",
-                  });
-                  gsap.to(overlay, {
-                    x: 0,
-                    duration: 0.6,
-                    ease: "power2.out",
-                  });
-                });
-                el.addEventListener("mouseleave", () => {
-                  gsap.to(el, {
-                    backgroundColor: "var(--accent-color)",
-                    duration: 0.4,
-                    ease: "power2.in",
-                  });
-                  gsap.to(overlay, {
-                    x: "100%",
-                    duration: 0.6,
-                    ease: "power2.in",
-                  });
-                });
-              }
-            }}
+            className="group relative overflow-hidden p-5 px-8 bg-[var(--accent-color)] transition-colors duration-300 hover:bg-[var(--accent-color-hover)]"
           >
+            <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out bg-white/10" />
             <span className="relative z-10 text-white font-semibold">
               Jetzt Anfragen
             </span>
