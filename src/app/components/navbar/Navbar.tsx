@@ -148,7 +148,7 @@ const Navbar = () => {
         if (!isMobile && !isTablet) {
           if (goingDown && currentY > 140) {
             if (!isCollapsed) setIsCollapsed(true);
-          } else if (!goingDown && (currentY < 40 || currentY < lastY - 12)) {
+          } else if (!goingDown && (currentY < 40 || currentY < lastY)) {
             if (isCollapsed) setIsCollapsed(false);
           }
         } else {
