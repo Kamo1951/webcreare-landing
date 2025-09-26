@@ -7,6 +7,7 @@ import { useTheme } from "next-themes";
 import logoLight from "../navbar/imgs/webcreare-logo-white.webp";
 import logoBlack from "../navbar/imgs/webcreare-logo-black.webp";
 import useDetectScroll from "@smakss/react-scroll-direction";
+import { Kontakt } from "../buttons/Kontakt";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -213,7 +214,9 @@ const Navbar = () => {
               <div className="flex w-full justify-between items-center">
                 {/* Logo */}
                 <div className="ml-2 lg:ml-[200px]">
-                  <Image src={src} alt="Logo" width={150} height={100} />
+                  <Link href="/" aria-label="Zur Startseite">
+                    <Image src={src} alt="Logo" width={150} height={100} />
+                  </Link>
                 </div>
 
                 {/* Hamburger menu for mobile only (not tablet) */}
@@ -304,15 +307,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <Link
-              href="kontakt"
-              className="group relative overflow-hidden p-5 px-8 bg-[var(--accent-color)] transition-colors duration-300 hover:bg-[var(--accent-color-hover)]"
-            >
-              <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out bg-white/10" />
-              <span className="relative z-10 text-white font-semibold">
-                Jetzt Anfragen
-              </span>
-            </Link>
+            <Kontakt />
           </nav>
         )}
 
@@ -321,7 +316,9 @@ const Navbar = () => {
         {isTablet && (
           <div className="w-full bg-transparent flex justify-between items-center px-4 py-3">
             <div className="ml-2">
-              <Image src={src} alt="Logo" width={150} height={100} />
+              <Link href="/" aria-label="Zur Startseite">
+                <Image src={src} alt="Logo" width={150} height={100} />
+              </Link>
             </div>
             {!isMenuOpen && (
               <button
@@ -358,7 +355,9 @@ const Navbar = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center px-6 pt-4 mb-6 relative z-10">
-            <Image src={src} alt="Logo" width={120} height={80} />
+            <Link href="/" aria-label="Zur Startseite">
+              <Image src={src} alt="Logo" width={120} height={80} />
+            </Link>
             <button
               onClick={toggleMenu}
               className="p-2 border border-white/5 rounded-full hover:bg-[var(--accent-color)] focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-2 focus:ring-offset-transparent transition-colors"
