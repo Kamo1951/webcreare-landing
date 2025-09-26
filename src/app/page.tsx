@@ -20,10 +20,10 @@ export default function Home() {
       <section className="container mx-auto px-4 overflow-hidden-x">
         <Image
           src={HeroCircle}
-          alt="Hero-Shape"
+          alt="Hero circle"
           loading="lazy"
-          className="absolute -mt-20 -ml-40"
-        ></Image>
+          className="absolute  -mt-8 -ml-10 sm:w-32 sm:-mt-12 sm:-ml-14 md:w-40 md:-mt-16 md:-ml-20 lg:w-48 lg:-mt-20 lg:-ml-24 xl:w-[20rem] xl:w-[60vw] xl:-mt-24 xl:-ml-28"
+        />
         <HeroTitle />
       </section>
       <div className="h-[2000px]"></div>
