@@ -149,7 +149,7 @@ const Navbar = () => {
         if (!isMobile && !isTablet) {
           if (goingDown && currentY > 140) {
             if (!isCollapsed) setIsCollapsed(true);
-          } else if (!goingDown && (currentY < 40 || currentY < lastY)) {
+          } else if (!goingDown && currentY < 250) {
             if (isCollapsed) setIsCollapsed(false);
           }
         } else {
@@ -159,7 +159,7 @@ const Navbar = () => {
             if (goingDown && currentY > 40) {
               if (!isHiddenSmall) setIsHiddenSmall(true);
             } else if (!goingDown) {
-              if (currentY < lastY - 10 || currentY < 10) {
+              if (currentY < 260) {
                 if (isHiddenSmall) setIsHiddenSmall(false);
               }
             }
