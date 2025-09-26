@@ -41,7 +41,7 @@ export const HeroTitle: React.FC = () => {
     );
 
   return (
-    <div ref={scope} className="sm:mt-4 md:mt-20 lg:mt-24 ">
+    <div ref={scope} className="-sm:mt-20 md:mt-20 lg:mt-24 ">
       <div className="leading-[1.2]">
         <h2 className="font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl leading-[1.2]">
           {renderChars("Lassen Sie")}
