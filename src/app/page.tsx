@@ -13,30 +13,29 @@ export default function Home() {
           alt="Logo"
           width={1200}
           height={1200}
-          className="-z-10"
+          className="-z-10 select-none"
         />
       </div>
       <Navbar />
-      <div className="">
-        {/* <Image src={HeroCircle} /> */}
-        <div className="">
-          <div>
-            <p>Lassen Sie</p>
+      <section className="container mx-auto px-4">
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 ">
+          <div className="leading-snug">
+            <h2 className="font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl">
+              Lassen Sie
+            </h2>
+            <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem]">
+              Ihre
+              <span className="text-[var(--accent-color)]"> Webseite</span>
+            </h1>
+            <h3 className="font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl">
+              Erstellen
+            </h3>
           </div>
-          <div>
-            <p>
-              <b>
-                Ihre
-                <span className="text-[var(--accent-color)]"> Webseite</span>
-              </b>
-            </p>
-          </div>
-          <div>
-            <p>Erstellen</p>
+          <div className="mt-8 sm:mt-10">
+            <Kontakt />
           </div>
         </div>
-        <Kontakt />
-      </div>
+      </section>
     </>
   );
 }
