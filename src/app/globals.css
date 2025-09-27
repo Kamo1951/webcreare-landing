@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
-  --accent-color: #3F5AF3;
+  --accent-color: #3f5af3;
   --accent-color-hover: #657BF5;
   --background-box-color: #F2F3F4;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
@@ -33,6 +33,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-jakarta);
+}
+
+.leistungen::before {
+    background: linear-gradient(270deg, rgba(63, 90, 243, .4) 0%, transparent 100%);
+    content: "";
+    width: 37px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 @utility main-headline {
