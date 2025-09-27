@@ -22,11 +22,13 @@ export default function Home() {
           src={HeroCircle}
           alt="Hero circle"
           loading="lazy"
-          className="absolute  -mt-8 -ml-10 sm:w-32 sm:-mt-12 sm:-ml-14 md:w-40 md:-mt-16 md:-ml-20 lg:w-48 lg:-mt-20 lg:-ml-24 xl:w-[20rem] xl:w-[60vw] xl:-mt-24 xl:-ml-28"
+          className="absolute  w-9xl -mt-8 -ml-10 sm:w-2xl sm:-mt-12 sm:-ml-14 md:w-3xl md:-mt-16 md:-ml-20 lg:w-4xl lg:-mt-20 lg:-ml-24 xl:w-5xl 2xl:w-6xl 2xl:min-w-[30vw] xl:-mt-24 xl:-ml-28"
         />
         <HeroTitle />
       </section>
-      <div className="h-[2000px]"></div>
+      <section>
+        <HeroTitle />
+      </section>
     </>
   );
 }
