@@ -1,9 +1,9 @@
-type LeistungsHeaderProps = {
+type SubAndMainHeaderProps = {
   subheader: string;
   header: string;
 };
 
-export function LeistungsHeader({ subheader, header }: LeistungsHeaderProps) {
+export function SubAndMainHeader({ subheader, header }: SubAndMainHeaderProps) {
   return (
     <div className="grid grid-cols-1 grid-rows-2 ">
       <div className="flex place-content-center">
