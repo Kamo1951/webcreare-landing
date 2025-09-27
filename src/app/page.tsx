@@ -3,7 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import HeroShape from "./components/navbar/imgs/hero-shape-5.png";
 import HeroCircle from "./components/navbar/imgs/hero-shape-6.png";
 import { HeroTitle } from "./components/hero/HeroTitle";
-import { LeistungsHeader } from "./components/headers/LeistungsHeader";
+import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
 
 export default function Home() {
   return (
@@ -28,7 +28,7 @@ export default function Home() {
         <HeroTitle />
       </section>
       <section className="pt-38">
-        <LeistungsHeader
+        <SubAndMainHeader
           subheader="Unsere Leistungen"
           header="Wir helfen beim Wachstum Ihrer Marke"
         />
