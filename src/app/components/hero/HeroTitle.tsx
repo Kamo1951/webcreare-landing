@@ -43,16 +43,16 @@ export const HeroTitle: React.FC = () => {
   return (
     <div ref={scope} className="-sm:mt-20 md:mt-20 lg:mt-24 ">
       <div className="leading-[1.2]">
-        <h2 className="font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl leading-[1.2]">
+        <h2 className="font-extralight sub-headline leading-[1.2]">
           {renderChars("Lassen Sie")}
         </h2>
-        <h1 className="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem] leading-[1.2]">
+        <h1 className="font-bold main-headline leading-[1.2]">
           {renderChars("Ihre ")}
           <span className="text-[var(--accent-color)]">
             {renderChars("Webseite")}
           </span>
         </h1>
-        <h3 className="font-extralight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl leading-[1.2]">
+        <h3 className="font-extralight sub-headline leading-[1.2]">
           {renderChars("Erstellen")}
         </h3>
       </div>
