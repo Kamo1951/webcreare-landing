@@ -3,6 +3,7 @@ import Navbar from "./components/navbar/Navbar";
 import HeroShape from "./components/navbar/imgs/hero-shape-5.png";
 import HeroCircle from "./components/navbar/imgs/hero-shape-6.png";
 import { HeroTitle } from "./components/hero/HeroTitle";
+import { LeistungsHeader } from "./components/leistungen/LeistungsHeader";
 
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
         <HeroTitle />
       </section>
       <section>
-        <HeroTitle />
+        <LeistungsHeader />
       </section>
     </>
   );
