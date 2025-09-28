@@ -33,27 +33,29 @@ export default function Home() {
           subheader="Unsere Leistungen"
           header="Wir helfen beim Wachstum Ihrer Marke"
         />
-        <div className="flex justify-around content-center mt-20">
-          <LeistungsCard
-            image=""
-            header="Responsive Design"
-            subheader="Eine Webseite angepasst für jedes Gerät."
-          />
-          <LeistungsCard
-            image=""
-            header="Logo- & Webdesign"
-            subheader="Ein Design welches jeden Geschmack trifft."
-          />
-          <LeistungsCard
-            image=""
-            header="Webentwicklung"
-            subheader="Individuell programmierte und eingestellte Webseite nach Ihren Vorstellungen."
-          />
-          <LeistungsCard
-            image=""
-            header="SEO"
-            subheader="Wir optimieren die Sichtbarkeit Ihrer Webseite auf Google."
-          />
+        <div className="flex justify-center">
+          <div className="mt-20 w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <LeistungsCard
+              image=""
+              header="Responsive Design"
+              subheader="Eine Webseite angepasst für jedes Gerät."
+            />
+            <LeistungsCard
+              image=""
+              header="Logo- & Webdesign"
+              subheader="Ein Design welches jeden Geschmack trifft."
+            />
+            <LeistungsCard
+              image=""
+              header="Webentwicklung"
+              subheader="Individuell programmierte und eingestellte Webseite nach Ihren Vorstellungen."
+            />
+            <LeistungsCard
+              image=""
+              header="SEO"
+              subheader="Wir optimieren die Sichtbarkeit Ihrer Webseite auf Google."
+            />
+          </div>
         </div>
       </section>
     </>
