@@ -1,4 +1,4 @@
-export function KeywordCarousel(keyword: string[]) {
+export function KeywordCarousel() {
   return (
     <>
       <ul className="uppercase">
