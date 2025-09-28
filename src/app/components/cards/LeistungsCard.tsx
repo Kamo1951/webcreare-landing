@@ -11,7 +11,7 @@ export function LeistungsCard({
 }: LeistungsCardsProps) {
   return (
     <>
-      <div className="bg-[var(--background-box-color)] border border-white/10 border-[1px] p-7 text-center ">
+      <div className="bg-[var(--background-box-color)] border border-[var(--border-color)] border-[1px] p-7 text-center ">
         <div className="">
           <div>
             <img src={image} alt={header} />
