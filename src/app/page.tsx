@@ -5,7 +5,25 @@ import HeroCircle from "./components/navbar/imgs/hero-shape-6.webp";
 import { HeroTitle } from "./components/hero/HeroTitle";
 import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
 import { LeistungsCard } from "./components/cards/LeistungsCard";
-import { KeywordCarousel } from "./components/carousel/KeywordCarousel";
+import { Slider } from "./components/carousel/Slider";
+
+const sliders = [
+  {
+    id: 1,
+    text: [
+      "Entwicklung",
+      "Design",
+      "Markebildung",
+      "Digitale Lösungen",
+      "Ideen",
+      "Startegie",
+      "Webdesign",
+      "Gestaltung",
+      "Kreative Lösungen",
+    ],
+    richtung: "left",
+  },
+];
 
 export default function Home() {
   return (
@@ -229,10 +247,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
-        <div>
-          <KeywordCarousel />
-        </div>
+      <section className="slider-container bg-[var(--accent-color)] text-xl font-bold">
+        {sliders.map((slider) => (
+          <Slider
+            key={slider.id}
+            id={slider.id}
+            text={slider.text}
+            richtung={slider.richtung}
+          />
+        ))}
+      </section>
       </section>
     </>
   );
