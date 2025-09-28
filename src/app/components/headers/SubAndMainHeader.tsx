@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 type SubAndMainHeaderProps = {
@@ -8,7 +9,7 @@ type SubAndMainHeaderProps = {
   header: string;
 };
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export function SubAndMainHeader({ subheader, header }: SubAndMainHeaderProps) {
   const scope = useRef<HTMLDivElement>(null);
@@ -19,7 +20,14 @@ export function SubAndMainHeader({ subheader, header }: SubAndMainHeaderProps) {
         "(prefers-reduced-motion: reduce)"
       ).matches;
       if (prefersReduced) return;
-      const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.out" },
+        scrollTrigger: {
+          trigger: scope.current,
+          start: "top 80%",
+          once: true,
+        },
+      });
       tl.from(".word-sub", {
         opacity: 0,
         y: 10,
