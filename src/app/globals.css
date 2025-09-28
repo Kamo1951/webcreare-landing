@@ -40,20 +40,31 @@ body {
 }
 
 .leistungen::before {
-    background: linear-gradient(270deg, rgba(63, 90, 243, .4) 0%, transparent 100%);
-    content: "";
-    width: 37px;
-    height: 10px;
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    opacity: 0;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+  background: linear-gradient(270deg, rgba(63, 90, 243, .4) 0%, transparent 100%);
+  content: "";
+  width: 37px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.wiggle-on-hover:hover {
+  animation: wiggle 300ms ease-in-out;
+}
+@keyframes wiggle {
+  0%   { transform: rotate(0deg); }
+  25%  { transform: rotate(-3deg); }
+  50%  { transform: rotate(3deg); }
+  75%  { transform: rotate(-2deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @utility main-headline {
