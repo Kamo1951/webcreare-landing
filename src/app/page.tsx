@@ -4,6 +4,7 @@ import HeroShape from "./components/navbar/imgs/hero-shape-5.png";
 import HeroCircle from "./components/navbar/imgs/hero-shape-6.png";
 import { HeroTitle } from "./components/hero/HeroTitle";
 import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
+import { LeistungsCard } from "./components/cards/LeistungsCard";
 
 export default function Home() {
   return (
@@ -32,6 +33,28 @@ export default function Home() {
           subheader="Unsere Leistungen"
           header="Wir helfen beim Wachstum Ihrer Marke"
         />
+        <div className="flex justify-around content-center mt-20">
+          <LeistungsCard
+            image=""
+            header="Responsive Design"
+            subheader="Eine Webseite angepasst für jedes Gerät."
+          />
+          <LeistungsCard
+            image=""
+            header="Logo- & Webdesign"
+            subheader="Ein Design welches jeden Geschmack trifft."
+          />
+          <LeistungsCard
+            image=""
+            header="Webentwicklung"
+            subheader="Individuell programmierte und eingestellte Webseite nach Ihren Vorstellungen."
+          />
+          <LeistungsCard
+            image=""
+            header="SEO"
+            subheader="Wir optimieren die Sichtbarkeit Ihrer Webseite auf Google."
+          />
+        </div>
       </section>
     </>
   );
