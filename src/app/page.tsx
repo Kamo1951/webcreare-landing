@@ -5,6 +5,7 @@ import HeroCircle from "./components/navbar/imgs/hero-shape-6.webp";
 import { HeroTitle } from "./components/hero/HeroTitle";
 import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
 import { LeistungsCard } from "./components/cards/LeistungsCard";
+import { KeywordCarousel } from "./components/carousel/KeywordCarousel";
 
 export default function Home() {
   return (
@@ -36,7 +37,7 @@ export default function Home() {
           header="Wir helfen beim Wachstum Ihrer Marke"
         />
         <div className="flex justify-center">
-          <div className="mt-20 w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="mt-15 w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <LeistungsCard
               image={
                 <svg
@@ -226,6 +227,11 @@ export default function Home() {
               subheader="Wir optimieren die Sichtbarkeit Ihrer Webseite auf Google."
             />
           </div>
+        </div>
+      </section>
+      <section>
+        <div>
+          <KeywordCarousel />
         </div>
       </section>
     </>
