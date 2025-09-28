@@ -9,6 +9,7 @@
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
   --webcreare-logo: url('/webcreare-logo-dark.webp');
   --navbar-background-color: var(--background-box-color);
+  --paragraph-text-color: #414141;
 }
 
 @theme inline {
