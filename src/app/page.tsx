@@ -7,26 +7,30 @@ import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
 import { LeistungsCard } from "./components/cards/LeistungsCard";
 import { Slider } from "./components/carousel/Slider";
 import "./components/carousel/slider.css";
-import { UeberUns } from "./components/ueberuns/UeberUns";
-
-const sliders = [
-  {
-    id: "1",
-    text: [
-      "Entwicklung",
-      "Design Ideen",
-      "Markebildung",
-      "Digitale Lösungen",
-      "Startegie",
-      "Webdesign",
-      "Gestaltung",
-      "Kreative Lösungen",
-    ],
-    richtung: "left",
-  },
-];
+import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
 
 export default function Home() {
+  const sliders = [
+    {
+      id: "1",
+      text: [
+        "Entwicklung",
+        "Design Ideen",
+        "Markebildung",
+        "Digitale Lösungen",
+        "Startegie",
+        "Webdesign",
+        "Gestaltung",
+        "Kreative Lösungen",
+      ],
+      richtung: "left",
+    },
+  ];
+  const items = [
+    { id: "aufgabe", heading: "Unsere Aufgabe", bodyText: "…Text A…" },
+    { id: "vision", heading: "Unsere Vision", bodyText: "…Text B…" },
+    { id: "ziel", heading: "Unser Ziel", bodyText: "…Text C…" },
+  ];
   return (
     <>
       <div className="absolute select-none -z-2">
@@ -268,7 +272,7 @@ export default function Home() {
             direction="left"
           />
           <div className="">
-            <UeberUns />
+            <UeberUnsTabs items={items} initialActiveId={items[0].id} />
           </div>
         </div>
       </section>
