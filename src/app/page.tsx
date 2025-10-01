@@ -13,10 +13,9 @@ const sliders = [
     id: "1",
     text: [
       "Entwicklung",
-      "Design",
+      "Design Ideen",
       "Markebildung",
       "Digitale Lösungen",
-      "Ideen",
       "Startegie",
       "Webdesign",
       "Gestaltung",
