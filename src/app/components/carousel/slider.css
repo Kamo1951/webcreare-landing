@@ -1,0 +1,48 @@
+:root {
+    --slide-count: 9;
+    --slider-height: 80px;
+    --slide-width: 295px;
+    --slide-gap: 10px;
+    --animation-duration: 50s;
+}
+
+
+.slider {
+    overflow: hidden;
+}
+
+
+.slide {
+    width: var(--slide-width);
+    height: var(--slider-height);
+    overflow: hidden;
+}
+
+.scrollLeft {
+    animation: scrollLeft var(--animation-duration) linear infinite;
+}
+
+.scrollRight {
+    animation: scrollRight var(--animation-duration) linear infinite;
+}  
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-1 * (var(--slide-width) + 2 * var(--slide-gap)) * var(--slide-count)));
+    }
+}
+@keyframes scrollRight {
+    0% {
+        transform: translateX(calc(-1 * (var(--slide-width) + 2 * var(--slide-gap)) * var(--slide-count)));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slider-track:has(.slide .slide:hover) {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
