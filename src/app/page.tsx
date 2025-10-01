@@ -8,6 +8,8 @@ import { LeistungsCard } from "./components/cards/LeistungsCard";
 import { Slider } from "./components/carousel/Slider";
 import "./components/carousel/slider.css";
 import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
+import MikiErklaert from "./components/imgs/Miki-erklaert-_2_-scaled.webp";
+import OliLaedt from "./components/imgs/Oli-laedt-scaled.webp";
 
 export default function Home() {
   const sliders = [
@@ -31,7 +33,7 @@ export default function Home() {
       id: "aufgabe",
       heading: "Unsere Aufgabe",
       bodyText:
-        "Wir entwickeln individuelle Websites am Tegernsee, die Unternehmen in der Region sichtbar machen und beim Wachsen unterstützen. Von Strategie & Konzept über Design bis zur technischen Umsetzung liefern wir saubere, schnelle und suchmaschinenfreundliche Webauftritte. Dabei achten wir auf klaren Aufbau, Top-Performance, Barrierearmut und Conversion-Ziele, damit deine Seite nicht nur gut aussieht, sondern messbar für dich arbeitet. \n\nKurz gesagt: Wir bauen Websites, die passen, performen und verkaufen – mit echtem Fokus auf lokale Betriebe rund um den Tegernsee.",
+        "Wir entwickeln individuelle Websites am Tegernsee, die Unternehmen in der Region sichtbar machen und beim Wachsen unterstützen. Von Strategie & Konzept über Design bis zur technischen Umsetzung liefern wir saubere, schnelle und suchmaschinenfreundliche Webauftritte.\n Dabei achten wir auf klaren Aufbau, Top-Performance, Barrierearmut und Conversion-Ziele, damit deine Seite nicht nur gut aussieht, sondern messbar für dich arbeitet. \n\nKurz gesagt: Wir bauen Websites, die passen, performen und verkaufen – mit echtem Fokus auf lokale Betriebe rund um den Tegernsee.",
     },
     {
       id: "vision",
@@ -290,7 +292,23 @@ export default function Home() {
             <UeberUnsTabs items={items} initialActiveId={items[0].id} />
           </div>
         </div>
+        <div>
+          <div className="relative flex items-end h-[300px] sm:h-[400px] md:h-[500px]">
+            <Image
+              src={MikiErklaert}
+              alt="Miki erklärt Kunden ihr Design"
+              className="absolute left-0 top-0 w-[65%] sm:w-[70%] aspect-square object-cover  z-10"
+            />
+            <Image
+              src={OliLaedt}
+              alt="Oli heißt Interessenten wilkommen"
+              className="absolute right-0 sm:-right-5 md:-right-10 bottom-0 sm:-bottom-5 md:-bottom-10 w-[60%] sm:w-[50%] aspect-square object-cover z-20"
+            />
+          </div>
+        </div>
       </section>
+
+      <section></section>
     </>
   );
 }
