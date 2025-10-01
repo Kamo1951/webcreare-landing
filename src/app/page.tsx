@@ -6,10 +6,11 @@ import { HeroTitle } from "./components/hero/HeroTitle";
 import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
 import { LeistungsCard } from "./components/cards/LeistungsCard";
 import { Slider } from "./components/carousel/Slider";
+import "./components/carousel/slider.css";
 
 const sliders = [
   {
-    id: 1,
+    id: "1",
     text: [
       "Entwicklung",
       "Design",
@@ -247,7 +248,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="slider-container bg-[var(--accent-color)] text-xl font-bold">
+      <section className="slider-container bg-[var(--accent-color)] font-bold my-20 uppercase text-2xl">
         {sliders.map((slider) => (
           <Slider
             key={slider.id}
