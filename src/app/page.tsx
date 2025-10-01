@@ -25,24 +25,6 @@ const sliders = [
   },
 ];
 
-const ueberuns = [
-  {
-    id: "1",
-    heading: "Unsere Aufgabe",
-    bodyText: "",
-  },
-  {
-    id: "2",
-    heading: "Unsere Vision",
-    bodyText: "",
-  },
-  {
-    id: "3",
-    heading: "Unser Ziel",
-    bodyText: "",
-  },
-];
-
 export default function Home() {
   return (
     <>
