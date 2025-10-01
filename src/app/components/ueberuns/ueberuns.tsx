@@ -1,8 +1,9 @@
-import { useState } from "react";
+"use client";
 
-export function ueberuns() {
-  const [active, setActive] = useState(false);
-  const ueberuns = [
+import { useState, useEffect } from "react";
+
+export function UeberUns() {
+  const items = [
     {
       id: "1",
       heading: "Unsere Aufgabe",
@@ -19,20 +20,34 @@ export function ueberuns() {
       bodyText: "",
     },
   ];
+  const [activeId, setActiveId] = useState(items[0].id);
 
   return (
     <>
-      <nav className="flex justify-around">
-        {ueberuns.map((wir) => (
-          <div key={wir.id} className="py-3 px-5 bg-[var(--accent-color)]">
-            <p>{wir.heading}</p>
-          </div>
-        ))}
+      <nav className="flex gap-2">
+        {items.map((item) => {
+          const isActive = item.id === activeId;
+          return (
+            <button
+              key={item.id}
+              type="button"
+              onClick={() => setActiveId(item.id)}
+              className={`py-3 px-5 rounded ${
+                isActive
+                  ? "bg-[var(--accent-color)] text-white"
+                  : "bg-neutral-200"
+              }`}
+              aria-pressed={isActive}
+            >
+              {item.heading}
+            </button>
+          );
+        })}
       </nav>
       <div>
-        {ueberuns.map((wir) => (
-          <div key={wir.id} className="hidden">
-            <p>{wir.bodyText}</p>
+        {items.map((item) => (
+          <div key={item.id} className="hidden">
+            <p>{item.bodyText}</p>
           </div>
         ))}
       </div>
