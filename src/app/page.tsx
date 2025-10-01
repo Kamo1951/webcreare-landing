@@ -7,6 +7,7 @@ import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
 import { LeistungsCard } from "./components/cards/LeistungsCard";
 import { Slider } from "./components/carousel/Slider";
 import "./components/carousel/slider.css";
+import { UeberUns } from "./components/ueberuns/UeberUns";
 
 const sliders = [
   {
@@ -266,7 +267,9 @@ export default function Home() {
             header="Unser Hauptziel ist Ihre Zufriedenheit"
             direction="left"
           />
-          <div className=""></div>
+          <div className="">
+            <UeberUns />
+          </div>
         </div>
       </section>
     </>
