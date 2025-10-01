@@ -45,7 +45,11 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
       </h2>
 
       {/* Tabs */}
-      <div role="tablist" aria-label="Über uns" className="flex gap-2">
+      <div
+        role="tablist"
+        aria-label="Über uns"
+        className="flex flex-wrap gap-2 justify-center lg:justify-start"
+      >
         {items.map((item) => {
           const isActive = item.id === activeId;
           return (
@@ -58,7 +62,7 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
               id={`tab-${item.id}`}
               onClick={() => onActivate(item.id)}
               className={
-                "py-3 px-5 transition-colors " +
+                "py-2 px-3 sm:py-3 sm:px-5 text-sm sm:text-base cursor-pointer transition-colors " +
                 (isActive
                   ? "bg-[var(--accent-color)] text-[var(--foreground)]"
                   : "bg-[var(--background-box-color)] hover:bg-[var(--background-box-color-hover)]")
@@ -85,9 +89,11 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
               aria-labelledby={`tab-${item.id}`}
               hidden={!isActive}
               aria-hidden={!isActive}
+              className="mt-8"
             >
-              <h3 className="text-xl font-semibold">{item.heading}</h3>
-              <p className="mt-2">{item.bodyText}</p>
+              <p className=" text-sm sm:text-base text-[var(--paragraph-text-color)] whitespace-pre-line">
+                {item.bodyText}
+              </p>
             </div>
           );
         })}
