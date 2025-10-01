@@ -66,10 +66,10 @@ export function SubAndMainHeader({
       <div
         className={`flex ${
           direction === "left"
-            ? "lg:place-content-start place-content-center lg:ml-12"
+            ? "lg:place-content-start place-content-center"
             : direction === "center"
             ? "place-content-center"
-            : "lg:place-content-end place-content-center lg:mr-12"
+            : "lg:place-content-end place-content-center"
         }`}
       >
         <span className="bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto"></span>
@@ -81,10 +81,10 @@ export function SubAndMainHeader({
       <div
         className={`w-3xs sm:w-sm lg:w-md ${
           direction === "left"
-            ? "text-center lg:text-left lg:mr-auto mx-auto "
+            ? "text-center lg:text-left mx-auto lg:mr-auto lg:ml-0"
             : direction === "center"
             ? "text-center mx-auto"
-            : "text-center lg:text-right mx-auto lg:ml-auto  "
+            : "text-center lg:text-right mx-auto lg:ml-auto lg:mr-0"
         }`}
       >
         <h2 className="capitalize text-xl sm:text-3xl lg:text-4xl font-semibold ">
