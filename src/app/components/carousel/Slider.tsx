@@ -26,7 +26,7 @@ export function Slider({ id, text, richtung }: SliderProps) {
               className="slide flex justify-center items-center "
               key={index}
             >
-              <span className="before:content-['★'] before:mr-4">{src}</span>
+              <span className="before:content-['★'] before:mr-5">{src}</span>
             </div>
           ))}
         </div>
