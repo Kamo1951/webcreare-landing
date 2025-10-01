@@ -7,11 +7,16 @@ import { useGSAP } from "@gsap/react";
 type SubAndMainHeaderProps = {
   subheader: string;
   header: string;
+  direction: string;
 };
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-export function SubAndMainHeader({ subheader, header }: SubAndMainHeaderProps) {
+export function SubAndMainHeader({
+  subheader,
+  header,
+  direction,
+}: SubAndMainHeaderProps) {
   const scope = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -58,14 +63,30 @@ export function SubAndMainHeader({ subheader, header }: SubAndMainHeaderProps) {
 
   return (
     <div ref={scope} className="grid grid-cols-1 grid-rows-2">
-      <div className="flex place-content-center">
+      <div
+        className={`flex ${
+          direction === "left"
+            ? "place-content-start"
+            : direction === "center"
+            ? "place-content-center"
+            : "place-content-end"
+        }`}
+      >
         <span className="bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto"></span>
         <h4 className="uppercase px-2 leistungen text-[var(--accent-color)] font-bold text-xs sm:text-sm my-auto ">
           {renderWords(subheader, "word-sub")}
         </h4>
         <span className="bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto"></span>
       </div>
-      <div className="mx-auto w-3xs sm:w-sm lg:w-md text-center">
+      <div
+        className={`w-3xs sm:w-sm lg:w-md ${
+          direction === "left"
+            ? "text-left mr-auto"
+            : direction === "center"
+            ? "text-center mx-auto"
+            : "text-right ml-auto"
+        }`}
+      >
         <h2 className="capitalize text-xl sm:text-3xl lg:text-4xl font-semibold ">
           {renderWords(header, "word-head")}
         </h2>
