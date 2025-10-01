@@ -25,6 +25,24 @@ const sliders = [
   },
 ];
 
+const ueberuns = [
+  {
+    id: "1",
+    heading: "Unsere Aufgabe",
+    bodyText: "",
+  },
+  {
+    id: "2",
+    heading: "Unsere Vision",
+    bodyText: "",
+  },
+  {
+    id: "3",
+    heading: "Unser Ziel",
+    bodyText: "",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -259,17 +277,14 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="grid grid-cols-2 grid-rows-1 gap-4 w-6xl mx-auto">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-6xl mx-auto px-4">
         <div>
           <SubAndMainHeader
             subheader="Über uns"
             header="Unser Hauptziel ist Ihre Zufriedenheit"
             direction="left"
           />
-          <div className="h-[1200px]">
-            <nav></nav>
-            <div></div>
-          </div>
+          <div className=""></div>
         </div>
       </section>
     </>
