@@ -53,6 +53,7 @@ export default function Home() {
         <SubAndMainHeader
           subheader="Unsere Leistungen"
           header="Wir helfen beim Wachstum Ihrer Marke"
+          direction="center"
         />
         <div className="flex justify-center">
           <div className="mt-15 w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -256,6 +257,20 @@ export default function Home() {
             richtung={slider.richtung}
           />
         ))}
+      </section>
+
+      <section className="grid grid-cols-2 grid-rows-1 gap-4 w-6xl mx-auto">
+        <div>
+          <SubAndMainHeader
+            subheader="Über uns"
+            header="Unser Hauptziel ist Ihre Zufriedenheit"
+            direction="left"
+          />
+          <div className="h-[1200px]">
+            <nav></nav>
+            <div></div>
+          </div>
+        </div>
       </section>
     </>
   );
