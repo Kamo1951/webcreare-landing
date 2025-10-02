@@ -14,9 +14,9 @@ export function ReferenzCard({ src, header, id }: ReferenzCardProps) {
         </div>
         <div className="flex items-center mt-8">
           <div className="p-4 w-14 rounded-full bg-[var(--background)] flex justify-center">
-            <p>{id}</p>
+            <p className="font-bold">{id}</p>
           </div>
-          <h3>{header}</h3>
+          <h3 className="text-2xl font-semibold px-4">{header}</h3>
         </div>
       </div>
     </>
