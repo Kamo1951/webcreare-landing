@@ -323,7 +323,11 @@ export default function Home() {
             header="Minecraft Server Webseite"
             id="01"
           />
-          <ReferenzCard src={Veerdesign} header="Buchseite" id="02" />
+          <ReferenzCard
+            src={Veerdesign}
+            header="Buchsverkaufs Webseite"
+            id="02"
+          />
         </div>
       </section>
     </>
