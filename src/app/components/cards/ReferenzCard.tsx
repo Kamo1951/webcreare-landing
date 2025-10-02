@@ -1,7 +1,7 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 type ReferenzCardProps = {
-  src: string;
+  src: string | StaticImageData;
   header: string;
   id: string;
 };
