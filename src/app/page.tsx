@@ -11,6 +11,8 @@ import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
 import MikiErklaert from "./components/imgs/Miki-erklaert-_2_-scaled.webp";
 import OliLaedt from "./components/imgs/Oli-laedt-scaled.webp";
 import { ReferenzCard } from "./components/cards/ReferenzCard";
+import Bausucht from "./components/imgs/Bausucht.webp";
+import Veerdesign from "./components/imgs/Veerdesign.webp";
 
 export default function Home() {
   const sliders = [
@@ -315,9 +317,13 @@ export default function Home() {
           header="Unsere aktuellsten Projekte"
           direction="center"
         />
-        <div className="grid grid-cols-2 grid-rows-1 gap-4 justify-center ">
-          <ReferenzCard src={MikiErklaert} header="Minecraft Server Webseite" />
-          <ReferenzCard src={OliLaedt} header="Buchseite" />
+        <div className="flex place-content-center gap-8 mt-10">
+          <ReferenzCard
+            src={Bausucht}
+            header="Minecraft Server Webseite"
+            id="01"
+          />
+          <ReferenzCard src={Veerdesign} header="Buchseite" id="02" />
         </div>
       </section>
     </>
