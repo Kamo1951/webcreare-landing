@@ -3,17 +3,18 @@ import Image from "next/image";
 type ReferenzCardProps = {
   src: string;
   header: string;
+  id: string;
 };
-export function ReferenzCard({ src, header }: ReferenzCardProps) {
+export function ReferenzCard({ src, header, id }: ReferenzCardProps) {
   return (
     <>
-      <div className="bg-[var(--background-box-color)] p-5 h-96">
+      <div className="bg-[var(--background-box-color)] p-10  ">
         <div>
-          <Image src={src} alt={header} height={200} width={300} />
+          <Image src={src} alt={header} width={450} />
         </div>
-        <div className="flex">
-          <div className="p-2 bg-[var(--background)] ">
-            <p>01</p>
+        <div className="flex items-center mt-8">
+          <div className="p-4 w-14 rounded-full bg-[var(--background)] flex justify-center">
+            <p>{id}</p>
           </div>
           <h3>{header}</h3>
         </div>
