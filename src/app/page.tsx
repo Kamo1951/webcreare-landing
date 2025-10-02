@@ -10,6 +10,7 @@ import "./components/carousel/slider.css";
 import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
 import MikiErklaert from "./components/imgs/Miki-erklaert-_2_-scaled.webp";
 import OliLaedt from "./components/imgs/Oli-laedt-scaled.webp";
+import { ReferenzCard } from "./components/cards/ReferenzCard";
 
 export default function Home() {
   const sliders = [
@@ -281,7 +282,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-[90rem] mx-auto px-4">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-[90rem] mx-auto px-4 mb-20">
         <div>
           <SubAndMainHeader
             subheader="Über uns"
@@ -297,18 +298,28 @@ export default function Home() {
             <Image
               src={MikiErklaert}
               alt="Miki erklärt Kunden ihr Design"
-              className="absolute left-0 top-0 w-[65%] sm:w-[70%] aspect-square object-cover  z-10"
+              className="absolute left-0 top-0 w-[65%] sm:w-[70%] aspect-square object-cover z-10 animate-slide-in-left"
             />
             <Image
               src={OliLaedt}
               alt="Oli heißt Interessenten wilkommen"
-              className="absolute right-0 sm:-right-5 md:-right-10 bottom-0 sm:-bottom-5 md:-bottom-10 w-[60%] sm:w-[50%] aspect-square object-cover z-20"
+              className="absolute right-0 sm:-right-5 md:-right-10 bottom-0 sm:-bottom-5 md:-bottom-10 w-[60%] sm:w-[50%] aspect-square object-cover z-20 animate-slide-in-right"
             />
           </div>
         </div>
       </section>
 
-      <section></section>
+      <section className="my-20">
+        <SubAndMainHeader
+          subheader="Referenzen"
+          header="Unsere aktuellsten Projekte"
+          direction="center"
+        />
+        <div className="grid grid-cols-2 grid-rows-1 gap-4 justify-center ">
+          <ReferenzCard src={MikiErklaert} header="Minecraft Server Webseite" />
+          <ReferenzCard src={OliLaedt} header="Buchseite" />
+        </div>
+      </section>
     </>
   );
 }
