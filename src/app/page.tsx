@@ -317,7 +317,7 @@ export default function Home() {
           header="Unsere aktuellsten Projekte"
           direction="center"
         />
-        <div className="flex place-content-center gap-8 mt-10">
+        <div className="flex place-content-center gap-8 mt-15">
           <ReferenzCard
             src={Bausucht}
             header="Minecraft Server Webseite"
@@ -328,6 +328,17 @@ export default function Home() {
             header="Buchsverkaufs Webseite"
             id="02"
           />
+        </div>
+      </section>
+
+      <section>
+        <SubAndMainHeader
+          subheader="Preise"
+          header="Das Beste Preis - Leistungsverhältnis"
+          direction="center"
+        />
+        <div className="grid grid-cols-3 grid-rows-1 gap-4">
+          <div></div>
         </div>
       </section>
     </>
