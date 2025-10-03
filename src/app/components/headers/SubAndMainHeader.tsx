@@ -33,16 +33,27 @@ export function SubAndMainHeader({
           once: true,
         },
       });
-      tl.from(".word-sub", {
-        opacity: 0,
-        y: 10,
-        duration: 0.35,
-        stagger: 0.06,
-      }).from(
-        ".word-head",
-        { opacity: 0, y: 12, duration: 0.4, stagger: 0.05 },
-        "-=0.1"
-      );
+      tl.fromTo(
+        ".gradient-span",
+        { scaleX: 0, opacity: 0 },
+        {
+          scaleX: 1,
+          opacity: 1,
+          duration: 0.35,
+          stagger: 0.08,
+          transformOrigin: "center",
+        }
+      )
+        .from(
+          ".word-sub",
+          { opacity: 0, y: 10, duration: 0.35, stagger: 0.06 },
+          "-=0.2"
+        )
+        .from(
+          ".word-head",
+          { opacity: 0, y: 12, duration: 0.4, stagger: 0.05 },
+          "-=0.1"
+        );
     },
     { scope }
   );
@@ -72,11 +83,17 @@ export function SubAndMainHeader({
             : "lg:place-content-end place-content-center"
         }`}
       >
-        <span className="span-line inline-block bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto will-change-transform opacity-0"></span>
+        <span
+          className="gradient-span bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto origin-center"
+          style={{ opacity: 0, transform: "scaleX(0)" }}
+        ></span>
         <h4 className="uppercase px-2 leistungen text-[var(--accent-color)] font-bold text-xs sm:text-sm my-auto ">
           {renderWords(subheader, "word-sub")}
         </h4>
-        <span className="span-line inline-block bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto will-change-transform opacity-0"></span>
+        <span
+          className="gradient-span bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto origin-center"
+          style={{ opacity: 0, transform: "scaleX(0)" }}
+        ></span>
       </div>
       <div
         className={`w-3xs sm:w-sm lg:w-md ${
