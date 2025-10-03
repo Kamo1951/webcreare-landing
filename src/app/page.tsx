@@ -31,7 +31,7 @@ export default function Home() {
       richtung: "left",
     },
   ];
-  const items = [
+  const ueberUnsItems = [
     {
       id: "aufgabe",
       heading: "Unsere Aufgabe",
@@ -49,6 +49,24 @@ export default function Home() {
       heading: "Unser Ziel",
       bodyText:
         "Unser Ziel ist dein nachhaltiger Erfolg. Wir arbeiten transparent, verlässlich und auf Augenhöhe – mit klaren Angeboten, fairen Preisen und ohne versteckte Kosten. Statt „das große Geld“ im Blick zu haben, bauen wir auf langfristige Partnerschaften, ehrliche Beratung und Lösungen, die mit dir mitwachsen. \n\nKurz gesagt: Zufriedenheit, Fairness, Ergebnis – dafür stehen wir mit unserem Namen.",
+    },
+  ];
+
+  const preiseItems = [
+    {
+      id: "One-Pager",
+      heading: "",
+      bodyText: "",
+    },
+    {
+      id: "Buisness",
+      heading: "",
+      bodyText: "",
+    },
+    {
+      id: "Professionell",
+      heading: "",
+      bodyText: "",
     },
   ];
   return (
@@ -292,7 +310,10 @@ export default function Home() {
             direction="left"
           />
           <div className="mt-5">
-            <UeberUnsTabs items={items} initialActiveId={items[0].id} />
+            <UeberUnsTabs
+              items={ueberUnsItems}
+              initialActiveId={ueberUnsItems[0].id}
+            />
           </div>
         </div>
         <div>
