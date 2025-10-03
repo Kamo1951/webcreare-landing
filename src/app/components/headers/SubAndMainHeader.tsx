@@ -72,11 +72,11 @@ export function SubAndMainHeader({
             : "lg:place-content-end place-content-center"
         }`}
       >
-        <span className="bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto"></span>
+        <span className="span-line inline-block bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto will-change-transform opacity-0"></span>
         <h4 className="uppercase px-2 leistungen text-[var(--accent-color)] font-bold text-xs sm:text-sm my-auto ">
           {renderWords(subheader, "word-sub")}
         </h4>
-        <span className="bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto"></span>
+        <span className="span-line inline-block bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto will-change-transform opacity-0"></span>
       </div>
       <div
         className={`w-3xs sm:w-sm lg:w-md ${
