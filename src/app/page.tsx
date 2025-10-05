@@ -13,6 +13,7 @@ import OliLaedt from "./components/imgs/Oli-laedt-scaled.webp";
 import { ReferenzCard } from "./components/cards/ReferenzCard";
 import Bausucht from "./components/imgs/Bausucht.webp";
 import Veerdesign from "./components/imgs/Veerdesign.webp";
+import PreiseCard from "./components/cards/PreiseCard";
 
 export default function Home() {
   const sliders = [
@@ -55,18 +56,34 @@ export default function Home() {
   const preiseItems = [
     {
       id: "One-Pager",
-      heading: "",
-      bodyText: "",
+      heading: "Simpler One-Pager",
+      price: "ab 750 €",
+      bodyText: [
+        "1 Seite (One-Pager)",
+        "Individuelles Design",
+        "Mobiloptimiert",
+        "WordPress CMS",
+        "Suchmaschinen optimiert",
+        "Schnellste Ladezeiten",
+        "Animationen",
+        "Datenschutz & rechtliches",
+      ],
     },
     {
       id: "Buisness",
-      heading: "",
-      bodyText: "",
+      heading: "Buisness",
+      price: "ab 1.500 €",
+      bodyText: ["Erweiteres Call-to-Action", "Einführung"],
     },
     {
       id: "Professionell",
-      heading: "",
-      bodyText: "",
+      heading: "Professionell",
+      price: "ab 3.000 €",
+      bodyText: [
+        "(Mitarbeiter)Schulung",
+        "Innovative Interaktion",
+        "Karriereseite",
+      ],
     },
   ];
   return (
@@ -359,7 +376,9 @@ export default function Home() {
           direction="center"
         />
         <div className="grid grid-cols-3 grid-rows-1 gap-4">
-          <div></div>
+          <div>
+            <PreiseCard items={preiseItems} />
+          </div>
         </div>
       </section>
     </>
