@@ -1,13 +1,30 @@
-type PreisCardProps = {
+export type PreisItems = {
   id: string;
   heading: string;
-  bodyText: string;
+  price: string;
+  bodyText: string[];
 };
 
-export function PreiseCard(id, heading, bodyText): PreisCardProps {
-  return (
-    <>
-      <div></div>
-    </>
-  );
+interface PreisCardProps {
+  items: PreisItems[];
 }
+
+const PreiseCard: React.FC<PreisCardProps> = ({ items }) => {
+  return (
+    <div>
+      {items.map((item) => (
+        <div key={item.id} className="bg-[var(--background-box-color) p-8]">
+          <div className="bg-[var(--accent-color)]">{item.heading}</div>
+          <div>{item.price}</div>
+          <div>
+            <p className="text-[var(--paragraph-text-color)]">
+              {item.bodyText}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default PreiseCard;
