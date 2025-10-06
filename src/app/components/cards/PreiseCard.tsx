@@ -1,3 +1,5 @@
+import { Kontakt } from "../buttons/Kontakt";
+
 export type PreisItems = {
   id: string;
   heading: string;
@@ -13,16 +15,19 @@ const PreiseCard: React.FC<PreisCardProps> = ({ items }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
       {items.map((item) => (
-        <div key={item.id} className="bg-[var(--background-box-color)] p-8">
-          <div className="inline-block">
-            <p className="text-xl md:text-2xl font-semibold p-1 bg-[var(--accent-color)] text-white rounded">
+        <div
+          key={item.id}
+          className="bg-[var(--background-box-color)] p-8 flex flex-col"
+        >
+          <div className="mb-6">
+            <p className="text-xl md:text-2xl font-semibold p-1 px-2 bg-[var(--accent-color)] text-white rounded w-fit">
               {item.heading}
             </p>
           </div>
-          <h4 className="text-5xl md:text-5xl lg:text-6xl font-semibold">
+          <h4 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold mb-8">
             {item.price}
           </h4>
-          <div className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3">
+          <div className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3 mb-8 flex-grow">
             {item.bodyText.map((text, index) => (
               <p key={index} className="flex items-center gap-2">
                 <svg
@@ -45,6 +50,9 @@ const PreiseCard: React.FC<PreisCardProps> = ({ items }) => {
               </span>
               <span className="">vieles mehr</span>
             </p>
+            <div className="flex justify-center mt-5">
+              <Kontakt />
+            </div>
           </div>
         </div>
       ))}
