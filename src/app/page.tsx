@@ -110,6 +110,41 @@ export default function Home() {
       ],
     },
   ];
+
+  const serviceItems = [
+    {
+      id: "One-Pager",
+      heading: "Simpler One-Pager",
+      price: "ab 750 €",
+      bodyText: [
+        "1 Seite (One-Pager)",
+        "Individuelles Design",
+        "Mobiloptimiert",
+        "WordPress CMS",
+        "Suchmaschinen optimiert",
+        "Schnellste Ladezeiten",
+        "Animationen",
+        "Datenschutz & rechtliches",
+      ],
+    },
+    {
+      id: "Buisness",
+      heading: "Buisness",
+      price: "ab 1.500 €",
+      bodyText: [
+        "1 Seite (One-Pager)",
+        "Individuelles Design",
+        "Mobiloptimiert",
+        "WordPress CMS",
+        "Suchmaschinen optimiert",
+        "Schnellste Ladezeiten",
+        "Animationen",
+        "Erweiteres Call-to-Action",
+        "Einführung",
+        "Datenschutz & rechtliches",
+      ],
+    },
+  ];
   return (
     <>
       <div className="absolute select-none -z-2">
@@ -393,14 +428,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="my-15">
         <SubAndMainHeader
           subheader="Preise"
           header="Das Beste Preis - Leistungsverhältnis"
           direction="center"
         />
-
-        <PreiseCard items={preiseItems} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
+          <PreiseCard items={preiseItems} />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto px-4 mt-4">
+          <PreiseCard items={serviceItems}></PreiseCard>
+        </div>
       </section>
     </>
   );
