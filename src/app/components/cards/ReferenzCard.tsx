@@ -36,7 +36,9 @@ export function ReferenzCard({ src, header, id }: ReferenzCardProps) {
           </div>
           <div className="flex items-center mt-4 sm:mt-6 md:mt-8">
             <div className="p-3 sm:p-4 w-12 sm:w-14 rounded-full bg-[var(--background)] flex justify-center flex-shrink-0 group-hover:bg-[var(--accent-color)] transition-colors duration-300">
-              <p className="font-bold text-sm sm:text-base">{id}</p>
+              <p className="font-bold text-sm sm:text-base group-hover:text-white transition-colors duration-300">
+                {id}
+              </p>
             </div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold px-3 sm:px-4 hover:text-[var(--accent-color)] transition-all duration-300">
               {header}
