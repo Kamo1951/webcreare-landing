@@ -64,7 +64,7 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
               className={
                 "py-1 px-3 sm:py-2 sm:px-5 text-sm sm:text-base font-semibold cursor-pointer transition-colors " +
                 (isActive
-                  ? "bg-[var(--accent-color)] text-[var(--foreground)]"
+                  ? "bg-[var(--accent-color)] text-white "
                   : "bg-[var(--background-box-color)] hover:bg-[var(--background-box-color-hover)]")
               }
             >
