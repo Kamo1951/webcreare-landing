@@ -16,11 +16,7 @@ const PreiseCard: React.FC<PreisCardProps> = ({ items }) => {
         <div key={item.id} className="bg-[var(--background-box-color) p-8]">
           <div className="bg-[var(--accent-color)]">{item.heading}</div>
           <div>{item.price}</div>
-          <div>
-            <p className="text-[var(--paragraph-text-color)]">
-              {item.bodyText}
-            </p>
-          </div>
+          <div></div>
         </div>
       ))}
     </div>
