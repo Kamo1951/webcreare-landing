@@ -34,22 +34,27 @@ export default function Home() {
   ];
   const ueberUnsItems = [
     {
-      id: "aufgabe",
-      heading: "Unsere Aufgabe",
-      bodyText:
-        "Wir entwickeln individuelle Websites am Tegernsee, die Unternehmen in der Region sichtbar machen und beim Wachsen unterstützen. Von Strategie & Konzept über Design bis zur technischen Umsetzung liefern wir saubere, schnelle und suchmaschinenfreundliche Webauftritte.\n Dabei achten wir auf klaren Aufbau, Top-Performance, Barrierearmut und Conversion-Ziele, damit deine Seite nicht nur gut aussieht, sondern messbar für dich arbeitet. \n\nKurz gesagt: Wir bauen Websites, die passen, performen und verkaufen – mit echtem Fokus auf lokale Betriebe rund um den Tegernsee.",
-    },
-    {
       id: "vision",
       heading: "Unsere Vision",
       bodyText:
         "Wir sind ein junges Team mit der Überzeugung: Gute digitale Grundlagen dürfen kein Luxus sein. Gerade am Start – ob Gründer:in, Handwerksbetrieb, Praxis, Gastronomie, Ferienunterkunft oder Dienstleister – braucht es eine Website, die Vertrauen schafft und gefunden wird. \n\nUnsere Vision ist, digitale Erlebnisse zu schaffen, die einfach zu bedienen, schnell, mobil stark und lokal relevant sind. Wir kombinieren Local-SEO, sauberes UX-Design und moderne Webtechnologien, damit du gefunden, verstanden und kontaktiert wirst – ohne Marketing-Buzzwords, dafür mit Substanz.",
     },
     {
+      id: "aufgabe",
+      heading: "Unsere Aufgabe",
+      bodyText:
+        "Wir entwickeln individuelle Websites am Tegernsee, die Unternehmen in der Region sichtbar machen und beim Wachsen unterstützen. Von Strategie & Konzept über Design bis zur technischen Umsetzung liefern wir saubere, schnelle und suchmaschinenfreundliche Webauftritte.\n Dabei achten wir auf klaren Aufbau, Top-Performance, Barrierearmut und Conversion-Ziele, damit deine Seite nicht nur gut aussieht, sondern messbar für dich arbeitet. \n\nKurz gesagt: Wir bauen Websites, die passen, performen und verkaufen – mit echtem Fokus auf lokale Betriebe rund um den Tegernsee.",
+    },
+    {
       id: "ziel",
       heading: "Unser Ziel",
       bodyText:
         "Unser Ziel ist dein nachhaltiger Erfolg. Wir arbeiten transparent, verlässlich und auf Augenhöhe – mit klaren Angeboten, fairen Preisen und ohne versteckte Kosten. Statt „das große Geld“ im Blick zu haben, bauen wir auf langfristige Partnerschaften, ehrliche Beratung und Lösungen, die mit dir mitwachsen. \n\nKurz gesagt: Zufriedenheit, Fairness, Ergebnis – dafür stehen wir mit unserem Namen.",
+    },
+    {
+      id: "wir",
+      heading: "Wer ist Webcreare?",
+      bodyText: "",
     },
   ];
 
@@ -355,7 +360,7 @@ export default function Home() {
           header="Unsere aktuellsten Projekte"
           direction="center"
         />
-        <div className="flex place-content-center gap-8 mt-15">
+        <div className="flex flex-col sm:flex-row place-content-center gap-8 mt-15 px-4">
           <ReferenzCard
             src={Bausucht}
             header="Minecraft Server Webseite"
