@@ -17,14 +17,14 @@ export function ReferenzCard({ src, header, id }: ReferenzCardProps) {
               width={450}
               className="w-full h-auto"
             />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-30 h-30 bg-[var(--accent-color)] opacity-0 rounded-full flex items-center justify-center group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 bg-[var(--accent-color)] opacity-0 rounded-full flex items-center justify-center group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 hover:bg-[var(--accent-color-hover)]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2.5}
                 stroke="var(--foreground)"
-                className="w-15 h-15 transition-transform duration-300 rotate-45 group-hover:rotate-0"
+                className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-15 lg:h-15 transition-transform duration-300 rotate-45 group-hover:rotate-0 "
               >
                 <path
                   strokeLinecap="round"
