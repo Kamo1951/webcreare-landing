@@ -23,7 +23,7 @@ export function ReferenzCard({ src, header, id }: ReferenzCardProps) {
                 fill="none"
                 viewBox="0 0 24 24"
                 strokeWidth={2.5}
-                stroke="var(--foreground)"
+                stroke="white"
                 className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-15 lg:h-15 transition-transform duration-300 rotate-45 group-hover:rotate-0 "
               >
                 <path
