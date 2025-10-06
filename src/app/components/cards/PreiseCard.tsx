@@ -11,12 +11,20 @@ interface PreisCardProps {
 
 const PreiseCard: React.FC<PreisCardProps> = ({ items }) => {
   return (
-    <div>
+    <div className="grid grid-cols-3 grid-rows-1 gap-4">
       {items.map((item) => (
-        <div key={item.id} className="bg-[var(--background-box-color) p-8]">
-          <div className="bg-[var(--accent-color)]">{item.heading}</div>
-          <div>{item.price}</div>
-          <div></div>
+        <div key={item.id} className="bg-[var(--background-box-color)] p-8">
+          <div className="">
+            <p className="text-3xl font-semibold p-2 bg-[var(--accent-color)] text-white">
+              {item.heading}
+            </p>
+          </div>
+          <h4 className="text-7xl font-semibold">{item.price}</h4>
+          <div className="text-[var(--paragraph-text-color)]">
+            {item.bodyText.map((text, index) => (
+              <p key={index}>{text}</p>
+            ))}
+          </div>
         </div>
       ))}
     </div>
