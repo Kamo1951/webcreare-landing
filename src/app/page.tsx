@@ -445,7 +445,7 @@ export default function Home() {
           <PreiseCard
             items={serviceItems}
             monatlich={true}
-            subtitle=""
+            subtitle="Optional & Nur Verfügbar mit einem der Website-Pakete"
           ></PreiseCard>
         </div>
       </section>
