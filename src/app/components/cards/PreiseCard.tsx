@@ -9,9 +9,15 @@ export type PreisItems = {
 
 interface PreisCardProps {
   items: PreisItems[];
+  subtitle: string;
+  monatlich: boolean;
 }
 
-const PreiseCard: React.FC<PreisCardProps> = ({ items }) => {
+const PreiseCard: React.FC<PreisCardProps> = ({
+  items,
+  subtitle,
+  monatlich,
+}) => {
   return (
     <>
       {items.map((item) => (
