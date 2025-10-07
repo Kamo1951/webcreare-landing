@@ -439,10 +439,14 @@ export default function Home() {
           direction="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
-          <PreiseCard items={preiseItems} />
+          <PreiseCard items={preiseItems} monatlich={false} subtitle="" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto px-4 mt-4">
-          <PreiseCard items={serviceItems}></PreiseCard>
+          <PreiseCard
+            items={serviceItems}
+            monatlich={true}
+            subtitle=""
+          ></PreiseCard>
         </div>
       </section>
     </>
