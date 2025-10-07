@@ -1,5 +1,6 @@
 "use client";
 import React, { useMemo, useState } from "react";
+import Link from "next/link";
 
 export type TabItem = {
   id: string;
@@ -97,6 +98,10 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
           );
         })}
       </div>
+      <p>
+        Erfahren sie mehr
+        <Link href="ueberuns"> Über Uns</Link>
+      </p>
     </section>
   );
 };
