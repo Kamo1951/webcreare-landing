@@ -14,6 +14,7 @@ import { ReferenzCard } from "./components/cards/ReferenzCard";
 import Bausucht from "./components/imgs/Bausucht.webp";
 import Veerdesign from "./components/imgs/Veerdesign.webp";
 import PreiseCard from "./components/cards/PreiseCard";
+import TeamCard from "./components/cards/TeamCard";
 
 export default function Home() {
   const sliders = [
@@ -147,6 +148,21 @@ export default function Home() {
         "12 Monate Mindestlaufzeit für maximale Sicherheit",
         "+ viele weitere Premium-Services",
       ],
+    },
+  ];
+
+  const teamMembers = [
+    {
+      id: "Miki",
+      img: "",
+      name: "Mikolaj Spruch",
+      role: "Entwickler & Designer",
+    },
+    {
+      id: "Oli",
+      img: "",
+      name: "Oliwer Keskin",
+      role: "Vertrieb",
     },
   ];
   return (
@@ -467,6 +483,9 @@ export default function Home() {
           header="Unser erfahrenes Team!"
           direction="center"
         />
+        <div>
+          <TeamCard items={teamMembers} />
+        </div>
       </section>
     </>
   );
