@@ -307,7 +307,7 @@ const Navbar = () => {
                 </Link>
               ))}
             </div>
-            <Kontakt />
+            <Kontakt href="kontakt" text="Jetzt Anfragen" />
           </nav>
         )}
 
