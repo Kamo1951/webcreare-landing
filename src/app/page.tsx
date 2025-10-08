@@ -15,6 +15,8 @@ import Bausucht from "./components/imgs/Bausucht.webp";
 import Veerdesign from "./components/imgs/Veerdesign.webp";
 import PreiseCard from "./components/cards/PreiseCard";
 import TeamCard from "./components/cards/TeamCard";
+import MikiPort from "./components/imgs/Miki-Port.webp";
+import OliPort from "./components/imgs/Oli-Port.webp";
 
 export default function Home() {
   const sliders = [
@@ -154,15 +156,17 @@ export default function Home() {
   const teamMembers = [
     {
       id: "Miki",
-      img: "",
+      img: MikiPort,
       name: "Mikolaj Spruch",
       role: "Entwickler & Designer",
+      link: "https://github.com/Kamo1951",
     },
     {
       id: "Oli",
-      img: "",
+      img: OliPort,
       name: "Oliwer Keskin",
       role: "Vertrieb",
+      link: "",
     },
   ];
   return (
@@ -437,7 +441,7 @@ export default function Home() {
           header="Unsere aktuellsten Projekte"
           direction="center"
         />
-        <div className="flex flex-col sm:flex-row place-content-center gap-8 mt-15 px-4">
+        <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
           <ReferenzCard
             src={Bausucht}
             header="Minecraft Server Webseite"
@@ -457,7 +461,7 @@ export default function Home() {
           header="Das Beste Preis - Leistungsverhältnis"
           direction="center"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 mt-15">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
           <PreiseCard
             items={preiseItems}
             monatlich={false}
@@ -483,7 +487,7 @@ export default function Home() {
           header="Unser erfahrenes Team!"
           direction="center"
         />
-        <div>
+        <div className="">
           <TeamCard items={teamMembers} />
         </div>
       </section>
