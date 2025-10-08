@@ -12,12 +12,16 @@ interface PreisCardProps {
   items: PreisItems[];
   subtitle: string;
   monatlich: boolean;
+  buttonLink: string;
+  buttonLabel: string;
 }
 
 const PreiseCard: React.FC<PreisCardProps> = ({
   items,
   subtitle,
   monatlich,
+  buttonLink,
+  buttonLabel,
 }) => {
   return (
     <>
@@ -79,7 +83,7 @@ const PreiseCard: React.FC<PreisCardProps> = ({
               <span className="">+ vieles mehr</span>
             </p>
             <div className="flex justify-center mt-5">
-              <Kontakt />
+              <Kontakt href={buttonLink} text={buttonLabel} />
             </div>
           </div>
         </div>
