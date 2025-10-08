@@ -382,7 +382,10 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-[90rem] mx-auto px-4 mb-20">
+      <section
+        id="ueberuns"
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-[90rem] mx-auto px-4 mb-20"
+      >
         <div>
           <SubAndMainHeader
             subheader="Über uns"
@@ -412,7 +415,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-20">
+      <section id="referenzen" className="my-20">
         <SubAndMainHeader
           subheader="Referenzen"
           header="Unsere aktuellsten Projekte"
@@ -432,20 +435,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-20">
+      <section id="preise" className="my-20">
         <SubAndMainHeader
           subheader="Preise"
           header="Das Beste Preis - Leistungsverhältnis"
           direction="center"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 mt-15">
-          <PreiseCard items={preiseItems} monatlich={false} subtitle="" />
+          <PreiseCard
+            items={preiseItems}
+            monatlich={false}
+            subtitle=""
+            buttonLink="kontakt"
+            buttonLabel="Jetzt Anfragen"
+          />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto px-4 mt-4">
           <PreiseCard
             items={serviceItems}
             monatlich={true}
             subtitle="Optional & Nur Verfügbar mit einem der Website-Pakete"
+            buttonLink="#preise"
+            buttonLabel="Zuerst Ein Webseiten-Paket Wählen"
           ></PreiseCard>
         </div>
       </section>
