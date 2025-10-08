@@ -98,9 +98,14 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
           );
         })}
       </div>
-      <p>
-        Erfahren sie mehr
-        <Link href="ueberuns"> Über Uns</Link>
+      <p className="mt-6 text-center lg:text-left text-sm sm:text-base text-[var(--paragraph-text-color)]">
+        Erfahren Sie mehr{" "}
+        <Link
+          href="/ueberuns"
+          className="text-[var(--accent-color)] hover:underline font-semibold transition-all"
+        >
+          über uns
+        </Link>
       </p>
     </section>
   );
