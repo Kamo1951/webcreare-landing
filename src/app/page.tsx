@@ -24,7 +24,7 @@ export default function Home() {
         "Design Ideen",
         "Markebildung",
         "Digitale Lösungen",
-        "Startegie",
+        "Strategie",
         "Webdesign",
         "Gestaltung",
         "Kreative Lösungen",
@@ -60,7 +60,7 @@ export default function Home() {
 
   const preiseItems = [
     {
-      id: "One-Pager",
+      id: "onePager",
       heading: "Simpler One-Pager",
       price: "ab 750 €",
       bodyText: [
@@ -75,8 +75,8 @@ export default function Home() {
       ],
     },
     {
-      id: "Buisness",
-      heading: "Buisness",
+      id: "business",
+      heading: "Business",
       price: "ab 1.500 €",
       bodyText: [
         "1 Seite (One-Pager)",
@@ -92,7 +92,7 @@ export default function Home() {
       ],
     },
     {
-      id: "Professionell",
+      id: "professionell",
       heading: "Professionell",
       price: "ab 3.000 €",
       bodyText: [
@@ -113,7 +113,7 @@ export default function Home() {
 
   const serviceItems = [
     {
-      id: "Webseiten-Pflege",
+      id: "webseitenPflege",
       heading: "Webseiten-Pflege",
       price: "100 €",
       bodyText: [
@@ -131,7 +131,7 @@ export default function Home() {
       ],
     },
     {
-      id: "Sicherheit & Speed Hosting",
+      id: "sicherheitSpeedHosting",
       heading: "Sicherheit & Speed Hosting",
       price: "15 €",
       bodyText: [
@@ -151,7 +151,7 @@ export default function Home() {
   ];
   return (
     <>
-      <div className="absolute select-none -z-2">
+      <div className="absolute select-none z-[-2]">
         <Image
           src={HeroShape}
           alt="Hero-Shape"
@@ -162,7 +162,7 @@ export default function Home() {
         />
       </div>
       <Navbar />
-      <section className="container mx-auto px-4 overflow-hidden-x">
+      <section className="container mx-auto px-4 overflow-x-hidden">
         <Image
           src={HeroCircle}
           alt="Hero circle"
@@ -457,7 +457,7 @@ export default function Home() {
             subtitle="Optional & Nur Verfügbar mit einem der Website-Pakete"
             buttonLink="#preise"
             buttonLabel="Zuerst Ein Webseiten-Paket Wählen"
-          ></PreiseCard>
+          />
         </div>
       </section>
     </>
