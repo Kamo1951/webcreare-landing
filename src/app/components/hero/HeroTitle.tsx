@@ -57,7 +57,7 @@ export const HeroTitle: React.FC = () => {
         </h3>
       </div>
       <div className="mt-8 sm:mt-10 hero-cta">
-        <Kontakt />
+        <Kontakt href="kontakt" text="Jetzt Anfragen" />
       </div>
     </div>
   );
