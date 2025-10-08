@@ -162,7 +162,7 @@ export default function Home() {
         />
       </div>
       <Navbar />
-      <section className="container mx-auto px-4 overflow-x-hidden">
+      <section className="container mx-auto px-4 ">
         <Image
           src={HeroCircle}
           alt="Hero circle"
@@ -459,6 +459,14 @@ export default function Home() {
             buttonLabel="Zuerst Ein Webseiten-Paket Wählen"
           />
         </div>
+      </section>
+
+      <section id="team" className="my-20">
+        <SubAndMainHeader
+          subheader="TeamMitglieder"
+          header="Unser erfahrenes Team!"
+          direction="center"
+        />
       </section>
     </>
   );
