@@ -73,7 +73,7 @@ export function SubAndMainHeader({
   };
 
   return (
-    <div ref={scope} className="grid grid-cols-1 grid-rows-2">
+    <div ref={scope} className="grid grid-cols-1 grid-rows-2 mb-15">
       <div
         className={`flex ${
           direction === "left"
