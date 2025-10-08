@@ -432,13 +432,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-15">
+      <section className="my-20">
         <SubAndMainHeader
           subheader="Preise"
           header="Das Beste Preis - Leistungsverhältnis"
           direction="center"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4 mt-15">
           <PreiseCard items={preiseItems} monatlich={false} subtitle="" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto px-4 mt-4">
