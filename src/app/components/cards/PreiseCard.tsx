@@ -36,7 +36,7 @@ const PreiseCard: React.FC<PreisCardProps> = ({
             </p>
           </div>
           <div className="flex items-end">
-            <h4 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold ">
+            <h4 className="text-4xl md:text-5xl xl:text-6xl font-semibold ">
               {item.price}
             </h4>
             <p
@@ -60,8 +60,8 @@ const PreiseCard: React.FC<PreisCardProps> = ({
             </p>
           </div>
           <div className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3 mb-8 flex-grow">
-            {item.bodyText.map((text, index) => (
-              <p key={index} className="flex items-center gap-2">
+            {item.bodyText.map((text) => (
+              <p key={text} className="flex items-center gap-2">
                 <svg
                   className="w-5 h-5 text-[var(--accent-color)] flex-shrink-0"
                   fill="currentColor"
