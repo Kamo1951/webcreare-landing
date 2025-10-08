@@ -15,11 +15,14 @@ interface TeamCardProps {
 const TeamCard: React.FC<TeamCardProps> = ({ items }) => {
   return (
     <>
-      <div className="flex justify-center gap-x-4">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-x-4 px-4">
         {items.map((item) => {
           return (
-            <div key={item.id} className="flex flex-col group">
-              <div className="relative w-60 h-96 overflow-hidden">
+            <div
+              key={item.id}
+              className="flex flex-col group w-full sm:w-[calc(50%-0.5rem)] lg:w-60"
+            >
+              <div className="relative w-full aspect-[2/3] overflow-hidden max-w-[240px] mx-auto lg:max-w-none">
                 <Image
                   src={item.img}
                   alt={item.name}
@@ -29,7 +32,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ items }) => {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-b from-[var(--accent-color)]/10 to-[var(--accent-color-hover)]/50" />
               </div>
               <div className="flex flex-col mt-5">
-                <h5 className="font-semibold text-2xl mb-1 hover:text-[var(--accent-color)]">
+                <h5 className="font-semibold text-xl sm:text-2xl mb-1 hover:text-[var(--accent-color)]">
                   <a target="_blank" rel="noopener noreferrer" href={item.link}>
                     {item.name}
                   </a>
