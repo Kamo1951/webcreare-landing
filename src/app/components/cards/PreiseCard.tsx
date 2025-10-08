@@ -1,4 +1,5 @@
 import { Kontakt } from "../buttons/Kontakt";
+import clsx from "clsx";
 
 export type PreisItems = {
   id: string;
@@ -30,9 +31,30 @@ const PreiseCard: React.FC<PreisCardProps> = ({
               {item.heading}
             </p>
           </div>
-          <h4 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold mb-8">
-            {item.price}
-          </h4>
+          <div className="flex items-end">
+            <h4 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-semibold ">
+              {item.price}
+            </h4>
+            <p
+              className={clsx(
+                monatlich ? "" : "hidden",
+                "text-[var(--paragraph-text-color)]"
+              )}
+            >
+              /Monat
+            </p>
+          </div>
+
+          <div className="mb-3">
+            <p
+              className={clsx(
+                subtitle !== "" ? "" : "hidden",
+                "mt-2 text-[var(--accent-color-hover)]"
+              )}
+            >
+              {subtitle}
+            </p>
+          </div>
           <div className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3 mb-8 flex-grow">
             {item.bodyText.map((text, index) => (
               <p key={index} className="flex items-center gap-2">
