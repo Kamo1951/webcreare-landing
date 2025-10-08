@@ -31,7 +31,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ items }) => {
                 />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-b from-[var(--accent-color)]/10 to-[var(--accent-color-hover)]/50" />
               </div>
-              <div className="flex flex-col mt-5">
+              <div className="flex flex-col mt-5 text-center lg:text-start">
                 <h5 className="font-semibold text-xl sm:text-2xl mb-1 hover:text-[var(--accent-color)]">
                   <a target="_blank" rel="noopener noreferrer" href={item.link}>
                     {item.name}
