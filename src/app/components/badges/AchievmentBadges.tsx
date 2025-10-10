@@ -67,8 +67,11 @@ const formatValue = (value: number, decimals: number) => {
   return Math.round(value).toLocaleString("de-DE");
 };
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
+let gsapPluginsRegistered = false;
+
+if (typeof window !== "undefined" && !gsapPluginsRegistered) {
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+  gsapPluginsRegistered = true;
 }
 
 const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
@@ -84,10 +87,25 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
   );
 
   useGSAP(
-    () => {
-      const cards = gsap.utils.toArray<HTMLElement>(".ach-badge-card");
+    (context) => {
+      const scope = (context.scope ||
+        containerRef.current) as HTMLElement | null;
+
+      if (!scope) {
+        return undefined;
+      }
+
+      const cards = gsap.utils.toArray<HTMLElement>(
+        scope.querySelectorAll(".ach-badge-card")
+      );
+
+      const triggers: ScrollTrigger[] = [];
 
       cards.forEach((card) => {
+        if (!card.isConnected) {
+          return;
+        }
+
         const numberElement =
           card.querySelector<HTMLElement>(".ach-badge-number");
 
@@ -103,41 +121,51 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
 
         gsap.set(card, { autoAlpha: 0, y: 30 });
 
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 80%",
-          once: true,
-          onEnter: () => {
-            const counter = { value: 0 };
+        const timeline = gsap.timeline({
+          defaults: { ease: "power2.out" },
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            once: true,
+            onEnter: () => {
+              const counter = { value: 0 };
 
-            gsap.timeline().to(card, {
-              autoAlpha: 1,
-              y: 0,
-              duration: 0.6,
-              ease: "power2.out",
-            });
+              gsap.to(card, {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.6,
+              });
 
-            gsap.to(counter, {
-              value: target,
-              duration: 1.6,
-              ease: "power2.out",
-              onUpdate: () => {
-                numberElement.textContent = `${prefix}${formatValue(
-                  counter.value,
-                  decimals
-                )}${suffix}`;
-              },
-              onComplete: () => {
-                numberElement.textContent =
-                  original ||
-                  `${prefix}${formatValue(target, decimals)}${suffix}`;
-              },
-            });
+              gsap.to(counter, {
+                value: target,
+                duration: 1.6,
+                ease: "power2.out",
+                onUpdate: () => {
+                  numberElement.textContent = `${prefix}${formatValue(
+                    counter.value,
+                    decimals
+                  )}${suffix}`;
+                },
+                onComplete: () => {
+                  numberElement.textContent =
+                    original ||
+                    `${prefix}${formatValue(target, decimals)}${suffix}`;
+                },
+              });
+            },
           },
         });
+
+        if (timeline.scrollTrigger) {
+          triggers.push(timeline.scrollTrigger);
+        }
       });
+
+      return () => {
+        triggers.forEach((trigger) => trigger.kill());
+      };
     },
-    { scope: containerRef }
+    { scope: containerRef, dependencies: [badgesWithNumbers] }
   );
 
   return (
