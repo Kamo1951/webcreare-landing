@@ -83,16 +83,18 @@ export function Footer() {
             );
           })}
         </div>
-        <div className="border-t border-white/10 ">
-          <div className="w-[80%] mx-auto">
-            <div className="flex justify-between mt-2 ">
-              <p>Copyright ©2024 Webcreare. Alle Rechte vorbehalten.</p>
-              <a href="https://www.medius-fitness.de">
+        <div className="border-t border-white/10 mt-8">
+          <div className="w-[80%] mx-auto  ">
+            <div className="flex justify-between p-6">
+              <p className=" ">
+                Copyright ©2024 Webcreare. Alle Rechte vorbehalten.
+              </p>
+              <p>
                 Fotos aufgenommen in Zusammenarbeit mit{" "}
                 <span className="hover:underline decoration-[var(--accent-color)] text-[var(--accent-color)]">
-                  medius Tegernsee.
+                  <a href="https://www.medius-fitness.de">medius Tegernsee.</a>
                 </span>
-              </a>
+              </p>
             </div>
           </div>
         </div>
