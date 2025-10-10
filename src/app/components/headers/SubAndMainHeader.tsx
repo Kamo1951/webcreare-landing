@@ -8,6 +8,7 @@ type SubAndMainHeaderProps = {
   subheader: string;
   header: string;
   direction: string;
+  widthSize: string;
 };
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -16,6 +17,7 @@ export function SubAndMainHeader({
   subheader,
   header,
   direction,
+  widthSize,
 }: SubAndMainHeaderProps) {
   const scope = useRef<HTMLDivElement>(null);
 
@@ -96,7 +98,7 @@ export function SubAndMainHeader({
         ></span>
       </div>
       <div
-        className={`w-3xs sm:w-sm lg:w-md ${
+        className={`w-3xs sm:w-sm lg:${widthSize} ${
           direction === "left"
             ? "text-center lg:text-left mx-auto lg:mr-auto lg:ml-0"
             : direction === "center"
