@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FooterShape from "./img/footer-bg-shape.png";
+import Link from "next/link";
 
 type footerItemsType = {
   id: string;
@@ -44,7 +45,7 @@ export function Footer() {
   return (
     <>
       <div className="">
-        <div className="absolute select-none -z-10 bg-[var(--background-box-color)]">
+        <div className="absolute select-none -z-10 bg-[var(--background-box-color)] ">
           <Image src={FooterShape} alt="Footer-Shape" />
         </div>
         <div className="flex justify-around z-3">
@@ -57,7 +58,7 @@ export function Footer() {
                 {item.linksName.map((underitem, index) => {
                   return (
                     <li key={underitem} className="mb-2 list-none ">
-                      <a
+                      <Link
                         href={item.links[index]}
                         className="hover:text-[var(--accent-color)] transition-all duration-300 flex items-center gap-2 group text-[var(--paragraph-text-color)] text-lg"
                       >
@@ -71,7 +72,7 @@ export function Footer() {
                           </span>
                         )}
                         {underitem}
-                      </a>
+                      </Link>
                     </li>
                   );
                 })}
@@ -81,9 +82,14 @@ export function Footer() {
         </div>
         <div className="border-t border-white/10 ">
           <div className="w-[80%] mx-auto">
-            <div className="flex justify-between">
+            <div className="flex justify-between my-2 ">
               <p>Copyright ©2024 Webcreare. Alle Rechte vorbehalten.</p>
-              <p>Fotos aufgenommen in Zusammenarbeit mit medius Tegernsee.</p>
+              <a href="https://www.medius-fitness.de">
+                Fotos aufgenommen in Zusammenarbeit mit{" "}
+                <span className="hover:underline decoration-[var(--accent-color)] text-[var(--accent-color)]">
+                  medius Tegernsee.
+                </span>
+              </a>
             </div>
           </div>
         </div>
