@@ -17,6 +17,7 @@ import PreiseCard from "./components/cards/PreiseCard";
 import TeamCard from "./components/cards/TeamCard";
 import MikiPort from "./components/imgs/Miki-Port.webp";
 import OliPort from "./components/imgs/Oli-Port.webp";
+import { Kontakt } from "./components/buttons/Kontakt";
 
 export default function Home() {
   const sliders = [
@@ -489,6 +490,17 @@ export default function Home() {
         />
         <div className="">
           <TeamCard items={teamMembers} />
+        </div>
+      </section>
+
+      <section>
+        <div className="grid">
+          <SubAndMainHeader
+            subheader="Unternehmens Wachstum"
+            header="Wir steigern das Wachstum Ihres Unternehmens"
+            direction="left"
+          />
+          <Kontakt href="kontakt" text="Jetzt Anfragen" />
         </div>
       </section>
     </>
