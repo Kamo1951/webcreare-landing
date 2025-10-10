@@ -189,7 +189,7 @@ export default function Home() {
           ></path>
         </svg>
       ),
-      number: "5",
+      number: "5+",
       numberText: "Jahre Erfahrung",
       bodyText:
         "In diesen 5 Jahren haben wir schon fast jedes Problem gemeistert.",
