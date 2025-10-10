@@ -44,7 +44,7 @@ const footerItems: footerItemsType[] = [
 export function Footer() {
   return (
     <>
-      <div className=" h-130">
+      <div className="">
         <div className="absolute select-none -z-10 bg-[var(--background-box-color)]">
           <Image src={FooterShape} alt="Footer-Shape" />
         </div>
@@ -80,7 +80,14 @@ export function Footer() {
             );
           })}
         </div>
-        <div className=""></div>
+        <div className="border-t-4 border-white/10 ">
+          <div className="w-[80%] mx-auto">
+            <div className="flex justify-between">
+              <p>Copyright ©2024 Webcreare. Alle Rechte vorbehalten.</p>
+              <p>Fotos aufgenommen in Zusammenarbeit mit medius Tegernsee.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
