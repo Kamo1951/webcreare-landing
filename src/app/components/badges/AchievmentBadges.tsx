@@ -1,7 +1,23 @@
+"use client";
+
+import type { ReactNode } from "react";
+import { useMemo, useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+type NumberParts = {
+  original: string;
+  prefix: string;
+  suffix: string;
+  target: number;
+  decimals: number;
+};
+
 export type AchivementBadgesItems = {
   id: string | number;
-  svg: React.ReactNode;
-  number: string;
+  svg: ReactNode;
+  number: string | number;
   numberText: string;
   bodyText: string;
 };
@@ -10,32 +26,161 @@ interface AchivementBadgesProps {
   items: AchivementBadgesItems[];
 }
 
+const extractNumberParts = (value: string | number): NumberParts => {
+  const stringValue = String(value).trim();
+
+  const numberMatch = stringValue.match(/-?\d+(?:[.,]\d+)?/);
+
+  if (!numberMatch || numberMatch.index === undefined) {
+    return {
+      original: stringValue,
+      prefix: "",
+      suffix: "",
+      target: 0,
+      decimals: 0,
+    };
+  }
+
+  const numericPart = numberMatch[0].replace(/\./g, "").replace(",", ".");
+  const target = parseFloat(numericPart);
+  const decimals = numericPart.includes(".")
+    ? numericPart.split(".")[1].length
+    : 0;
+
+  const prefix = stringValue.slice(0, numberMatch.index);
+  const suffix = stringValue.slice(numberMatch.index + numberMatch[0].length);
+
+  return {
+    original: stringValue,
+    prefix,
+    suffix,
+    target: Number.isFinite(target) ? target : 0,
+    decimals,
+  };
+};
+
+const formatValue = (value: number, decimals: number) => {
+  if (decimals > 0) {
+    return value.toFixed(decimals).replace(".", ",");
+  }
+
+  return Math.round(value).toLocaleString("de-DE");
+};
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
 const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const badgesWithNumbers = useMemo(
+    () =>
+      items.map((item) => ({
+        ...item,
+        numberParts: extractNumberParts(item.number),
+      })),
+    [items]
+  );
+
+  useGSAP(
+    () => {
+      const cards = gsap.utils.toArray<HTMLElement>(".ach-badge-card");
+
+      cards.forEach((card) => {
+        const numberElement =
+          card.querySelector<HTMLElement>(".ach-badge-number");
+
+        if (!numberElement) {
+          return;
+        }
+
+        const target = parseFloat(numberElement.dataset.target ?? "0");
+        const decimals = parseInt(numberElement.dataset.decimals ?? "0", 10);
+        const prefix = numberElement.dataset.prefix ?? "";
+        const suffix = numberElement.dataset.suffix ?? "";
+        const original = numberElement.dataset.original ?? "";
+
+        gsap.set(card, { autoAlpha: 0, y: 30 });
+
+        ScrollTrigger.create({
+          trigger: card,
+          start: "top 80%",
+          once: true,
+          onEnter: () => {
+            const counter = { value: 0 };
+
+            gsap.timeline().to(card, {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.6,
+              ease: "power2.out",
+            });
+
+            gsap.to(counter, {
+              value: target,
+              duration: 1.6,
+              ease: "power2.out",
+              onUpdate: () => {
+                numberElement.textContent = `${prefix}${formatValue(
+                  counter.value,
+                  decimals
+                )}${suffix}`;
+              },
+              onComplete: () => {
+                numberElement.textContent =
+                  original ||
+                  `${prefix}${formatValue(target, decimals)}${suffix}`;
+              },
+            });
+          },
+        });
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <>
-      <div className="flex justify-center gap-8">
-        {items.map((item) => {
-          return (
-            <div className="flex place-items-center gap-4">
-              <span className="rounded-full bg-[var(--background-box-color)] p-4 ">
-                {item.svg}
-              </span>
-              <div className="flex flex-col">
-                <div className="flex place-items-center text-3xl gap-2">
-                  <p className="text-4xl">{item.number}</p>
-                  <p>{item.numberText}</p>
-                </div>
-                <div className="w-xs">
-                  <p className="text-[var(--paragraph-text-color)]">
-                    {item.bodyText}
-                  </p>
-                </div>
+    <section
+      ref={containerRef}
+      className="flex flex-wrap justify-center gap-6 md:gap-8"
+      aria-label="Auszeichnungen und Kennzahlen"
+    >
+      {badgesWithNumbers.map((item) => {
+        const { original, prefix, suffix, target, decimals } = item.numberParts;
+
+        return (
+          <article
+            key={item.id}
+            className="ach-badge-card flex min-w-[260px] max-w-sm flex-1 items-start gap-5 rounded-2xl bg-[var(--glass-background)] p-6"
+          >
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--background-box-color)] text-[var(--accent-color)]">
+              {item.svg}
+            </span>
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-3xl font-semibold">
+                <span
+                  className="ach-badge-number text-4xl font-extrabold tracking-tight text-white"
+                  data-original={original}
+                  data-prefix={prefix}
+                  data-suffix={suffix}
+                  data-target={target}
+                  data-decimals={decimals}
+                >
+                  {original}
+                </span>
+                <span className="text-lg font-medium text-[var(--paragraph-text-color)]">
+                  {item.numberText}
+                </span>
               </div>
+              <p className="max-w-xs text-base text-[var(--paragraph-text-color)]">
+                {item.bodyText}
+              </p>
             </div>
-          );
-        })}
-      </div>
-    </>
+          </article>
+        );
+      })}
+    </section>
   );
 };
 
