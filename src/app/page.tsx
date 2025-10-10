@@ -498,7 +498,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section className="my-20">
         <div className="grid grid-cols-3 grid-rows-1 gap-4">
           <div className="col-span-2 mx-auto">
             <SubAndMainHeader
