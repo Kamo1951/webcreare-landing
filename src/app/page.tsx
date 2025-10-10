@@ -198,6 +198,7 @@ export default function Home() {
           subheader="Unsere Leistungen"
           header="Wir helfen beim Wachstum Ihrer Marke"
           direction="center"
+          widthSize="w-md"
         />
         <div className="flex justify-center">
           <div className="mt-15 w-full max-w-7xl px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -412,6 +413,7 @@ export default function Home() {
             subheader="Über uns"
             header="Unser Hauptziel ist Ihre Zufriedenheit"
             direction="left"
+            widthSize="w-md"
           />
           <div className="mt-5">
             <UeberUnsTabs
@@ -441,6 +443,7 @@ export default function Home() {
           subheader="Referenzen"
           header="Unsere aktuellsten Projekte"
           direction="center"
+          widthSize="w-md"
         />
         <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
           <ReferenzCard
@@ -461,6 +464,7 @@ export default function Home() {
           subheader="Preise"
           header="Das Beste Preis - Leistungsverhältnis"
           direction="center"
+          widthSize="w-md"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
           <PreiseCard
@@ -487,6 +491,7 @@ export default function Home() {
           subheader="TeamMitglieder"
           header="Unser erfahrenes Team!"
           direction="center"
+          widthSize="w-md"
         />
         <div className="">
           <TeamCard items={teamMembers} />
@@ -494,14 +499,20 @@ export default function Home() {
       </section>
 
       <section>
-        <div className="grid">
-          <SubAndMainHeader
-            subheader="Unternehmens Wachstum"
-            header="Wir steigern das Wachstum Ihres Unternehmens"
-            direction="left"
-          />
-          <Kontakt href="kontakt" text="Jetzt Anfragen" />
+        <div className="grid grid-cols-3 grid-rows-1 gap-4">
+          <div className="col-span-2 mx-auto">
+            <SubAndMainHeader
+              subheader="Unternehmens Wachstum"
+              header="Wir steigern das Wachstum Ihres Unternehmens"
+              direction="left"
+              widthSize="w-xl"
+            />
+          </div>
+          <div className="flex place-items-center">
+            <Kontakt href="kontakt" text="Jetzt Anfragen" />
+          </div>
         </div>
+        <div></div>
       </section>
     </>
   );
