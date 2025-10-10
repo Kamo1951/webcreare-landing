@@ -44,11 +44,14 @@ const footerItems: footerItemsType[] = [
 export function Footer() {
   return (
     <>
-      <div className="">
-        <div className="absolute select-none -z-10 bg-[var(--background-box-color)] ">
-          <Image src={FooterShape} alt="Footer-Shape" />
-        </div>
-        <div className="flex justify-around z-3">
+      <div className="bg-[var(--background-box-color)]">
+        <Image
+          src={FooterShape}
+          alt="Footer-Shape"
+          height={320}
+          className="pointer-events-none absolute select-none "
+        />
+        <div className="flex justify-around z-10">
           {footerItems.map((item) => {
             return (
               <ul key={item.id} className="mt-12">
@@ -82,7 +85,7 @@ export function Footer() {
         </div>
         <div className="border-t border-white/10 ">
           <div className="w-[80%] mx-auto">
-            <div className="flex justify-between my-2 ">
+            <div className="flex justify-between mt-2 ">
               <p>Copyright ©2024 Webcreare. Alle Rechte vorbehalten.</p>
               <a href="https://www.medius-fitness.de">
                 Fotos aufgenommen in Zusammenarbeit mit{" "}
