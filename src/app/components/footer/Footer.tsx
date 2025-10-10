@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FooterShape from "./img/footer-bg-shape.png";
+import clsx from "clsx";
 
 type footerItemsType = {
   id: string;
@@ -13,8 +14,8 @@ const footerItems: footerItemsType[] = [
   {
     id: "webcreare",
     name: "WebCreare",
-    links: [""],
-    linksName: [""],
+    links: [],
+    linksName: [],
     arrows: false,
   },
   {
@@ -47,15 +48,31 @@ export function Footer() {
         <div className="absolute select-none -z-10 bg-[var(--background-box-color)]">
           <Image src={FooterShape} alt="Footer-Shape" />
         </div>
-        <div className="flex justify-around place-items-center z-3">
+        <div className="flex justify-around z-3">
           {footerItems.map((item) => {
             return (
-              <ul key={item.id} className="">
-                <p className="text-3xl">{item.name}</p>
+              <ul key={item.id} className="mt-12">
+                <p className="text-3xl mb-8 underline decoration-[var(--accent-color)] decoration-4 underline-offset-8 font-semibold">
+                  {item.name}
+                </p>
                 {item.linksName.map((underitem, index) => {
                   return (
-                    <li key={underitem}>
-                      <a href={item.links[index]}>{underitem}</a>
+                    <li key={underitem} className="mb-2 list-none ">
+                      <a
+                        href={item.links[index]}
+                        className="hover:text-[var(--accent-color)] transition-all duration-300 flex items-center gap-2 group text-[var(--paragraph-text-color)] text-lg"
+                      >
+                        {item.arrows && (
+                          <span
+                            className={
+                              "transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110 font-bold mr-2 "
+                            }
+                          >
+                            →
+                          </span>
+                        )}
+                        {underitem}
+                      </a>
                     </li>
                   );
                 })}
@@ -63,6 +80,7 @@ export function Footer() {
             );
           })}
         </div>
+        <div className=""></div>
       </div>
     </>
   );
