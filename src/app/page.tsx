@@ -285,7 +285,7 @@ export default function Home() {
   ];
   return (
     <>
-      <div className="absolute select-none z-[-2]">
+      <div className="absolute select-none -mt-100">
         <Image
           src={HeroShape}
           alt="Hero-Shape"
@@ -295,7 +295,7 @@ export default function Home() {
           fetchPriority="high"
         />
       </div>
-      <Navbar />
+
       <section className="container mx-auto px-4 ">
         <Image
           src={HeroCircle}
