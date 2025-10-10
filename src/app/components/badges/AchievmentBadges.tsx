@@ -1,8 +1,6 @@
-import { StaticImageData } from "next/image";
-
 export type AchivementBadgesItems = {
   id: string | number;
-  img: StaticImageData;
+  svg: React.ReactNode;
   number: string;
   numberText: string;
   bodyText: string;
@@ -18,7 +16,8 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
       <div className="flex justify-center">
         {items.map((item) => {
           return (
-            <div>
+            <div className="flex place-items-center">
+              <span>{item.svg}</span>
               <div></div>
             </div>
           );
