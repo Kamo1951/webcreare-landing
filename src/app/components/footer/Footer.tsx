@@ -43,20 +43,20 @@ const footerItems: footerItemsType[] = [
 export function Footer() {
   return (
     <>
-      <div className="bg-[var(--background-box-color)]">
-        <div className="absolute">
+      <div className=" h-130">
+        <div className="absolute select-none -z-10 bg-[var(--background-box-color)]">
           <Image src={FooterShape} alt="Footer-Shape" />
         </div>
-        <div className="flex justify-around">
+        <div className="flex justify-around place-items-center z-3">
           {footerItems.map((item) => {
             return (
-              <ul key={item.id}>
-                {item.name}
+              <ul key={item.id} className="">
+                <p className="text-3xl">{item.name}</p>
                 {item.linksName.map((underitem, index) => {
                   return (
-                    <div key={underitem}>
+                    <li key={underitem}>
                       <a href={item.links[index]}>{underitem}</a>
-                    </div>
+                    </li>
                   );
                 })}
               </ul>
