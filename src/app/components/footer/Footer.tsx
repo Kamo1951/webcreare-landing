@@ -1,6 +1,5 @@
 import Image from "next/image";
 import FooterShape from "./img/footer-bg-shape.png";
-import clsx from "clsx";
 
 type footerItemsType = {
   id: string;
@@ -80,7 +79,7 @@ export function Footer() {
             );
           })}
         </div>
-        <div className="border-t-4 border-white/10 ">
+        <div className="border-t border-white/10 ">
           <div className="w-[80%] mx-auto">
             <div className="flex justify-between">
               <p>Copyright ©2024 Webcreare. Alle Rechte vorbehalten.</p>
