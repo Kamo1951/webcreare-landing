@@ -544,7 +544,7 @@ export default function Home() {
             <Image
               src={OliLaedt}
               alt="Oli heißt Interessenten wilkommen"
-              className="absolute right-0 sm:-right-5 md:-right-10 bottom-0 sm:-bottom-5 md:-bottom-10 w-[60%] sm:w-[50%] aspect-square object-cover z-20 animate-slide-in-right"
+              className="absolute right-0 sm:-right-5 md:-right-0 bottom-0 sm:-bottom-5 md:-bottom-10 w-[60%] sm:w-[50%] aspect-square object-cover z-20 animate-slide-in-right"
             />
           </div>
         </div>
@@ -611,16 +611,16 @@ export default function Home() {
       </section>
 
       <section className="my-20">
-        <div className="grid grid-cols-3 grid-rows-1 gap-4">
-          <div className="col-span-2 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 max-w-7xl mx-auto items-center">
+          <div className="md:col-span-2">
             <SubAndMainHeader
               subheader="Unternehmens Wachstum"
               header="Wir steigern das Wachstum Ihres Unternehmens"
               direction="left"
-              widthSize="w-xl"
+              widthSize="w-lg"
             />
           </div>
-          <div className="flex place-items-center">
+          <div className="flex justify-center md:justify-end">
             <Kontakt href="kontakt" text="Jetzt Anfragen" />
           </div>
         </div>
