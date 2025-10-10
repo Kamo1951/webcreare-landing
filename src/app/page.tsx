@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Navbar from "./components/navbar/Navbar";
 import HeroShape from "./components/navbar/imgs/hero-shape-5.webp";
 import HeroCircle from "./components/navbar/imgs/hero-shape-6.webp";
 import { HeroTitle } from "./components/hero/HeroTitle";
