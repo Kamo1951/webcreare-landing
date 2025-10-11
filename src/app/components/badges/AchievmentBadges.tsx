@@ -20,15 +20,17 @@ export type AchivementBadgesItems = {
   number: string | number;
   numberText: string;
   bodyText: string;
+  ariaLabel?: string;
 };
 
 interface AchivementBadgesProps {
   items: AchivementBadgesItems[];
+  heading?: string;
+  headingLevel?: "h1" | "h2" | "h3";
 }
 
 const extractNumberParts = (value: string | number): NumberParts => {
   const stringValue = String(value).trim();
-
   const numberMatch = stringValue.match(/-?\d+(?:[.,]\d+)?/);
 
   if (!numberMatch || numberMatch.index === undefined) {
@@ -63,7 +65,6 @@ const formatValue = (value: number, decimals: number) => {
   if (decimals > 0) {
     return value.toFixed(decimals).replace(".", ",");
   }
-
   return Math.round(value).toLocaleString("de-DE");
 };
 
@@ -74,7 +75,11 @@ if (typeof window !== "undefined" && !gsapPluginsRegistered) {
   gsapPluginsRegistered = true;
 }
 
-const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
+const AchivementBadges: React.FC<AchivementBadgesProps> = ({
+  items,
+  heading = "Unsere Erfolge und Kennzahlen",
+  headingLevel = "h2",
+}) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const badgesWithNumbers = useMemo(
@@ -91,9 +96,7 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
       const scope = (context.scope ||
         containerRef.current) as HTMLElement | null;
 
-      if (!scope) {
-        return undefined;
-      }
+      if (!scope) return undefined;
 
       const cards = gsap.utils.toArray<HTMLElement>(
         scope.querySelectorAll(".ach-badge-card")
@@ -102,16 +105,12 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
       const triggers: ScrollTrigger[] = [];
 
       cards.forEach((card) => {
-        if (!card.isConnected) {
-          return;
-        }
+        if (!card.isConnected) return;
 
         const numberElement =
           card.querySelector<HTMLElement>(".ach-badge-number");
 
-        if (!numberElement) {
-          return;
-        }
+        if (!numberElement) return;
 
         const target = parseFloat(numberElement.dataset.target ?? "0");
         const decimals = parseInt(numberElement.dataset.decimals ?? "0", 10);
@@ -168,46 +167,80 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({ items }) => {
     { scope: containerRef, dependencies: [badgesWithNumbers] }
   );
 
+  const HeadingTag = headingLevel;
+
   return (
     <section
       ref={containerRef}
-      className="flex flex-wrap justify-center gap-6 md:gap-8"
-      aria-label="Auszeichnungen und Kennzahlen"
+      className="flex flex-col gap-8"
+      aria-labelledby="achievements-heading"
+      itemScope
+      itemType="https://schema.org/ItemList"
     >
-      {badgesWithNumbers.map((item) => {
-        const { original, prefix, suffix, target, decimals } = item.numberParts;
+      <HeadingTag id="achievements-heading" className="sr-only" itemProp="name">
+        {heading}
+      </HeadingTag>
 
-        return (
-          <article
-            key={item.id}
-            className="ach-badge-card flex min-w-[260px] max-w-sm flex-1 items-start gap-5 rounded-2xl bg-[var(--glass-background)] p-6"
-          >
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--background-box-color)] text-[var(--accent-color)]">
-              {item.svg}
-            </span>
-            <div className="space-y-3">
-              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-3xl font-semibold">
-                <span
-                  className="ach-badge-number text-4xl font-extrabold tracking-tight text-white"
-                  data-original={original}
-                  data-prefix={prefix}
-                  data-suffix={suffix}
-                  data-target={target}
-                  data-decimals={decimals}
-                >
-                  {original}
-                </span>
-                <span className="text-lg font-medium text-[var(--paragraph-text-color)]">
-                  {item.numberText}
-                </span>
+      <div className="flex flex-wrap justify-center gap-6 md:gap-8" role="list">
+        {badgesWithNumbers.map((item, index) => {
+          const { original, prefix, suffix, target, decimals } =
+            item.numberParts;
+          const ariaLabel =
+            item.ariaLabel ||
+            `${original} ${item.numberText}: ${item.bodyText}`;
+
+          return (
+            <article
+              key={item.id}
+              className="ach-badge-card flex min-w-[260px] max-w-sm flex-1 items-start gap-5 rounded-2xl bg-[var(--glass-background)] p-6"
+              role="listitem"
+              aria-label={ariaLabel}
+              itemScope
+              itemType="https://schema.org/ListItem"
+              itemProp="itemListElement"
+            >
+              <meta itemProp="position" content={String(index + 1)} />
+
+              <div
+                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-[var(--background-box-color)] text-[var(--accent-color)]"
+                aria-hidden="true"
+                itemProp="image"
+              >
+                {item.svg}
               </div>
-              <p className="max-w-xs text-base text-[var(--paragraph-text-color)]">
-                {item.bodyText}
-              </p>
-            </div>
-          </article>
-        );
-      })}
+
+              <div className="space-y-3" itemProp="item">
+                <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-3xl font-semibold">
+                  <data
+                    className="ach-badge-number text-4xl font-extrabold tracking-tight text-white"
+                    value={target}
+                    data-original={original}
+                    data-prefix={prefix}
+                    data-suffix={suffix}
+                    data-target={target}
+                    data-decimals={decimals}
+                    itemProp="value"
+                  >
+                    {original}
+                  </data>
+                  <span
+                    className="text-lg font-medium text-[var(--paragraph-text-color)]"
+                    itemProp="name"
+                  >
+                    {item.numberText}
+                  </span>
+                </div>
+                <p
+                  className="max-w-xs text-base text-[var(--paragraph-text-color)]"
+                  itemProp="description"
+                >
+                  {item.bodyText}
+                </p>
+              </div>
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 };
