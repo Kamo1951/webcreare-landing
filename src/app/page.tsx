@@ -18,6 +18,8 @@ import MikiPort from "./components/imgs/Miki-Port.webp";
 import OliPort from "./components/imgs/Oli-Port.webp";
 import { Kontakt } from "./components/buttons/Kontakt";
 import AchievmentBadges from "./components/badges/AchievmentBadges";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 export default function Home() {
   const sliders = [
@@ -282,6 +284,43 @@ export default function Home() {
       bodyText: "Ein frisches junges Team ist auch ein Schlüssel zum Erfolg.",
     },
   ];
+
+  const footerItems = [
+    {
+      id: "webcreare",
+      name: "WebCreare",
+      links: [],
+      linksName: [],
+      arrows: false,
+    },
+    {
+      id: "hilfreicheLinks",
+      name: "Hilfreiche Links",
+      links: ["#", "#ueberuns", "#referenzen", "#preise", "#team"],
+      linksName: [
+        "WebCreare",
+        "Über Uns",
+        "Referenzen",
+        "Preise",
+        "Unser Team",
+      ],
+      arrows: true,
+    },
+    {
+      id: "kontakt",
+      name: "Kontaktieren Sie Uns",
+      links: ["mailto:info@webcreare.de", "tel:+4915156065802"],
+      linksName: ["info@webcreare.de", "+49 151 56065802"],
+      arrows: false,
+    },
+    {
+      id: "rechtliches",
+      name: "Rechtliches",
+      links: ["datenschutz", "impressum", "agb"],
+      linksName: ["Datenschutzerklärung", "Impressum", "AGB"],
+      arrows: true,
+    },
+  ];
   return (
     <>
       <div className="absolute select-none -mt-100">
@@ -294,7 +333,7 @@ export default function Home() {
           fetchPriority="high"
         />
       </div>
-
+      <Navbar />
       <section className="container mx-auto px-4 ">
         <Image
           src={HeroCircle}
@@ -625,6 +664,9 @@ export default function Home() {
           </div>
         </div>
         <AchievmentBadges items={achivementBadges} />
+      </section>
+      <section>
+        <Footer items={footerItems} />
       </section>
     </>
   );
