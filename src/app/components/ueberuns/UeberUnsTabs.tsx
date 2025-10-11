@@ -23,20 +23,10 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
     initialActiveId ?? firstId
   );
 
-  // Panels, die mindestens einmal geöffnet wurden, bleiben gemountet
-  const [mountedIds, setMountedIds] = useState<Set<string>>(() =>
-    activeId ? new Set([activeId]) : new Set()
-  );
-
+  // Alle Panels sind immer gemountet für SEO (Crawler sehen allen Content)
   const onActivate = (id: string) => {
     if (!id || id === activeId) return;
     setActiveId(id);
-    setMountedIds((prev) => {
-      if (prev.has(id)) return prev;
-      const next = new Set(prev);
-      next.add(id);
-      return next;
-    });
   };
 
   return (
@@ -46,9 +36,9 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
       </h2>
 
       {/* Tabs */}
-      <div
+      <nav
         role="tablist"
-        aria-label="Über uns"
+        aria-label="Über uns Bereiche"
         className="flex flex-wrap gap-2 justify-center lg:justify-start my-7"
       >
         {items.map((item) => {
@@ -62,51 +52,61 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
               aria-controls={`panel-${item.id}`}
               id={`tab-${item.id}`}
               onClick={() => onActivate(item.id)}
+              tabIndex={isActive ? 0 : -1}
               className={
-                "py-1 px-3 sm:py-2 sm:px-5 text-sm sm:text-base font-semibold cursor-pointer transition-colors " +
+                "py-1 px-3 sm:py-2 sm:px-5 text-sm sm:text-base font-semibold cursor-pointer transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-2 " +
                 (isActive
                   ? "bg-[var(--accent-color)] text-white "
-                  : "bg-[var(--background-box-color)] hover:bg-[var(--background-box-color-hover)]")
+                  : "bg-[var(--background-box-color)] hover:bg-[var(--background-box-color-hover)] text-[var(--text-color)]")
               }
             >
               {item.heading}
             </button>
           );
         })}
-      </div>
+      </nav>
 
-      {/* Panels: lazy-once-keep */}
+      {/* Panels: Immer alle gerendert (SEO), nur visuell versteckt */}
       <div className="mt-4">
         {items.map((item) => {
           const isActive = item.id === activeId;
-          const isMounted = mountedIds.has(item.id);
-          if (!isMounted) return null; // noch nie geöffnet → noch nicht mounten
 
           return (
-            <div
+            <article
               key={item.id}
               role="tabpanel"
               id={`panel-${item.id}`}
               aria-labelledby={`tab-${item.id}`}
               hidden={!isActive}
-              aria-hidden={!isActive}
+              tabIndex={0}
+              className={isActive ? "block" : "hidden"}
+              itemScope
+              itemType="https://schema.org/Article"
             >
-              <p className=" text-sm sm:text-base text-[var(--paragraph-text-color)] whitespace-pre-line">
+              <h3 className="sr-only" itemProp="headline">
+                {item.heading}
+              </h3>
+              <p
+                className="text-sm sm:text-base text-[var(--paragraph-text-color)] whitespace-pre-line leading-relaxed"
+                itemProp="articleBody"
+              >
                 {item.bodyText}
               </p>
-            </div>
+            </article>
           );
         })}
       </div>
-      <p className="mt-6 text-center lg:text-left text-sm sm:text-base text-[var(--paragraph-text-color)]">
+
+      <footer className="mt-6 text-center lg:text-left text-sm sm:text-base text-[var(--paragraph-text-color)]">
         Erfahren Sie mehr{" "}
         <Link
           href="/ueberuns"
-          className="text-[var(--accent-color)] hover:underline font-semibold transition-all"
+          className="text-[var(--accent-color)] hover:underline font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 rounded-sm"
+          aria-label="Mehr über uns erfahren"
         >
           über uns
         </Link>
-      </p>
+      </footer>
     </section>
   );
 };
