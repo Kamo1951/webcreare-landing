@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { JSX, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -9,6 +9,7 @@ type SubAndMainHeaderProps = {
   header: string;
   direction: string;
   widthSize: string;
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
@@ -18,8 +19,14 @@ export function SubAndMainHeader({
   header,
   direction,
   widthSize,
+  level = 2,
 }: SubAndMainHeaderProps) {
   const scope = useRef<HTMLDivElement>(null);
+  const HeaderTag = `h${level}` as keyof JSX.IntrinsicElements;
+  const SubheaderTag = `h${Math.min(
+    level + 1,
+    6
+  )}` as keyof JSX.IntrinsicElements;
 
   useGSAP(
     () => {
@@ -65,17 +72,13 @@ export function SubAndMainHeader({
     return parts.map((w, i) => (
       <React.Fragment key={`${w}-${i}`}>
         <span className={`${cls} inline-block will-change-transform`}>{w}</span>
-        {i < parts.length - 1 && (
-          <span aria-hidden="true" className="inline-block select-none">
-            &nbsp;
-          </span>
-        )}
+        {i < parts.length - 1 && " "}
       </React.Fragment>
     ));
   };
 
   return (
-    <div ref={scope} className="grid grid-cols-1 grid-rows-2 mb-15">
+    <header ref={scope} className="grid grid-cols-1 grid-rows-2 mb-15">
       <div
         className={`flex ${
           direction === "left"
@@ -88,13 +91,15 @@ export function SubAndMainHeader({
         <span
           className="gradient-span bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto origin-center"
           style={{ opacity: 0, transform: "scaleX(0)" }}
+          aria-hidden="true"
         ></span>
-        <h4 className="uppercase px-2 leistungen text-[var(--accent-color)] font-bold text-xs sm:text-sm my-auto ">
+        <SubheaderTag className="uppercase px-2 leistungen text-[var(--accent-color)] font-bold text-xs sm:text-sm my-auto ">
           {renderWords(subheader, "word-sub")}
-        </h4>
+        </SubheaderTag>
         <span
           className="gradient-span bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto origin-center"
           style={{ opacity: 0, transform: "scaleX(0)" }}
+          aria-hidden="true"
         ></span>
       </div>
       <div
@@ -106,10 +111,10 @@ export function SubAndMainHeader({
             : "text-center lg:text-right mx-auto lg:ml-auto lg:mr-0"
         }`}
       >
-        <h2 className="capitalize text-xl sm:text-3xl lg:text-4xl font-semibold ">
+        <HeaderTag className="capitalize text-xl sm:text-3xl lg:text-4xl font-semibold ">
           {renderWords(header, "word-head")}
-        </h2>
+        </HeaderTag>
       </div>
-    </div>
+    </header>
   );
 }
