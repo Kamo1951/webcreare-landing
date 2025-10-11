@@ -27,13 +27,14 @@ export const HeroTitle: React.FC = () => {
   const renderChars = (text: string, extra?: string) =>
     text.split("").map((ch, i) =>
       ch === " " ? (
-        <span key={i} className="inline-block">
+        <span key={i} className="inline-block" aria-hidden="true">
           &nbsp;
         </span>
       ) : (
         <span
           key={i}
           className={`char inline-block will-change-transform ${extra ?? ""}`}
+          aria-hidden="true"
         >
           {ch}
         </span>
@@ -41,21 +42,26 @@ export const HeroTitle: React.FC = () => {
     );
 
   return (
-    <div ref={scope} className="-sm:mt-20 md:mt-20 lg:mt-24 ">
-      <div className="leading-[1.2]">
-        <h2 className="font-extralight sub-headline leading-[1.2]">
-          {renderChars("Lassen Sie")}
-        </h2>
+    <div ref={scope} className="-sm:mt-20 md:mt-20 lg:mt-24">
+      <header className="leading-[1.2]">
         <h1 className="font-bold main-headline leading-[1.2]">
-          {renderChars("Ihre ")}
-          <span className="text-[var(--accent-color)]">
-            {renderChars("Webseite")}
+          <span className="font-extralight sub-headline block">
+            <span aria-hidden="true">{renderChars("Lassen Sie")}</span>
+            <span className="sr-only">Lassen Sie</span>
+          </span>
+          <span aria-hidden="true">
+            {renderChars("Ihre ")}
+            <span className="text-[var(--accent-color)]">
+              {renderChars("Webseite")}
+            </span>
+          </span>
+          <span className="sr-only">Ihre Webseite</span>
+          <span className="font-extralight sub-headline block">
+            <span aria-hidden="true">{renderChars("Erstellen")}</span>
+            <span className="sr-only">Erstellen</span>
           </span>
         </h1>
-        <h3 className="font-extralight sub-headline leading-[1.2]">
-          {renderChars("Erstellen")}
-        </h3>
-      </div>
+      </header>
       <div className="mt-8 sm:mt-10 hero-cta">
         <Kontakt href="kontakt" text="Jetzt Anfragen" />
       </div>
