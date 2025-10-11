@@ -26,27 +26,42 @@ const PreiseCard: React.FC<PreisCardProps> = ({
   return (
     <>
       {items.map((item) => (
-        <div
+        <article
           key={item.id}
           className="bg-[var(--background-box-color)] p-8 flex flex-col"
+          itemScope
+          itemType="https://schema.org/Offer"
         >
           <div className="mb-6">
-            <p className="text-xl md:text-2xl font-semibold p-1 px-2 bg-[var(--accent-color)] text-white rounded w-fit">
+            <h3
+              className="text-xl md:text-2xl font-semibold p-1 px-2 bg-[var(--accent-color)] text-white rounded w-fit"
+              itemProp="name"
+            >
               {item.heading}
-            </p>
+            </h3>
           </div>
-          <div className="flex items-end">
-            <h4 className="text-4xl md:text-5xl xl:text-6xl font-semibold ">
-              {item.price}
-            </h4>
-            <p
+          <div
+            className="flex items-end"
+            itemProp="priceSpecification"
+            itemScope
+            itemType="https://schema.org/PriceSpecification"
+          >
+            <data value={item.price.replace(/[^\d]/g, "")} itemProp="price">
+              <span className="text-4xl md:text-5xl xl:text-6xl font-semibold">
+                {item.price}
+              </span>
+            </data>
+            <span
               className={clsx(
                 monatlich ? "" : "hidden",
                 "text-[var(--paragraph-text-color)]"
               )}
             >
-              /Monat
-            </p>
+              <meta itemProp="priceCurrency" content="EUR" />
+              <span itemProp="billingDuration" content="P1M">
+                /Monat
+              </span>
+            </span>
           </div>
 
           <div className="mb-3">
@@ -55,17 +70,22 @@ const PreiseCard: React.FC<PreisCardProps> = ({
                 subtitle !== "" ? "" : "hidden",
                 "mt-2 text-[var(--accent-color-hover)]"
               )}
+              itemProp="description"
             >
               {subtitle}
             </p>
           </div>
-          <div className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3 mb-8 flex-grow">
-            {item.bodyText.map((text) => (
-              <p key={text} className="flex items-center gap-2">
+          <ul className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3 mb-8 flex-grow list-none">
+            {item.bodyText.map((text, textIndex) => (
+              <li
+                key={`${item.id}-${textIndex}`}
+                className="flex items-center gap-2"
+              >
                 <svg
                   className="w-5 h-5 text-[var(--accent-color)] flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
+                  aria-hidden="true"
                 >
                   <path
                     fillRule="evenodd"
@@ -74,19 +94,22 @@ const PreiseCard: React.FC<PreisCardProps> = ({
                   />
                 </svg>
                 <span>{text}</span>
-              </p>
+              </li>
             ))}
-            <p className="flex items-center gap-2">
-              <span className="text-[var(--accent-color)] font-bold text-lg">
+            <li className="flex items-center gap-2">
+              <span
+                className="text-[var(--accent-color)] font-bold text-lg"
+                aria-hidden="true"
+              >
                 ➝
               </span>
-              <span className="">+ vieles mehr</span>
-            </p>
-            <div className="flex justify-center mt-5">
+              <span>+ vieles mehr</span>
+            </li>
+            <li className="flex justify-center mt-5">
               <Kontakt href={buttonLink} text={buttonLabel} />
-            </div>
-          </div>
-        </div>
+            </li>
+          </ul>
+        </article>
       ))}
     </>
   );
