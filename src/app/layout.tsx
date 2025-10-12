@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Footer from "./components/footer/Footer";
-import Navbar from "./components/navbar/Navbar";
+import ThemeSwitch from "./components/carousel/ThemeSwitch";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -32,6 +32,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={true}
         >
+          <ThemeSwitch />
           {children}
         </ThemeProvider>
         <Footer />
