@@ -91,11 +91,11 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   const navItems: { href: string; label: string }[] = [
-    { href: "#", label: "Webcreare" },
-    { href: "#ueberuns", label: "Über Uns" },
-    { href: "#referenzen", label: "Referenzen" },
-    { href: "#preise", label: "Preise" },
-    { href: "#team", label: "Unser Team" },
+    { href: "/", label: "Webcreare" },
+    { href: "/#ueberuns", label: "Über Uns" },
+    { href: "/#referenzen", label: "Referenzen" },
+    { href: "/#preise", label: "Preise" },
+    { href: "/#team", label: "Unser Team" },
   ];
 
   const { resolvedTheme } = useTheme();

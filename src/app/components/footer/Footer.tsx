@@ -2,19 +2,44 @@ import Image from "next/image";
 import FooterShape from "./img/footer-bg-shape.png";
 import Link from "next/link";
 
-export type footerItemsType = {
-  id: string;
-  name: string;
-  links: string[];
-  linksName: string[];
-  arrows: boolean;
-};
+const Footer = () => {
+  const footerItems = [
+    {
+      id: "webcreare",
+      name: "WebCreare",
+      links: [],
+      linksName: [],
+      arrows: false,
+    },
+    {
+      id: "hilfreicheLinks",
+      name: "Hilfreiche Links",
+      links: ["/", "/#ueberuns", "/#referenzen", "/#preise", "/#team"],
+      linksName: [
+        "WebCreare",
+        "Über Uns",
+        "Referenzen",
+        "Preise",
+        "Unser Team",
+      ],
+      arrows: true,
+    },
+    {
+      id: "kontakt",
+      name: "Kontaktieren Sie Uns",
+      links: ["mailto:info@webcreare.de", "tel:+4915156065802"],
+      linksName: ["info@webcreare.de", "+49 151 56065802"],
+      arrows: false,
+    },
+    {
+      id: "rechtliches",
+      name: "Rechtliches",
+      links: ["datenschutz", "impressum", "agb"],
+      linksName: ["Datenschutzerklärung", "Impressum", "AGB"],
+      arrows: true,
+    },
+  ];
 
-interface footerItemProps {
-  items: footerItemsType[];
-}
-
-const Footer = ({ items }: footerItemProps) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -31,7 +56,7 @@ const Footer = ({ items }: footerItemProps) => {
         aria-label="Footer Navigation"
         className="flex flex-col md:flex-row justify-around z-10 px-4 md:px-8"
       >
-        {items.map((item) => {
+        {footerItems.map((item) => {
           return (
             <section key={item.id} className="mt-8 md:mt-12">
               <h2 className="text-2xl md:text-xl lg:text-2xl mb-4 md:mb-8 underline decoration-[var(--accent-color)] decoration-4 underline-offset-8 font-semibold">

@@ -20,7 +20,6 @@ import OliPort from "./components/imgs/Oli-Port.webp";
 import { Kontakt } from "./components/buttons/Kontakt";
 import AchievmentBadges from "./components/badges/AchievmentBadges";
 import Navbar from "./components/navbar/Navbar";
-import Footer from "./components/footer/Footer";
 
 export const metadata: Metadata = {
   title:
@@ -309,42 +308,6 @@ export default function Home() {
     },
   ];
 
-  const footerItems = [
-    {
-      id: "webcreare",
-      name: "WebCreare",
-      links: [],
-      linksName: [],
-      arrows: false,
-    },
-    {
-      id: "hilfreicheLinks",
-      name: "Hilfreiche Links",
-      links: ["#", "#ueberuns", "#referenzen", "#preise", "#team"],
-      linksName: [
-        "WebCreare",
-        "Über Uns",
-        "Referenzen",
-        "Preise",
-        "Unser Team",
-      ],
-      arrows: true,
-    },
-    {
-      id: "kontakt",
-      name: "Kontaktieren Sie Uns",
-      links: ["mailto:info@webcreare.de", "tel:+4915156065802"],
-      linksName: ["info@webcreare.de", "+49 151 56065802"],
-      arrows: false,
-    },
-    {
-      id: "rechtliches",
-      name: "Rechtliches",
-      links: ["datenschutz", "impressum", "agb"],
-      linksName: ["Datenschutzerklärung", "Impressum", "AGB"],
-      arrows: true,
-    },
-  ];
   return (
     <>
       <div className="absolute select-none -mt-100" aria-hidden="true">
@@ -703,7 +666,6 @@ export default function Home() {
           <AchievmentBadges items={achivementBadges} />
         </section>
       </main>
-      <Footer items={footerItems} />
     </>
   );
 }
