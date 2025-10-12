@@ -73,6 +73,30 @@ body {
   100% { transform: rotate(0deg); }
 }
 
+@theme {
+  --animate-move: move 0.5s linear;
+
+  @keyframes move {
+    0% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  --animate-moveReversed: moveReversed 0.5s linear;
+
+  @keyframes moveReversed {
+    0% {
+      transform: translateY(-40px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
 @utility main-headline {
   @apply text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-[9rem]
 }
