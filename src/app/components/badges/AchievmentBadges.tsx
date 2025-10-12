@@ -212,7 +212,7 @@ const AchivementBadges: React.FC<AchivementBadgesProps> = ({
               <div className="space-y-3" itemProp="item">
                 <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-3xl font-semibold">
                   <data
-                    className="ach-badge-number text-4xl font-extrabold tracking-tight text-white"
+                    className="ach-badge-number text-4xl font-extrabold tracking-tight text-[var(--foreground)]"
                     value={target}
                     data-original={original}
                     data-prefix={prefix}
