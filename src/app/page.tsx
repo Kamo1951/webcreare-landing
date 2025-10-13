@@ -656,7 +656,7 @@ export default function Home() {
                 subheader="Unternehmens Wachstum"
                 header="Wir steigern das Wachstum Ihres Unternehmens"
                 direction="left"
-                widthSize="w-lg"
+                widthSize="w-2xl"
               />
             </div>
             <div className="flex justify-center md:justify-end">
