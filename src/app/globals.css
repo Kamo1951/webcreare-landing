@@ -11,6 +11,7 @@
   --accent-color-hover: #657BF5;
   --background-box-color: #F2F3F4;
   --background-box-color-hover: #e1e3e6;
+  --background-input-color: #1E2228;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
   --webcreare-logo: url('/webcreare-logo-dark.webp');
   --navbar-background-color: var(--background-box-color);
@@ -31,6 +32,7 @@
   --accent-color: #3F5AF3;
   --accent-color-hover: #657BF5;
   --background-box-color: #11151C;
+  --background-input-color: #1E2228;
   --background-box-color-hover: #1a1e24;
   --font-jakarta: 'Plus Jakarta Sans', sans-serif;
   --webcreare-logo: url('/webcreare-logo-white.webp');
