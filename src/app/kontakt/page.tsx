@@ -177,7 +177,7 @@ export default function Kontakt() {
                   Ich akzeptiere die{" "}
                   <Link
                     href="datenschutzerklaerung"
-                    className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)]"
+                    className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)] hover:underline"
                   >
                     Datenschutzerklärung*
                   </Link>
