@@ -2,14 +2,14 @@ export default function AGB() {
   return (
     <>
       <div className="min-h-screen bg-[var(--background)] py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 sm:p-8 lg:p-12">
+        <div className="max-w-4xl mx-auto bg-[var(--card-background)] rounded-lg shadow-lg p-6 sm:p-8 lg:p-12">
           <div className="space-y-6">
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+            <h1 className="text-3xl sm:text-4xl font-bold ">
               Allgemeine Geschäftsbedingungen (AGB)
             </h1>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 1. Geltungsbereich
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -23,7 +23,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 2. Vertragsgegenstand
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -36,7 +36,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 3. Vertragsschluss
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -47,7 +47,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 4. Leistungserbringung und Mitwirkungspflichten
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -61,9 +61,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
-                5. Abnahme
-              </h2>
+              <h2 className="text-xl sm:text-2xl font-semibold ">5. Abnahme</h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
                 Nach Fertigstellung wird dem Kunden eine Vorabansicht („Sketch")
                 der Website präsentiert. Erst nach schriftlicher oder mündlicher
@@ -75,7 +73,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 6. Pflege und Wartung
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -88,7 +86,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 7. Hosting und Domain
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -105,7 +103,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 8. Vergütung
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -118,7 +116,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 9. Anpassung der monatlichen Vergütung
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -131,7 +129,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 10. Nutzungsrechte
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -144,7 +142,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 11. Haftung
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -156,7 +154,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 12. Datenschutz
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -169,7 +167,7 @@ export default function AGB() {
                   href="https://webcreare.de"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  className="text-[var(--link-color)] underline hover:opacity-80 transition-opacity"
                 >
                   www.webcreare.de
                 </a>
@@ -178,7 +176,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 13. Schlussbestimmungen
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
@@ -191,7 +189,7 @@ export default function AGB() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 dark:text-gray-100">
+              <h2 className="text-xl sm:text-2xl font-semibold ">
                 14. Kontakt
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
