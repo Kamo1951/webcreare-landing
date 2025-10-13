@@ -68,7 +68,7 @@ const PreiseCard: React.FC<PreisCardProps> = ({
             <p
               className={clsx(
                 subtitle !== "" ? "" : "hidden",
-                "mt-2 text-[var(--accent-color-hover)]"
+                "mt-2 text-[var(--accent-color)]"
               )}
               itemProp="description"
             >
