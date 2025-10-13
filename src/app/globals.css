@@ -76,7 +76,7 @@ body {
 }
 
 @theme {
-  --animate-move: move 0.5s linear;
+  --animate-move: move 0.2s linear;
 
   @keyframes move {
     0% {
@@ -87,7 +87,7 @@ body {
     }
   }
 
-  --animate-moveReversed: moveReversed 0.5s linear;
+  --animate-moveReversed: moveReversed 0.2s linear;
 
   @keyframes moveReversed {
     0% {
