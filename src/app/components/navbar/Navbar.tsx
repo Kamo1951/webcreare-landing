@@ -211,9 +211,9 @@ const Navbar = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center py-4 px-4 lg:px-0">
             {!isTablet && (
-              <div className="flex w-full justify-between items-center">
+              <div className="flex w-full justify-between lg:justify-around items-center">
                 {/* Logo */}
-                <div className="ml-2 lg:ml-[200px]">
+                <div className="lg:-ml-[320px]">
                   <Link href="/" aria-label="Zur Startseite">
                     <Image src={src} alt="Logo" width={150} height={100} />
                   </Link>
