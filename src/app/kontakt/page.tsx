@@ -31,7 +31,7 @@ export default function Kontakt() {
   return (
     <>
       <Navbar />
-      <div className="flex justfiy-center my-20">
+      <div className="flex justify-center my-20 gap-10">
         <div className="w-110 border border-[var(--border-color)] h-fit">
           <div className="px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
             <div className="">
@@ -139,7 +139,7 @@ export default function Kontakt() {
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="checkbox"
-                  name="checkbox-614"
+                  name="checkbox-datenschutz"
                   required
                   className="w-4 h-4"
                 />
@@ -149,7 +149,7 @@ export default function Kontakt() {
                     href="datenschutzerklärung"
                     className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)]"
                   >
-                    Datenschutzerklärung
+                    Datenschutzerklärung*
                   </Link>
                 </span>
               </label>
@@ -158,9 +158,12 @@ export default function Kontakt() {
               <button
                 type="submit"
                 id="submit"
-                className="px-8 py-3 bg-[var(--accent-color)] text-white hover:opacity-90 transition-opacity"
+                className="group relative inline-flex sm:w-auto items-center justify-center overflow-hidden bg-[var(--accent-color)] text-white font-semibold transition-colors duration-300 hover:bg-[var(--accent-color-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4"
               >
-                Anfrage Absenden
+                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out bg-white/10"></span>
+                <span className="relative z-10 text-sm sm:text-base md:text-lg">
+                  Anfrage Absenden
+                </span>
               </button>
             </div>
           </form>
