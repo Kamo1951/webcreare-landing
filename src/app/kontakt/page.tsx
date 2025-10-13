@@ -3,14 +3,6 @@ import { SubAndMainHeader } from "../components/headers/SubAndMainHeader";
 import Navbar from "../components/navbar/Navbar";
 
 export default function Kontakt() {
-  type InfoItemsType = [
-    id: string,
-    svg: React.ReactNode,
-    header: string,
-    subheaderTop: string,
-    subheaderBottom: string
-  ];
-
   const infoItems = [
     {
       id: "Telfon",
