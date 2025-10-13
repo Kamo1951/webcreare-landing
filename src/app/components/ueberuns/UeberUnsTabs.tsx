@@ -54,7 +54,7 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
               onClick={() => onActivate(item.id)}
               tabIndex={isActive ? 0 : -1}
               className={
-                "py-1 px-3 sm:py-2 sm:px-5 text-sm sm:text-base font-semibold cursor-pointer transition-colors rounded-sm focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-2 " +
+                "py-1 px-3 sm:py-2 sm:px-5 text-sm sm:text-base font-semibold cursor-pointer transition-colors  focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-2 " +
                 (isActive
                   ? "bg-[var(--accent-color)] text-white "
                   : "bg-[var(--background-box-color)] hover:bg-[var(--background-box-color-hover)] text-[var(--text-color)]")
@@ -101,7 +101,7 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
         Erfahren Sie mehr{" "}
         <Link
           href="/ueberuns"
-          className="text-[var(--accent-color)] hover:underline font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 rounded-sm"
+          className="text-[var(--accent-color)] hover:underline font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 "
           aria-label="Mehr über uns erfahren"
         >
           über uns
