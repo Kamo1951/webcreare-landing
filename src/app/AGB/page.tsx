@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 
-export default function AGB() {
+export default function Agb() {
   return (
     <>
       <Navbar />
