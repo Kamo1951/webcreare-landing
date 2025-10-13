@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SubAndMainHeader } from "../components/headers/SubAndMainHeader";
 import Navbar from "../components/navbar/Navbar";
 
@@ -30,8 +31,8 @@ export default function Kontakt() {
   return (
     <>
       <Navbar />
-      <div className="flex justfiy-center">
-        <div className=" my-20 w-110">
+      <div className="flex justfiy-center my-20">
+        <div className="w-110 border border-[var(--border-color)] h-fit">
           <div className="px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
             <div className="">
               <SubAndMainHeader
@@ -68,10 +69,100 @@ export default function Kontakt() {
             </div>
           </div>
         </div>
-        <div className="px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
-          <form action="">
-            <input type="text" placeholder="Vorname*" />
-            <input type="text" placeholder="Nachname*" />
+        <div className="p-10 bg-[var(--background-box-color)] border border-[var(--border-color)] h-fit">
+          <form action="" className="w-full">
+            <div className="flex gap-4 mb-4">
+              <div className="flex-1">
+                <input
+                  type="text"
+                  id="your-first-name"
+                  name="your-first-name"
+                  placeholder="Vorname*"
+                  required
+                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
+                />
+              </div>
+              <div className="flex-1">
+                <input
+                  type="text"
+                  id="your-last-name"
+                  name="your-last-name"
+                  placeholder="Nachname*"
+                  required
+                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
+                />
+              </div>
+            </div>
+            <div className="flex gap-4 mb-4">
+              <div className="flex-1">
+                <input
+                  type="email"
+                  id="your-email"
+                  name="your-email"
+                  placeholder="Email-Adresse*"
+                  required
+                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
+                />
+              </div>
+              <div className="flex-1">
+                <input
+                  type="tel"
+                  id="your-phone"
+                  name="your-phone"
+                  placeholder="Telefonnummer*"
+                  required
+                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
+                />
+              </div>
+            </div>
+            <div className="mb-4">
+              <input
+                type="text"
+                id="unternehmen"
+                name="unternehmen"
+                placeholder="Firma / Organisation*"
+                required
+                className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
+              />
+            </div>
+            <div className="mb-4">
+              <textarea
+                id="your-message"
+                name="your-message"
+                placeholder="Ihre Nachricht*"
+                required
+                rows={6}
+                className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)] resize-none"
+              />
+            </div>
+            <div className="mb-6">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="checkbox"
+                  name="checkbox-614"
+                  required
+                  className="w-4 h-4"
+                />
+                <span className="text-sm text-[var(--paragraph-text-color)]">
+                  Ich akzeptiere die{" "}
+                  <Link
+                    href="datenschutzerklärung"
+                    className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)]"
+                  >
+                    Datenschutzerklärung
+                  </Link>
+                </span>
+              </label>
+            </div>
+            <div>
+              <button
+                type="submit"
+                id="submit"
+                className="px-8 py-3 bg-[var(--accent-color)] text-white hover:opacity-90 transition-opacity"
+              >
+                Anfrage Absenden
+              </button>
+            </div>
           </form>
         </div>
       </div>
