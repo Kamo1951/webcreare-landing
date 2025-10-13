@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import Footer from "./components/footer/Footer";
 import ThemeSwitch from "./components/carousel/ThemeSwitch";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -38,6 +39,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Footer />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
