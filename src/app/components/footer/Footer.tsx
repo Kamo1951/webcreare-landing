@@ -34,7 +34,11 @@ const Footer = () => {
     {
       id: "rechtliches",
       name: "Rechtliches",
-      links: ["/datenschutzerklaerung", "/impressum", "/agb"],
+      links: [
+        "/datenschutzerklaerung",
+        "/impressum",
+        "/allgmeinegeschäftsbedingungen",
+      ],
       linksName: ["Datenschutzerklärung", "Impressum", "AGB"],
       arrows: true,
     },

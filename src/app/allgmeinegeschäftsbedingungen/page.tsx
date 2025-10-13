@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar/Navbar";
 
-export default function Agb() {
+export default function Allgmeinegeschäftsbedingungen() {
   return (
     <>
       <Navbar />
