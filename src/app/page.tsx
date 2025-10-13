@@ -80,7 +80,7 @@ export default function Home() {
     },
     {
       id: "wir",
-      heading: "Wer ist Webcreare?",
+      heading: "Wer ist WebCreare?",
       bodyText:
         "Webcreare ist eine junge Agentur aus Tegernsee, gegründet von Mikolaj Spruch und Oliwer Keskin.\nMikolaj kümmert sich um Design und Entwicklung – autodidaktisch erlernt, mit dem Ziel, durch Können zu überzeugen statt durch ein Papier.\nOliwer ist unser Vertriebsexperte und sorgt dafür, dass jedes Projekt mit einem klaren, einfachen Start beginnt.\nGemeinsam möchten wir Unternehmen helfen, eine starke und moderne Online-Präsenz aufzubauen – ehrlich, direkt und professionell.",
     },
