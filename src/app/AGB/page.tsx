@@ -19,8 +19,8 @@ export default function AGB() {
                 Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
                 Verträge zwischen der Webcreare GbR, vertreten durch Mikolaj
                 Spruch und Oliwer Keskin, Perronstraße 6B, 83684 Tegernsee
-                (nachfolgend „Webcreare" genannt) und ihren Auftraggebern
-                (nachfolgend „Kunde" genannt). Abweichende Bedingungen des
+                (nachfolgend „Webcreare“ genannt) und ihren Auftraggebern
+                (nachfolgend „Kunde“ genannt). Abweichende Bedingungen des
                 Kunden gelten nur, wenn sie schriftlich bestätigt wurden.
               </p>
             </section>
@@ -66,7 +66,7 @@ export default function AGB() {
             <section className="space-y-3">
               <h2 className="text-xl sm:text-2xl font-semibold ">5. Abnahme</h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
-                Nach Fertigstellung wird dem Kunden eine Vorabansicht („Sketch")
+                Nach Fertigstellung wird dem Kunden eine Vorabansicht („Sketch“)
                 der Website präsentiert. Erst nach schriftlicher oder mündlicher
                 Designfreigabe durch den Kunden beginnt die finale Umsetzung.
                 Die Abnahme gilt als erfolgt, wenn der Kunde die Website nutzt
