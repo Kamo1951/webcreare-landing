@@ -14,14 +14,44 @@ export default function Kontakt() {
   const infoItems = [
     {
       id: "Telfon",
-      svg: "",
+      svg: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="var(--accent-color)"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+          />
+        </svg>
+      ),
       header: "Telefonnummer",
       subheaderTop: "(+49) 151 56065802",
       subheaderBottom: "info@webcreare.de",
     },
     {
       id: "Öffnungszeiten",
-      svg: "",
+      svg: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="var(--accent-color)"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+          />
+        </svg>
+      ),
       header: "Öffnungszeiten",
       subheaderTop: "Montag - Freitag: 9:00 - 21:00",
       subheaderBottom: "Samstag - Sonntag: 10:00 - 19:00",
@@ -31,9 +61,9 @@ export default function Kontakt() {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center my-20 gap-10">
-        <div className="w-110 border border-[var(--border-color)] h-fit">
-          <div className="px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
+      <div className="flex flex-col lg:flex-row justify-center my-10 lg:my-20 gap-6 lg:gap-10 px-4 sm:px-6 lg:px-8">
+        <div className="w-full lg:w-110 border border-[var(--border-color)] h-fit">
+          <div className="px-6 sm:px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
             <div className="">
               <SubAndMainHeader
                 subheader="Unverbindlich anfragen"
@@ -53,12 +83,12 @@ export default function Kontakt() {
               {infoItems.map((item) => (
                 <div key={item.id} className="flex flex-col">
                   <div className="flex place-items-center gap-4">
-                    <div className="bg-[var(--background-box-color)/40] p-10">
+                    <div className="bg-[var(--background-input-color)] p-2 sm:p-5">
                       {item.svg}
                     </div>
                     <div className="flex flex-col gap-2">
-                      <div className="text-2xl">{item.header}</div>
-                      <div className="text-[var(--paragraph-text-color)]">
+                      <div className="text-xl sm:text-2xl">{item.header}</div>
+                      <div className="text-sm sm:text-base text-[var(--paragraph-text-color)]">
                         <p>{item.subheaderTop}</p>
                         <p>{item.subheaderBottom}</p>
                       </div>
@@ -69,9 +99,9 @@ export default function Kontakt() {
             </div>
           </div>
         </div>
-        <div className="p-10 bg-[var(--background-box-color)] border border-[var(--border-color)] h-fit">
+        <div className="p-6 sm:p-10 bg-[var(--background-box-color)] border border-[var(--border-color)] h-fit w-full lg:w-auto">
           <form action="" className="w-full">
-            <div className="flex gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <div className="flex-1">
                 <input
                   type="text"
@@ -93,7 +123,7 @@ export default function Kontakt() {
                 />
               </div>
             </div>
-            <div className="flex gap-4 mb-4">
+            <div className="flex flex-col sm:flex-row gap-4 mb-4">
               <div className="flex-1">
                 <input
                   type="email"
@@ -158,7 +188,7 @@ export default function Kontakt() {
               <button
                 type="submit"
                 id="submit"
-                className="group relative inline-flex sm:w-auto items-center justify-center overflow-hidden bg-[var(--accent-color)] text-white font-semibold transition-colors duration-300 hover:bg-[var(--accent-color-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4"
+                className="group cursor-pointer relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden bg-[var(--accent-color)] text-white font-semibold transition-colors duration-300 hover:bg-[var(--accent-color-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4"
               >
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out bg-white/10"></span>
                 <span className="relative z-10 text-sm sm:text-base md:text-lg">
