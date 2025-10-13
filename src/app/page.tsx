@@ -317,6 +317,7 @@ export default function Home() {
           width={1200}
           height={1200}
           loading="eager"
+          fetchPriority="high"
           priority
         />
       </div>
@@ -330,6 +331,7 @@ export default function Home() {
             src={HeroCircle}
             alt=""
             loading="eager"
+            fetchPriority="high"
             priority
             className="absolute select-none w-9xl -mt-8 -ml-10 sm:w-2xl sm:-mt-12 sm:-ml-14 md:w-3xl md:-mt-16 md:-ml-20 lg:w-4xl lg:-mt-20 lg:-ml-24 xl:w-5xl 2xl:w-6xl 2xl:min-w-[30vw] xl:-mt-24 xl:-ml-28"
             aria-hidden="true"
