@@ -146,7 +146,7 @@ export default function Kontakt() {
                 <span className="text-sm text-[var(--paragraph-text-color)]">
                   Ich akzeptiere die{" "}
                   <Link
-                    href="datenschutzerklärung"
+                    href="datenschutzerklaerung"
                     className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)]"
                   >
                     Datenschutzerklärung*
