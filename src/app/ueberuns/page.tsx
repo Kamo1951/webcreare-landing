@@ -22,7 +22,7 @@ export default function UeberUns() {
     <>
       <Navbar />
       <main className="min-h-screen bg-[var(--background)] pb-20">
-        <section className="relative isolate overflow-hidden px-4 py-16 sm:px-6 lg:px-16">
+        <section className="relative isolate overflow-hidden px-4 py-20 sm:px-6 lg:px-16">
           <div
             className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--accent-color)/16,transparent_55%)]"
             aria-hidden
@@ -75,8 +75,7 @@ export default function UeberUns() {
             </div>
           </div>
         </section>
-
-        <section className="px-4 py-12 sm:px-6 lg:px-16">
+        <section className="px-4 py-30 sm:px-6 lg:px-16">
           <div className="mx-auto max-w-5xl space-y-12">
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
               <div className="space-y-6">
@@ -121,8 +120,7 @@ export default function UeberUns() {
             </div>
           </div>
         </section>
-
-        <section className="px-4 py-12 sm:px-6 lg:px-16">
+        <section className="px-4 py-30 sm:px-6 lg:px-16">
           <div className="mx-auto max-w-6xl border border-white/10 bg-[var(--background-box-color)] px-6 py-12 sm:px-10 lg:px-16">
             <div className="grid gap-10 lg:grid-cols-2">
               <div className="space-y-6">
@@ -174,8 +172,7 @@ export default function UeberUns() {
             </div>
           </div>
         </section>
-
-        <section className="px-4 py-12 sm:px-6 lg:px-16">
+        <section className="px-4 py-30 sm:px-6 lg:px-16">
           <div className="mx-auto max-w-6xl">
             <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div className="space-y-6">
@@ -222,8 +219,7 @@ export default function UeberUns() {
             </div>
           </div>
         </section>
-
-        <section className="px-4 py-12 sm:px-6 lg:px-16">
+        <section className="px-4 py-25 sm:px-6 lg:px-16">
           <div className="mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[var(--background-box-color)]/80 px-6 py-10 sm:px-10 lg:px-16">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
               <div className="lg:w-7/12 space-y-5">
@@ -294,8 +290,7 @@ export default function UeberUns() {
             </div>
           </div>
         </section>
-
-        <section className="px-4 pb-24 pt-12 sm:px-6 lg:px-16">
+        <section className="px-4 py-20 sm:px-6 lg:px-16">
           <div className="mx-auto max-w-4xl border border-white/10 bg-[var(--background-box-color)] px-6 py-10 text-center sm:px-12">
             <h2 className="text-3xl font-semibold text-[var(--foreground)] sm:text-4xl">
               Bereit, Wirkung zu schaffen?
