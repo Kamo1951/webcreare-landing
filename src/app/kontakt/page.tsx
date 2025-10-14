@@ -1,6 +1,108 @@
-import Link from "next/link";
-import { SubAndMainHeader } from "../components/headers/SubAndMainHeader";
-import Navbar from "../components/navbar/Navbar";
+import { headers } from "next/headers";
+import { Resend } from "resend";
+import Navbar from "@/app/components/navbar/Navbar";
+import { SubAndMainHeader } from "@/app/components/headers/SubAndMainHeader";
+import ContactForm from "./ContactForm";
+
+export const runtime = "nodejs"; // Resend ist als Node-Runtime am sichersten
+
+type FormState = {
+  status: "idle" | "success" | "error";
+  message?: string;
+  fieldErrors?: Record<string, string>;
+};
+
+async function submitContact(
+  prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
+  "use server";
+
+  // --- Meta
+  const h = headers();
+  const ip = (await h).get("x-forwarded-for")?.split(",")[0]?.trim() ?? "";
+  const ua = (await h).get("user-agent") ?? "";
+
+  // --- Daten
+  const firstName = (formData.get("your-first-name") || "").toString().trim();
+  const lastName = (formData.get("your-last-name") || "").toString().trim();
+  const email = (formData.get("your-email") || "").toString().trim();
+  const phone = (formData.get("your-phone") || "").toString().trim();
+  const company = (formData.get("unternehmen") || "").toString().trim();
+  const message = (formData.get("your-message") || "").toString().trim();
+  const gdprChecked = !!formData.get("checkbox-datenschutz");
+  const honeypot = (formData.get("website") || "").toString().trim(); // unsichtbares Feld
+
+  // --- Bots direkt "erfolgreich" quittieren
+  if (honeypot) return { status: "success", message: "Danke!" };
+
+  // --- Validation (leichtgewichtig)
+  const fieldErrors: Record<string, string> = {};
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!firstName) fieldErrors["your-first-name"] = "Bitte ausfüllen.";
+  if (!lastName) fieldErrors["your-last-name"] = "Bitte ausfüllen.";
+  if (!email || !emailRe.test(email))
+    fieldErrors["your-email"] = "Gültige E-Mail angeben.";
+  if (!phone) fieldErrors["your-phone"] = "Bitte ausfüllen.";
+  if (!company) fieldErrors["unternehmen"] = "Bitte ausfüllen.";
+  if (!message) fieldErrors["your-message"] = "Bitte ausfüllen.";
+  if (!gdprChecked) fieldErrors["checkbox-datenschutz"] = "Erforderlich.";
+
+  if (Object.keys(fieldErrors).length) {
+    return {
+      status: "error",
+      message: "Bitte prüfe die markierten Felder.",
+      fieldErrors,
+    };
+  }
+
+  // --- Mail senden (Resend)
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.CONTACT_TO;
+  const from = process.env.RESEND_FROM || "Kontakt <noreply@your-domain.tld>";
+
+  if (!apiKey || !to) {
+    return {
+      status: "error",
+      message: "Server nicht korrekt konfiguriert (ENV fehlen).",
+    };
+  }
+
+  const resend = new Resend(apiKey);
+
+  try {
+    await resend.emails.send({
+      from,
+      to,
+      replyTo: email,
+      subject: `Kontaktanfrage: ${firstName} ${lastName} – ${company}`,
+      text: [
+        `Name: ${firstName} ${lastName}`,
+        `E-Mail: ${email}`,
+        `Telefon: ${phone}`,
+        `Firma: ${company}`,
+        ``,
+        message,
+        ``,
+        `—`,
+        `IP: ${ip}`,
+        `User-Agent: ${ua}`,
+      ].join("\n"),
+    });
+
+    return {
+      status: "success",
+      message: "Danke! Deine Nachricht ist bei uns eingegangen.",
+    };
+  } catch (err) {
+    console.error("Resend error:", err);
+    return {
+      status: "error",
+      message: "Senden fehlgeschlagen. Bitte später erneut versuchen.",
+    };
+  }
+}
 
 export default function Kontakt() {
   const infoItems = [
@@ -54,22 +156,21 @@ export default function Kontakt() {
     <>
       <Navbar />
       <div className="flex flex-col lg:flex-row justify-center my-10 lg:my-20 gap-6 lg:gap-10 px-4 sm:px-6 lg:px-8">
+        {/* Linke Infobox */}
         <div className="w-full lg:w-110 border border-[var(--border-color)] h-fit">
           <div className="px-6 sm:px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
-            <div className="">
-              <SubAndMainHeader
-                subheader="Unverbindlich anfragen"
-                header="Kontakt zu Uns"
-                widthSize="w-md"
-                direction="left"
-              />
-              <div className="-mt-10 mb-5">
-                <p className="text-[var(--paragraph-text-color)]">
-                  Wir verwirklichen Ihre digitale Vision! Ob Fragen,
-                  Projektplanung oder ein unverbindliches Angebot – wir sind für
-                  Sie da.
-                </p>
-              </div>
+            <SubAndMainHeader
+              subheader="Unverbindlich anfragen"
+              header="Kontakt zu Uns"
+              widthSize="w-md"
+              direction="left"
+            />
+            <div className="-mt-10 mb-5">
+              <p className="text-[var(--paragraph-text-color)]">
+                Wir verwirklichen Ihre digitale Vision! Ob Fragen,
+                Projektplanung oder ein unverbindliches Angebot – wir sind für
+                Sie da.
+              </p>
             </div>
             <div className="flex flex-col gap-4">
               {infoItems.map((item) => (
@@ -91,104 +192,10 @@ export default function Kontakt() {
             </div>
           </div>
         </div>
+
+        {/* Rechte Box: Formular */}
         <div className="p-6 sm:p-10 bg-[var(--background-box-color)] border border-[var(--border-color)] h-fit w-full lg:w-auto">
-          <form action="" className="w-full">
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <div className="flex-1">
-                <input
-                  type="text"
-                  id="your-first-name"
-                  name="your-first-name"
-                  placeholder="Vorname*"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
-                />
-              </div>
-              <div className="flex-1">
-                <input
-                  type="text"
-                  id="your-last-name"
-                  name="your-last-name"
-                  placeholder="Nachname*"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
-                />
-              </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 mb-4">
-              <div className="flex-1">
-                <input
-                  type="email"
-                  id="your-email"
-                  name="your-email"
-                  placeholder="Email-Adresse*"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
-                />
-              </div>
-              <div className="flex-1">
-                <input
-                  type="tel"
-                  id="your-phone"
-                  name="your-phone"
-                  placeholder="Telefonnummer*"
-                  required
-                  className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
-                />
-              </div>
-            </div>
-            <div className="mb-4">
-              <input
-                type="text"
-                id="unternehmen"
-                name="unternehmen"
-                placeholder="Firma / Organisation*"
-                required
-                className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)]"
-              />
-            </div>
-            <div className="mb-4">
-              <textarea
-                id="your-message"
-                name="your-message"
-                placeholder="Ihre Nachricht*"
-                required
-                rows={6}
-                className="w-full px-4 py-3 bg-[var(--background-color)] border border-[var(--border-color)]  focus:outline-none focus:border-[var(--accent-color)] resize-none"
-              />
-            </div>
-            <div className="mb-6">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="checkbox"
-                  name="checkbox-datenschutz"
-                  required
-                  className="w-4 h-4"
-                />
-                <span className="text-sm text-[var(--paragraph-text-color)]">
-                  Ich akzeptiere die{" "}
-                  <Link
-                    href="datenschutzerklaerung"
-                    className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)] hover:underline"
-                  >
-                    Datenschutzerklärung*
-                  </Link>
-                </span>
-              </label>
-            </div>
-            <div>
-              <button
-                type="submit"
-                id="submit"
-                className="group cursor-pointer relative inline-flex w-full sm:w-auto items-center justify-center overflow-hidden bg-[var(--accent-color)] text-white font-semibold transition-colors duration-300 hover:bg-[var(--accent-color-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/20 px-5 py-3 sm:px-6 sm:py-3.5 md:px-8 md:py-4"
-              >
-                <span className="absolute inset-0 -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out bg-white/10"></span>
-                <span className="relative z-10 text-sm sm:text-base md:text-lg">
-                  Anfrage Absenden
-                </span>
-              </button>
-            </div>
-          </form>
+          <ContactForm action={submitContact} />
         </div>
       </div>
     </>
