@@ -81,16 +81,16 @@ export default function UeberUns() {
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
               <div className="space-y-6">
                 <h2 className={sectionHeading}>
-                  Wir bauen, was du wirklich brauchst.
+                  Wir bauen, was Sie wirklich brauchen.
                 </h2>
                 <p className={bodyCopy}>
                   Mikolaj hat sich Design und Entwicklung selbst beigebracht,
-                  aus Neugier und Disziplin. Keine Titel, kein Diplom-Showcase –
-                  lieber Ergebnisse, die für sich sprechen: schnelle Ladezeiten,
-                  saubere Struktur, starke Typografie, sichere Technik. Oliwer
-                  kommt aus dem Vertrieb, sorgt für den leichten Einstieg und
-                  dafür, dass aus einem ersten Gespräch eine Zusammenarbeit mit
-                  klarem Ziel wird.
+                  aus Neugier und Disziplin. Noch keine Titel oder kein
+                  Diplom-Showcase – lieber Ergebnisse, die für sich sprechen:
+                  schnelle Ladezeiten, saubere Struktur, starke Typografie,
+                  sichere Technik. Oliwer kommt aus dem Vertrieb, sorgt für den
+                  leichten Einstieg und dafür, dass aus einem ersten Gespräch
+                  eine Zusammenarbeit mit klarem Ziel wird.
                 </p>
                 <p className={bodyCopy}>
                   Wir glauben an Einfachheit, Ehrlichkeit und Tempo. Wir hören
@@ -215,6 +215,78 @@ export default function UeberUns() {
                     </h3>
                     <p className="mt-2 text-sm text-[var(--paragraph-text-color)]">
                       {card.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-12 sm:px-6 lg:px-16">
+          <div className="mx-auto max-w-7xl overflow-hidden border border-white/10 bg-[var(--background-box-color)]/80 px-6 py-10 sm:px-10 lg:px-16">
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
+              <div className="lg:w-7/12 space-y-5">
+                <div className="flex place-content-left">
+                  <span
+                    className="gradient-span bg-gradient-to-r from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto origin-center"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="inline-flex items-center px-4 py-2 text-xs font-semibold uppercase text-[var(--accent-color)]">
+                    Tegernsee Fokus
+                  </span>
+                  <span
+                    className="gradient-span bg-gradient-to-l from-[rgba(63,90,243,0)] to-[rgb(63,90,243,40)] w-8 h-2 my-auto origin-center"
+                    aria-hidden="true"
+                  ></span>
+                </div>
+                <h2 className="text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">
+                  Digitale Sichtbarkeit für unsere Region
+                </h2>
+                <p className={bodyCopy}>
+                  Wir möchten, dass Betriebe rund um den Tegernsee nicht vor der
+                  Hürde stehen, fünfstellige Budgets zahlen zu müssen, um online
+                  professionell vertreten zu sein. Deshalb gestalten und
+                  entwickeln wir Webseiten, die sich lokale Unternehmen leisten
+                  können – ohne Abstriche bei Qualität, Performance oder Design.
+                </p>
+                <p className={bodyCopy}>
+                  Unser Ziel: Jede Anfrage soll mit Klarheit starten. Deine
+                  Kundschaft sieht sofort, was sie erwartet, wie ihr
+                  zusammenarbeitet und wofür dein Unternehmen steht. So
+                  entstehen transparente Beziehungen, weniger Nachfragen und ein
+                  digitales Erlebnis, das zur Hands-on-Mentalität der Region
+                  passt.
+                </p>
+              </div>
+              <div className="grid flex-1 gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Faire Budgets",
+                    desc: "Preisstrukturen, die zu kleinen und mittleren Unternehmen aus der Region passen.",
+                  },
+                  {
+                    title: "Klare Kommunikation",
+                    desc: "Texte, Strukturen und Kontaktwege, die Kund:innen sofort verstehen.",
+                  },
+                  {
+                    title: "Nähe zum Team",
+                    desc: "Direkter Draht zu uns – ohne Schichten von Projektmanagement.",
+                  },
+                  {
+                    title: "Langfristige Pflege",
+                    desc: "Support, Updates und ehrliche Beratung, wenn sich dein Angebot verändert.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="border border-white/10 bg-[var(--background)]/60 p-5"
+                  >
+                    <h3 className="text-sm font-semibold text-[var(--foreground)]">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-[var(--paragraph-text-color)]">
+                      {item.desc}
                     </p>
                   </div>
                 ))}
