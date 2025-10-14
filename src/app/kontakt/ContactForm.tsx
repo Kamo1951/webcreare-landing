@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState, useEffect, useRef } from "react";
+import { useFormStatus } from "react-dom";
 
 type FormState = {
   status: "idle" | "success" | "error";
@@ -16,7 +16,7 @@ export default function ContactForm({
   action: (prevState: FormState, formData: FormData) => Promise<FormState>;
 }) {
   const initialState: FormState = { status: "idle" };
-  const [state, formAction] = useFormState(action, initialState);
+  const [state, formAction] = useActionState(action, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
