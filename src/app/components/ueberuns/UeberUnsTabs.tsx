@@ -97,15 +97,32 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
         })}
       </div>
 
-      <footer className="mt-6 text-center lg:text-left text-sm sm:text-base text-[var(--paragraph-text-color)]">
-        Erfahren Sie mehr{" "}
-        <Link
-          href="/ueberuns"
-          className="text-[var(--accent-color)] hover:underline font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 "
-          aria-label="Mehr über uns erfahren"
-        >
-          über uns
-        </Link>
+      <footer className="mt-8 text-center lg:text-left">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--background-box-color)] border border-[var(--background-box-color-hover)] hover:border-[var(--accent-color)] transition-all duration-300 group">
+          <span className="text-sm sm:text-base text-[var(--paragraph-text-color)]">
+            Erfahren Sie mehr
+          </span>
+          <Link
+            href="/ueberuns"
+            className="text-[var(--accent-color)] hover:text-white font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 flex items-center gap-1"
+            aria-label="Mehr über uns erfahren"
+          >
+            über uns
+            <svg
+              className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
+        </div>
       </footer>
     </section>
   );
