@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import HeroShape from "./components/navbar/imgs/hero-shape-5.webp";
+
 import HeroCircle from "./components/navbar/imgs/hero-shape-6.webp";
 import { HeroTitle } from "./components/hero/HeroTitle";
 import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
@@ -311,17 +311,6 @@ export default function Home() {
 
   return (
     <>
-      <div className="absolute select-none -mt-100" aria-hidden="true">
-        <Image
-          src={HeroShape}
-          alt=""
-          width={1200}
-          height={1200}
-          loading="eager"
-          fetchPriority="high"
-          priority
-        />
-      </div>
       <Navbar />
       <main>
         <section
