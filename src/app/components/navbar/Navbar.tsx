@@ -176,7 +176,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="absolute select-none " aria-hidden="true">
+      <div className="absolute select-none" aria-hidden="true">
         <Image
           src={HeroShape}
           alt=""
