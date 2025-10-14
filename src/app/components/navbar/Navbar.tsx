@@ -8,6 +8,7 @@ import logoLight from "../navbar/imgs/webcreare-logo-white.webp";
 import logoBlack from "../navbar/imgs/webcreare-logo-black.webp";
 import useDetectScroll from "@smakss/react-scroll-direction";
 import { Kontakt } from "../buttons/Kontakt";
+import HeroShape from "../navbar/imgs/hero-shape-5.webp";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -175,6 +176,17 @@ const Navbar = () => {
 
   return (
     <>
+      <div className="absolute select-none " aria-hidden="true">
+        <Image
+          src={HeroShape}
+          alt=""
+          width={1200}
+          height={1200}
+          loading="eager"
+          fetchPriority="high"
+          priority
+        />
+      </div>
       <header
         className={`w-full sticky top-0 z-40 transition-[box-shadow,backdrop-filter,background-color,transform] duration-300 ${
           !isMobile && !isTablet && isCollapsed
