@@ -13,8 +13,69 @@ const jakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Erstelle Next App",
-  description: "Erstellt mit create next app",
+  metadataBase: new URL("https://webcreare.de"),
+  title: {
+    default: "Webcreare – Webdesign & Entwicklung aus Tegernsee",
+    template: "%s | Webcreare",
+  },
+  description:
+    "Webcreare ist eine junge Agentur aus Tegernsee für schnelle, saubere Websites – Design, Entwicklung, Hosting, Wartung & Fotografie. Klar. Sicher. Leistungsstark.",
+  applicationName: "Webcreare",
+  category: "business",
+  keywords: [
+    "Webdesign Tegernsee",
+    "Webentwicklung",
+    "Website erstellen",
+    "Hosting",
+    "Wartung",
+    "Fotografie",
+    "SEO",
+    "Webagentur",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: "https://webcreare.de/",
+    siteName: "Webcreare",
+    title: "Webcreare – Webdesign & Entwicklung aus Tegernsee",
+    description:
+      "Individuelle Websites, klares Design und verlässliches Hosting. Für Gründer:innen, Handwerk & KMU.",
+    images: [
+      {
+        url: "https://webcreare.de/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Webcreare – moderne Websites, die wirken",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Webcreare – Webdesign & Entwicklung aus Tegernsee",
+    description:
+      "Moderne Websites, Hosting & Wartung – sauber gebaut, schnell und sicher.",
+    images: ["https://webcreare.de/og.jpg"],
+  },
+  alternates: {
+    canonical: "https://webcreare.de/",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  themeColor: "#3F5AF3",
 };
 
 export default function RootLayout({
