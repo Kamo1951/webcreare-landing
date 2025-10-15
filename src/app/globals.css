@@ -2,6 +2,39 @@
 
 * {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+}
+
+/* Dezent angepasste Scrollbar für moderne Browser */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(63, 90, 243, 0.85) 0%,
+    rgba(101, 123, 245, 0.85) 100%
+  );
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background 200ms ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(101, 123, 245, 0.95) 0%,
+    rgba(63, 90, 243, 0.95) 100%
+  );
+  background-clip: content-box;
 }
 
 :root {
