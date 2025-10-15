@@ -17,7 +17,6 @@ export type AcknowledgementEmailProps = {
   lastName: string;
 };
 
-const backgroundColor = "#11151C";
 const cardBackground = "#1B2028";
 const accentColor = "#3F5AF3";
 const textColor = "#F5F7FA";
@@ -61,7 +60,6 @@ export const AcknowledgementEmail = ({
 
 const styles: Record<string, React.CSSProperties> = {
   body: {
-    backgroundColor,
     fontFamily: "'Plus Jakarta Sans', Arial, sans-serif",
     margin: 0,
   },
