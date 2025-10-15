@@ -191,7 +191,7 @@ export default function Home() {
       img: OliPort,
       name: "Oliwer Keskin",
       role: "Vertrieb",
-      link: "",
+      link: "https://webcreare.de/#team",
     },
   ];
 
