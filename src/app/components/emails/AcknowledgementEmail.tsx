@@ -105,6 +105,7 @@ const styles: Record<string, React.CSSProperties> = {
     letterSpacing: "0.18em",
     color: accentColor,
     margin: "0 0 12px",
+    fontWeight: "bold",
   },
   infoLine: {
     fontSize: 14,
