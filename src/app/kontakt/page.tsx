@@ -4,7 +4,7 @@ import { render as renderEmail } from "@react-email/render";
 import Navbar from "@/app/components/navbar/Navbar";
 import { SubAndMainHeader } from "@/app/components/headers/SubAndMainHeader";
 import ContactForm from "./ContactForm";
-import AcknowledgementEmail from "@/emails/AcknowledgementEmail";
+import AcknowledgementEmail from "@/app/components/emails/AcknowledgementEmail";
 
 export const runtime = "nodejs";
 
