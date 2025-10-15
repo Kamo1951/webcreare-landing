@@ -4,7 +4,7 @@ import Navbar from "@/app/components/navbar/Navbar";
 import { SubAndMainHeader } from "@/app/components/headers/SubAndMainHeader";
 import ContactForm from "./ContactForm";
 
-export const runtime = "nodejs"; // Resend ist als Node-Runtime am sichersten
+export const runtime = "nodejs";
 
 type FormState = {
   status: "idle" | "success" | "error";
@@ -31,7 +31,7 @@ async function submitContact(
   const company = (formData.get("unternehmen") || "").toString().trim();
   const message = (formData.get("your-message") || "").toString().trim();
   const gdprChecked = !!formData.get("checkbox-datenschutz");
-  const honeypot = (formData.get("website") || "").toString().trim(); // unsichtbares Feld
+  const honeypot = (formData.get("website") || "").toString().trim();
 
   // --- Bots direkt "erfolgreich" quittieren
   if (honeypot) return { status: "success", message: "Danke!" };
@@ -72,7 +72,7 @@ async function submitContact(
   const resend = new Resend(apiKey);
 
   try {
-    await resend.emails.send({
+    const internalMail = resend.emails.send({
       from,
       to,
       replyTo: email,
@@ -90,6 +90,22 @@ async function submitContact(
         `User-Agent: ${ua}`,
       ].join("\n"),
     });
+
+    const acknowledgementMail = resend.emails.send({
+      from,
+      to: email,
+      subject: "Vielen Dank für Ihre Nachricht",
+      text: [
+        `Hallo ${firstName} ${lastName},`,
+        ``,
+        `danke für Ihre Nachricht. Diese wird schnellstmöglich von uns bearbeitet.`,
+        ``,
+        `Liebe Grüße`,
+        `Ihr Webcreare-Team`,
+      ].join("\n"),
+    });
+
+    await Promise.all([internalMail, acknowledgementMail]);
 
     return {
       status: "success",
