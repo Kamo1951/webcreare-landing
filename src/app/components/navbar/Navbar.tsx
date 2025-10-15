@@ -176,7 +176,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="absolute select-none" aria-hidden="true">
+      <div
+        className="absolute select-none pointer-events-none -z-10"
+        aria-hidden="true"
+      >
         <Image
           src={HeroShape}
           alt=""
@@ -210,8 +213,8 @@ const Navbar = () => {
             height: isCollapsed
               ? 0
               : topHeight !== null
-              ? topHeight
-              : undefined,
+                ? topHeight
+                : undefined,
             opacity: isCollapsed ? 0 : 1,
             overflow: "hidden",
             transition:
