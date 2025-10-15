@@ -1,8 +1,10 @@
 import { headers } from "next/headers";
 import { Resend } from "resend";
+import { render as renderEmail } from "@react-email/render";
 import Navbar from "@/app/components/navbar/Navbar";
 import { SubAndMainHeader } from "@/app/components/headers/SubAndMainHeader";
 import ContactForm from "./ContactForm";
+import AcknowledgementEmail from "@/emails/AcknowledgementEmail";
 
 export const runtime = "nodejs";
 
@@ -91,6 +93,9 @@ async function submitContact(
       ].join("\n"),
     });
 
+    const acknowledgementHtml = await renderEmail(
+      <AcknowledgementEmail firstName={firstName} lastName={lastName} />
+    );
     const acknowledgementMail = resend.emails.send({
       from,
       to: email,
@@ -103,6 +108,7 @@ async function submitContact(
         `Liebe Grüße`,
         `Ihr Webcreare-Team`,
       ].join("\n"),
+      html: acknowledgementHtml,
     });
 
     await Promise.all([internalMail, acknowledgementMail]);
