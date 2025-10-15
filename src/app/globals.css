@@ -6,7 +6,6 @@
   scrollbar-color: var(--accent-color) transparent;
 }
 
-/* Dezent angepasste Scrollbar für moderne Browser */
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
