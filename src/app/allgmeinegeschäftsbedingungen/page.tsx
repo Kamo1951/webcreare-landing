@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navbar from "../components/navbar/Navbar";
 
 export default function Allgmeinegeschäftsbedingungen() {
@@ -17,11 +18,12 @@ export default function Allgmeinegeschäftsbedingungen() {
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
                 Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle
-                Verträge zwischen der Webcreare GbR, vertreten durch Mikolaj
-                Spruch und Oliwer Keskin, Perronstraße 6B, 83684 Tegernsee
-                (nachfolgend „Webcreare“ genannt) und ihren Auftraggebern
-                (nachfolgend „Kunde“ genannt). Abweichende Bedingungen des
-                Kunden gelten nur, wenn sie schriftlich bestätigt wurden.
+                Verträge zwischen Webcreare (Mikolaj Spruch und Oliwer Keskin
+                GbR), vertreten durch Mikolaj Spruch und Oliwer Keskin,
+                Perronstraße 6B, 83684 Tegernsee (nachfolgend „Webcreare“
+                genannt) und ihren Auftraggebern (nachfolgend „Kunde“ genannt).
+                Abweichende Bedingungen des Kunden gelten nur, wenn sie
+                schriftlich bestätigt wurden.
               </p>
             </section>
 
@@ -166,14 +168,14 @@ export default function Allgmeinegeschäftsbedingungen() {
                 Weitergabe an Dritte erfolgt nur, soweit dies für die
                 Vertragserfüllung erforderlich ist. Details ergeben sich aus der
                 Datenschutzerklärung auf{" "}
-                <a
-                  href="https://webcreare.de"
+                <Link
+                  href="https://webcreare.de/datenschutzerklaerung"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[var(--link-color)] underline hover:opacity-80 transition-opacity"
                 >
                   www.webcreare.de
-                </a>
+                </Link>
                 .
               </p>
             </section>
@@ -196,7 +198,7 @@ export default function Allgmeinegeschäftsbedingungen() {
                 14. Kontakt
               </h2>
               <p className="text-[var(--paragraph-text-color)] leading-relaxed">
-                Webcreare GbR
+                Mikolaj Spruch & Oliwer Keskin GbR
                 <br />
                 Perronstraße 6B
                 <br />
