@@ -10,6 +10,7 @@ import {
   Text,
 } from "@react-email/components";
 import * as React from "react";
+import Logo from "@/app/components/navbar/imgs/webcreare-logo-white.webp";
 
 export type AcknowledgementEmailProps = {
   firstName: string;
@@ -34,12 +35,7 @@ export const AcknowledgementEmail = ({
     <Body style={styles.body}>
       <Section style={styles.wrapper}>
         <Container style={styles.card}>
-          <Img
-            src="https://webcreare.de/webcreare-logo-white.webp"
-            width={120}
-            alt="Webcreare"
-            style={styles.logo}
-          />
+          <Img src={Logo.src} width={120} alt="Webcreare" style={styles.logo} />
           <Text style={styles.heading}>Danke für Ihre Nachricht</Text>
           <Text style={styles.paragraph}>
             Hallo {firstName} {lastName},
