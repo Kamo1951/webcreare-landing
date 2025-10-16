@@ -172,7 +172,6 @@ export default function Home() {
         "Tägliche Backups Ihrer Website",
         "Serverstandort Deutschland (Frankfurt am Main)",
         "12 Monate Mindestlaufzeit für maximale Sicherheit",
-        "+ viele weitere Premium-Services",
       ],
     },
   ];
