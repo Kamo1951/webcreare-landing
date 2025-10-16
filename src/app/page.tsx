@@ -107,7 +107,7 @@ export default function Home() {
       heading: "Business",
       price: "ab 1.500 €",
       bodyText: [
-        "1 Seite (One-Pager)",
+        "2 - 6 Seiten",
         "Individuelles Design",
         "Mobiloptimiert",
         "WordPress CMS",
@@ -124,7 +124,7 @@ export default function Home() {
       heading: "Professionell",
       price: "ab 3.000 €",
       bodyText: [
-        "1 Seite (One-Pager)",
+        "6 - 10",
         "Individuelles Design",
         "Mobiloptimiert",
         "WordPress CMS",
