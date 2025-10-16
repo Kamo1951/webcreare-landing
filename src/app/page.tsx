@@ -124,7 +124,7 @@ export default function Home() {
       heading: "Professionell",
       price: "ab 3.000 €",
       bodyText: [
-        "6 - 10",
+        "6 - 10 Seiten",
         "Individuelles Design",
         "Mobiloptimiert",
         "WordPress CMS",
