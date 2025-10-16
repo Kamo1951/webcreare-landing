@@ -155,7 +155,6 @@ export default function Home() {
         "Regelmäßige Sicherheitsupdates",
         "Fortlaufende Instandhaltung – Monat für Monat",
         "12 Monate Mindestlaufzeit für Ihre Planungssicherheit",
-        "+ vieles mehr",
       ],
     },
     {
