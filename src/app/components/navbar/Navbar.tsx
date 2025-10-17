@@ -177,12 +177,12 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="absolute select-none pointer-events-none -z-10"
+        className="absolute select-none pointer-events-none "
         aria-hidden="true"
       >
         <Image
           src={HeroShape}
-          alt=""
+          alt="Herobild"
           width={1200}
           height={1200}
           loading="eager"
