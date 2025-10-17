@@ -24,7 +24,7 @@ export default function UeberUns() {
       <main className="min-h-screen bg-[var(--background)] pb-20">
         <section className="relative isolate overflow-hidden px-4 py-20 sm:px-6 lg:px-16">
           <div
-            className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,var(--accent-color)/16,transparent_55%)]"
+            className="absolute inset-0 -z-11 bg-[radial-gradient(circle_at_top_left,var(--accent-color)/16,transparent_55%)]"
             aria-hidden
           />
           <div className="mx-auto flex max-w-6xl flex-col gap-10 lg:grid lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
