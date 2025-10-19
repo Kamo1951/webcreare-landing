@@ -23,7 +23,6 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
     initialActiveId ?? firstId
   );
 
-  // Alle Panels sind immer gemountet für SEO (Crawler sehen allen Content)
   const onActivate = (id: string) => {
     if (!id || id === activeId) return;
     setActiveId(id);
@@ -35,7 +34,6 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
         Über uns
       </h2>
 
-      {/* Tabs */}
       <nav
         role="tablist"
         aria-label="Über uns Bereiche"
@@ -65,8 +63,6 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
           );
         })}
       </nav>
-
-      {/* Panels: Immer alle gerendert (SEO), nur visuell versteckt */}
       <div className="mt-4">
         {items.map((item) => {
           const isActive = item.id === activeId;
