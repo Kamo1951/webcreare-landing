@@ -12,7 +12,7 @@ export function ReferenzCard({
   src,
   header,
   id,
-  url = "https://www.webcreare.de",
+  url,
   description,
 }: ReferenzCardProps) {
   return (
