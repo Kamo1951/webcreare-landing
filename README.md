@@ -1,127 +1,136 @@
-# WebCreare — Web Design & Development Agency Website
 
-Marketing website for WebCreare (web design & development agency). The codebase emphasizes performance, accessibility, SEO, and maintainability.
+# WebCreare — Web Design & Development Agency
 
-# 🔗 Quick links
+A fast, accessible, and SEO-friendly marketing website for WebCreare — a small web design & development agency. Built with Next.js (App Router) and TypeScript, focused on performance, maintainability and clear content.
 
-Live: https://webcreare.de
+Live: https://webcreare.de  
+Contact: info@webcreare.de · +49 151 56065802
 
-Contact: info@webcreare.de
- • +49 151 56065802
+---
 
-# ✨ Features
+## ✨ Highlights
 
-Services showcase (Web Design, Logo & Brand, Custom Development, SEO)
+- Clear services: Web Design, Branding, Custom Development, SEO  
+- References / Projects showcase  
+- Pricing packages (incl. maintenance & hosting)  
+- Team section and contact form  
+- Legal pages: Impressum, Datenschutzerklärung, AGB  
+- SEO-ready metadata (Open Graph, Twitter) and semantic HTML  
+- Performance optimizations (next/image, static pre-rendering)
 
-References / Projects
+---
 
-Pricing packages incl. maintenance/hosting
+## 🔧 Tech stack
 
-Team section
+- Framework: Next.js (App Router) + TypeScript  
+- Styling: Tailwind CSS (+ PostCSS)  
+- Linting: ESLint  
+- Deploy: Vercel  
+- Domain / Email: webcreare.de (Registrar: DeinServerHost), DNS & mail on Hostinger  
+- Optional transactional email: Resend
 
-Contact form & company details
+---
 
-Legal pages (Impressum, Datenschutzerklärung, AGB)
+## 📁 Project structure
+A short overview of the main files and folders:
 
-SEO-ready metadata (OG/Twitter), semantic HTML
-
-Performance via next/image, static pre-render where possible
-
-# 🛠 Tech stack
-
-Framework: Next.js (App Router) + TypeScript
-
-Styling: Tailwind CSS (+ PostCSS)
-
-Tooling: ESLint
-
-Deployment: Vercel
-
-Domain/DNS/Email: webcreare.de (Registrar: DeinServerHost), DNS & mail on Hostinger
-
-Transactional email (optional): Resend
-
-# 📁 Project structure
-├─ public/
-├─ src/
-│  └─ app/
-│     ├─ allgemeinegeschäftsbedingungen/   # AGB (legal)
-│     ├─ components/                       # UI components used by pages
-│     ├─ datenschutzerklaerung/            # Privacy policy (legal)
-│     ├─ impressum/                        # Imprint (legal)
-│     ├─ kontakt/                          # Contact page
-│     ├─ ueberuns/                         # About us
-│     ├─ favicon.ico
-│     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)
-│     ├─ layout.tsx                        # Root layout + metadata
-│     └─ page.tsx                          # Home page
-├─ .env
-├─ .gitignore
-├─ eslint.config.mjs
-├─ middleware.ts
-├─ next-env.d.ts
-├─ next.config.ts
-├─ package.json
-├─ package-lock.json
-├─ postcss.config.mjs
-├─ README.md
+├─ public/  
+├─ src/  
+│  └─ app/  
+│     ├─ allgemeinegeschäftsbedingungen/   # AGB (legal)  
+│     ├─ components/                       # UI components used by pages  
+│     ├─ datenschutzerklaerung/            # Privacy policy (legal)  
+│     ├─ impressum/                        # Imprint (legal)  
+│     ├─ kontakt/                          # Contact page  
+│     ├─ ueberuns/                         # About us  
+│     ├─ favicon.ico  
+│     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)  
+│     ├─ layout.tsx                        # Root layout + metadata  
+│     └─ page.tsx                          # Home page  
+├─ .env  
+├─ .gitignore  
+├─ eslint.config.mjs  
+├─ middleware.ts  
+├─ next-env.d.ts  
+├─ next.config.ts  
+├─ package.json  
+├─ package-lock.json  
+├─ postcss.config.mjs  
+├─ README.md  
 └─ tsconfig.json
 
-⚙️ Getting started
-# Clone
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+---
 
-# Install
-npm install
+## ⚙️ Getting started
 
-# Env
-cp .env.example .env.local
+Clone the repo and run locally.
 
-# Dev
-npm run dev   # http://localhost:3000
+1. Clone
+   git clone https://github.com/Kamo1951/webcreare-landing.git
+   cd webcreare-landing
 
-Scripts
-npm run dev
-npm run build
-npm start
-npm run lint
+2. Install
+   npm install
 
-# 🔐 Environment variables
-NEXT_PUBLIC_SITE_URL=https://webcreare.de
+3. Environment
+   Copy .env.example to .env.local and adjust variables.
 
-# 🚀 Deployment
+4. Run (development)
+   npm run dev
+   Open http://localhost:3000
 
-Push to GitHub
+Available scripts:
+- npm run dev        — start dev server
+- npm run build      — build for production
+- npm start          — run built app
+- npm run lint       — run linter
 
-Import to Vercel
+---
 
-Add env vars in Vercel
+## 🔐 Environment variables
 
-Connect webcreare.de in Vercel (DNS on Hostinger; registrar DeinServerHost)
+At minimum:
+- NEXT_PUBLIC_SITE_URL=https://webcreare.de
 
-# ♿ Accessibility & 📈 Performance
+Add any mail/Resend or analytics secrets to your .env.local as needed (do not commit).
 
-Semantic HTML, keyboard focus, alt text
+---
 
-Optimized images via next/image
+## 🚀 Deployment
 
-Pre-rendered pages where possible
+1. Push to GitHub
+2. Import repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Configure domain (webcreare.de) in Vercel — DNS hosted on Hostinger, registrar: DeinServerHost
 
-Add Lighthouse/Core Web Vitals screenshots if you want to show numbers.
+---
 
-# 🧭 Roadmap (nice-to-have)
+## ♿ Accessibility & 📈 Performance
 
-Adjust images for faster loading on phone
+- Semantic HTML elements and good heading structure  
+- Images optimized with next/image, all images include alt text  
+- Keyboard focus and ARIA where needed  
+- Pre-render pages where appropriate (static routes)  
+- Use Lighthouse/Core Web Vitals to track improvements
 
-Automated sitemap.xml & robots.txt (e.g., next-sitemap or route handlers)
+---
 
-Per-page metadata incl. canonical/OG
+## 🧭 Roadmap (nice-to-have)
 
-MDX/Markdown for long legal copy
+- Further image size optimization for phones  
+- Automated sitemap.xml & robots.txt (next-sitemap / route handlers)  
+- Per-page metadata (canonical, OG) improvements  
+- MDX/Markdown for long legal copy for easier editing  
+- /en route tailored for recruiters or international visitors
 
-/en Route for Recruiters
+---
 
-# 👔 License
+## Contributing
+
+This repository is proprietary. For changes, contact the site owner (info@webcreare.de) to coordinate.
+
+---
+
+## 👔 License
 
 Proprietary — All rights reserved.
