@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WebCreare — Web Design & Development Agency Website
 
-## Getting Started
+Marketing website for WebCreare (web design & development agency). The codebase emphasizes performance, accessibility, SEO, and maintainability.
 
-First, run the development server:
+# 🔗 Quick links
 
-```bash
+Live: https://webcreare.de
+
+Contact: info@webcreare.de
+ • +49 151 56065802
+
+# ✨ Features
+
+Services showcase (Web Design, Logo & Brand, Custom Development, SEO)
+
+References / Projects
+
+Pricing packages incl. maintenance/hosting
+
+Team section
+
+Contact form & company details
+
+Legal pages (Impressum, Datenschutzerklärung, AGB)
+
+SEO-ready metadata (OG/Twitter), semantic HTML
+
+Performance via next/image, static pre-render where possible
+
+# 🛠 Tech stack
+
+Framework: Next.js (App Router) + TypeScript
+
+Styling: Tailwind CSS (+ PostCSS)
+
+Tooling: ESLint
+
+Deployment: Vercel
+
+Domain/DNS/Email: webcreare.de (Registrar: DeinServerHost), DNS & mail on Hostinger
+
+Transactional email (optional): Resend
+
+# 📁 Project structure
+├─ public/
+├─ src/
+│  └─ app/
+│     ├─ allgemeinegeschäftsbedingungen/   # AGB (legal)
+│     ├─ components/                       # UI components used by pages
+│     ├─ datenschutzerklaerung/            # Privacy policy (legal)
+│     ├─ impressum/                        # Imprint (legal)
+│     ├─ kontakt/                          # Contact page
+│     ├─ ueberuns/                         # About us
+│     ├─ favicon.ico
+│     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)
+│     ├─ layout.tsx                        # Root layout + metadata
+│     └─ page.tsx                          # Home page
+├─ .env
+├─ .gitignore
+├─ eslint.config.mjs
+├─ middleware.ts
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package.json
+├─ package-lock.json
+├─ postcss.config.mjs
+├─ README.md
+└─ tsconfig.json
+
+⚙️ Getting started
+# Clone
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+
+# Install
+npm install
+
+# Env
+cp .env.example .env.local
+
+# Dev
+npm run dev   # http://localhost:3000
+
+Scripts
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+npm run build
+npm start
+npm run lint
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# 🔐 Environment variables
+NEXT_PUBLIC_SITE_URL=https://webcreare.de
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# 🚀 Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Push to GitHub
 
-## Learn More
+Import to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+Add env vars in Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Connect webcreare.de in Vercel (DNS on Hostinger; registrar DeinServerHost)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# ♿ Accessibility & 📈 Performance
 
-## Deploy on Vercel
+Semantic HTML, keyboard focus, alt text
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Optimized images via next/image
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pre-rendered pages where possible
+
+Add Lighthouse/Core Web Vitals screenshots if you want to show numbers.
+
+# 🧭 Roadmap (nice-to-have)
+
+Adjust images for faster loading on phone
+
+Automated sitemap.xml & robots.txt (e.g., next-sitemap or route handlers)
+
+Per-page metadata incl. canonical/OG
+
+MDX/Markdown for long legal copy
+
+/en Route for Recruiters
+
+# 👔 License
+
+Proprietary — All rights reserved.
