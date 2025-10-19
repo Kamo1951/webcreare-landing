@@ -593,11 +593,13 @@ export default function Home() {
               src={Bausucht}
               header="Minecraft Server Webseite"
               id="01"
+              url="https://www.bausucht.net/"
             />
             <ReferenzCard
               src={Veerdesign}
               header="Buchsverkaufs Webseite"
               id="02"
+              url="https://veerdesign.de/"
             />
           </div>
         </section>
