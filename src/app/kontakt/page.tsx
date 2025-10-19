@@ -20,12 +20,12 @@ async function submitContact(
 ): Promise<FormState> {
   "use server";
 
-  // --- Meta
+  // Meta
   const h = headers();
   const ip = (await h).get("x-forwarded-for")?.split(",")[0]?.trim() ?? "";
   const ua = (await h).get("user-agent") ?? "";
 
-  // --- Daten
+  // Data
   const firstName = (formData.get("your-first-name") || "").toString().trim();
   const lastName = (formData.get("your-last-name") || "").toString().trim();
   const email = (formData.get("your-email") || "").toString().trim();
@@ -35,10 +35,10 @@ async function submitContact(
   const gdprChecked = !!formData.get("checkbox-datenschutz");
   const honeypot = (formData.get("website") || "").toString().trim();
 
-  // --- Bots direkt "erfolgreich" quittieren
+  // Show Bots "success" directly
   if (honeypot) return { status: "success", message: "Danke!" };
 
-  // --- Validation (leichtgewichtig)
+  // Validation
   const fieldErrors: Record<string, string> = {};
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -59,7 +59,7 @@ async function submitContact(
     };
   }
 
-  // --- Mail senden (Resend)
+  // send mail (Resend)
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
   const from = process.env.RESEND_FROM || "Kontakt <noreply@your-domain.tld>";
@@ -178,7 +178,7 @@ export default function Kontakt() {
     <>
       <Navbar />
       <div className="flex flex-col lg:flex-row justify-center my-10 lg:my-20 gap-6 lg:gap-10 px-4 sm:px-6 lg:px-8">
-        {/* Linke Infobox */}
+        {/* left Infobox */}
         <div className="w-full lg:w-110 border border-[var(--border-color)] h-fit">
           <div className="px-6 sm:px-10 py-6 bg-[var(--background-box-color)] border-[var(--border-color)]">
             <SubAndMainHeader
@@ -215,7 +215,7 @@ export default function Kontakt() {
           </div>
         </div>
 
-        {/* Rechte Box: Formular */}
+        {/* right Box: Form */}
         <div className="p-6 sm:p-10 bg-[var(--background-box-color)] border border-[var(--border-color)] h-fit w-full lg:w-auto">
           <ContactForm action={submitContact} />
         </div>
