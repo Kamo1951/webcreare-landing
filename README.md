@@ -92,8 +92,6 @@ Available scripts:
 At minimum:
 - NEXT_PUBLIC_SITE_URL=https://webcreare.de
 
-Add any mail/Resend or analytics secrets to your .env.local as needed (do not commit).
-
 ---
 
 ## 🚀 Deployment
