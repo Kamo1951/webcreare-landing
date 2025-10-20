@@ -111,11 +111,13 @@ At minimum:
 - Pre-render pages where appropriate (static routes)  
 - Use Lighthouse/Core Web Vitals to track improvements
 
+<img width="892" height="791" alt="Screenshot 2025-10-20 231051" src="https://github.com/user-attachments/assets/322b8de5-be5f-479a-b144-450b23a14ecc" />
+<img width="862" height="735" alt="Screenshot 2025-10-20 231037" src="https://github.com/user-attachments/assets/ae2a9ee9-2d4c-494a-8cc2-077bed6d033b" />
+
 ---
 
 ## 🧭 Roadmap (nice-to-have)
 
-- Further image size optimization for phones  
 - Automated sitemap.xml & robots.txt (next-sitemap / route handlers)  
 - Per-page metadata (canonical, OG) improvements  
 - MDX/Markdown for long legal copy for easier editing  
@@ -132,3 +134,4 @@ This repository is proprietary. For changes, contact the site owner (info@webcre
 ## 👔 License
 
 Proprietary — All rights reserved.
+
