@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image";
 
 type ReferenzCardProps = {
   src: string | StaticImageData;
+  mobileSrc?: string | StaticImageData;
   header: string;
   id: string;
   url?: string;
@@ -10,6 +11,7 @@ type ReferenzCardProps = {
 
 export function ReferenzCard({
   src,
+  mobileSrc,
   header,
   id,
   url,
@@ -25,6 +27,20 @@ export function ReferenzCard({
         title={header}
       >
         <div className="w-full relative overflow-hidden">
+          {mobileSrc && (
+            <Image
+              src={mobileSrc}
+              alt={`Referenz Projekt: ${header}${
+                description ? ` - ${description}` : ""
+              }`}
+              width={450}
+              height={300}
+              className="w-full h-auto sm:hidden"
+              loading="lazy"
+              quality={85}
+              sizes="100vw"
+            />
+          )}
           <Image
             src={src}
             alt={`Referenz Projekt: ${header}${
@@ -32,10 +48,14 @@ export function ReferenzCard({
             }`}
             width={450}
             height={300}
-            className="w-full h-auto"
+            className={`w-full h-auto ${mobileSrc ? "hidden sm:block" : ""}`}
             loading="lazy"
             quality={85}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            sizes={
+              mobileSrc
+                ? "(max-width: 1024px) 50vw, 33vw"
+                : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            }
           />
           <div
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-30 lg:h-30 bg-[var(--accent-color)] opacity-0 rounded-full flex items-center justify-center group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 hover:bg-[var(--accent-color-hover)]"
