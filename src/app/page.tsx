@@ -22,6 +22,11 @@ import AchievmentBadges from "./components/badges/AchievmentBadges";
 import Navbar from "./components/navbar/Navbar";
 
 //mobile images
+import HeroCicleMobile from "./components/navbar/imgs/mobile imgs/hero-shape-6.webp";
+import MikiErklaertMobile from "./components/navbar/imgs/mobile imgs/Miki-erklaert-_2_-scaled.webp";
+import OliLaedtMobile from "./components/navbar/imgs/mobile imgs/Oli-laedt-scaled.webp";
+import BausuchtMobile from "./components/navbar/imgs/mobile imgs/Bausucht.webp";
+import VeerdesignMobile from "./components/navbar/imgs/mobile imgs/Veerdesign.webp";
 
 export const metadata: Metadata = {
   title:
