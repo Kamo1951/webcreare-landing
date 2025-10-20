@@ -182,7 +182,7 @@ const Navbar = () => {
         aria-hidden="true"
       >
         <Image
-          src={HeroShape}
+          src={isMobile ? HeroShapeMobile : HeroShape}
           alt="Herobild"
           width={1200}
           height={1200}
