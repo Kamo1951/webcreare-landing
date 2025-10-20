@@ -118,7 +118,6 @@ At minimum:
 
 ## 🧭 Roadmap (nice-to-have)
 
-- Further image size optimization for phones  
 - Automated sitemap.xml & robots.txt (next-sitemap / route handlers)  
 - Per-page metadata (canonical, OG) improvements  
 - MDX/Markdown for long legal copy for easier editing  
