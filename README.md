@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# WebCreare — Web Design & Development Agency
 
-First, run the development server:
+A fast, accessible, and SEO-friendly marketing website for WebCreare — a small web design & development agency. Built with Next.js (App Router) and TypeScript, focused on performance, maintainability and clear content.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Live: https://webcreare.de  
+Contact: info@webcreare.de · +49 151 56065802
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Highlights
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Clear services: Web Design, Branding, Custom Development, SEO  
+- References / Projects showcase  
+- Pricing packages (incl. maintenance & hosting)  
+- Team section and contact form  
+- Legal pages: Impressum, Datenschutzerklärung, AGB  
+- SEO-ready metadata (Open Graph, Twitter) and semantic HTML  
+- Performance optimizations (next/image, static pre-rendering)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🔧 Tech stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Framework: Next.js (App Router) + TypeScript  
+- Styling: Tailwind CSS (+ PostCSS)  
+- Linting: ESLint  
+- Deploy: Vercel  
+- Domain / Email: webcreare.de (Registrar: DeinServerHost), DNS & mail on Hostinger  
+- Optional transactional email: Resend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📁 Project structure
+A short overview of the main files and folders:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+├─ public/  
+├─ src/  
+│  └─ app/  
+│     ├─ allgemeinegeschäftsbedingungen/   # AGB (legal)  
+│     ├─ components/                       # UI components used by pages  
+│     ├─ datenschutzerklaerung/            # Privacy policy (legal)  
+│     ├─ impressum/                        # Imprint (legal)  
+│     ├─ kontakt/                          # Contact page  
+│     ├─ ueberuns/                         # About us  
+│     ├─ favicon.ico  
+│     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)  
+│     ├─ layout.tsx                        # Root layout + metadata  
+│     └─ page.tsx                          # Home page  
+├─ .env  
+├─ .gitignore  
+├─ eslint.config.mjs  
+├─ middleware.ts  
+├─ next-env.d.ts  
+├─ next.config.ts  
+├─ package.json  
+├─ package-lock.json  
+├─ postcss.config.mjs  
+├─ README.md  
+└─ tsconfig.json
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ⚙️ Getting started
+
+Clone the repo and run locally.
+
+1. Clone
+   git clone https://github.com/Kamo1951/webcreare-landing.git
+   cd webcreare-landing
+
+2. Install
+   npm install
+
+3. Environment
+   Copy .env.example to .env.local and adjust variables.
+
+4. Run (development)
+   npm run dev
+   Open http://localhost:3000
+
+Available scripts:
+- npm run dev        — start dev server
+- npm run build      — build for production
+- npm start          — run built app
+- npm run lint       — run linter
+
+---
+
+## 🔐 Environment variables
+
+At minimum:
+- NEXT_PUBLIC_SITE_URL=https://webcreare.de
+
+---
+
+## 🚀 Deployment
+
+1. Push to GitHub
+2. Import repository to Vercel
+3. Add environment variables in Vercel dashboard
+4. Configure domain (webcreare.de) in Vercel — DNS hosted on Hostinger, registrar: DeinServerHost
+
+---
+
+## ♿ Accessibility & 📈 Performance
+
+- Semantic HTML elements and good heading structure  
+- Images optimized with next/image, all images include alt text  
+- Keyboard focus and ARIA where needed  
+- Pre-render pages where appropriate (static routes)  
+- Use Lighthouse/Core Web Vitals to track improvements
+
+---
+
+## 🧭 Roadmap (nice-to-have)
+
+- Further image size optimization for phones  
+- Automated sitemap.xml & robots.txt (next-sitemap / route handlers)  
+- Per-page metadata (canonical, OG) improvements  
+- MDX/Markdown for long legal copy for easier editing  
+- /en route tailored for recruiters or international visitors
+
+---
+
+## Contributing
+
+This repository is proprietary. For changes, contact the site owner (info@webcreare.de) to coordinate.
+
+---
+
+## 👔 License
+
+Proprietary — All rights reserved.
