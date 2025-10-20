@@ -10,6 +10,9 @@ import useDetectScroll from "@smakss/react-scroll-direction";
 import { Kontakt } from "../buttons/Kontakt";
 import HeroShape from "../navbar/imgs/hero-shape-5.webp";
 
+//mobile
+import HeroShapeMobile from "../navbar/imgs/mobile imgs/hero-shape-5.webp";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
