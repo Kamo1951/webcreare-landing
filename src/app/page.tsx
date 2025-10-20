@@ -21,6 +21,8 @@ import { Kontakt } from "./components/buttons/Kontakt";
 import AchievmentBadges from "./components/badges/AchievmentBadges";
 import Navbar from "./components/navbar/Navbar";
 
+//mobile images
+
 export const metadata: Metadata = {
   title:
     "WebCreare - Professionelle Webseiten für den Tegernsee | Webdesign & Entwicklung",
