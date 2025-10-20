@@ -200,6 +200,29 @@ export default function Home() {
     },
   ];
 
+  const images = {
+    hero: {
+      desktop: HeroCircle,
+      mobile: HeroCicleMobile,
+    },
+    mikiErklaert: {
+      desktop: MikiErklaert,
+      mobile: MikiErklaertMobile,
+    },
+    oliLaedt: {
+      desktop: OliLaedt,
+      mobile: OliLaedtMobile,
+    },
+    bausucht: {
+      desktop: Bausucht,
+      mobile: BausuchtMobile,
+    },
+    veerdesign: {
+      desktop: Veerdesign,
+      mobile: VeerdesignMobile,
+    },
+  };
+
   const achivementBadges = [
     {
       id: "Jahre",
@@ -322,15 +345,24 @@ export default function Home() {
           className="container mx-auto px-4"
           aria-labelledby="hero-title"
         >
-          <Image
-            src={HeroCircle}
-            alt="HeroBild - Kreis"
-            loading="eager"
-            fetchPriority="high"
-            priority
-            className="absolute select-none pointer-events-none w-9xl -mt-8 -ml-10 sm:w-2xl sm:-mt-12 sm:-ml-14 md:w-3xl md:-mt-16 md:-ml-20 lg:w-4xl lg:-mt-20 lg:-ml-24 xl:w-5xl 2xl:w-6xl 2xl:min-w-[30vw] xl:-mt-24 xl:-ml-28"
-            aria-hidden="true"
-          />
+          <div aria-hidden="true">
+            <Image
+              src={HeroCicleMobile}
+              alt="HeroBild - Kreis"
+              loading="eager"
+              fetchPriority="high"
+              priority
+              className="absolute select-none pointer-events-none w-9xl -mt-8 -ml-10 sm:hidden"
+            />
+            <Image
+              src={HeroCircle}
+              alt="HeroBild - Kreis"
+              loading="eager"
+              fetchPriority="high"
+              priority
+              className="hidden sm:block sm:absolute sm:select-none sm:pointer-events-none sm:w-2xl sm:-mt-12 sm:-ml-14 md:w-3xl md:-mt-16 md:-ml-20 lg:w-4xl lg:-mt-20 lg:-ml-24 xl:w-5xl 2xl:w-6xl 2xl:min-w-[30vw] xl:-mt-24 xl:-ml-28"
+            />
+          </div>
           <HeroTitle />
         </section>
         <section className="pt-38" aria-labelledby="leistungen-heading">
@@ -569,15 +601,27 @@ export default function Home() {
           <aside aria-label="Team Bilder">
             <div className="relative flex items-end h-[300px] sm:h-[400px] md:h-[500px]">
               <Image
+                src={MikiErklaertMobile}
+                alt="Mikolaj Spruch erklärt Kunden das Webdesign-Konzept"
+                className="absolute left-0 top-0 w-[70%] aspect-square object-cover z-10 animate-slide-in-left sm:hidden"
+                loading="lazy"
+              />
+              <Image
                 src={MikiErklaert}
                 alt="Mikolaj Spruch erklärt Kunden das Webdesign-Konzept"
-                className="absolute left-0 top-0 w-[65%] sm:w-[70%] aspect-square object-cover z-10 animate-slide-in-left"
+                className="hidden sm:block sm:absolute sm:left-0 sm:top-0 sm:w-[70%] md:w-[65%] aspect-square object-cover z-10 animate-slide-in-left"
+                loading="lazy"
+              />
+              <Image
+                src={OliLaedtMobile}
+                alt="Oliwer Keskin heißt neue Kunden willkommen"
+                className="absolute right-0 bottom-0 w-[65%] aspect-square object-cover z-20 animate-slide-in-right sm:hidden"
                 loading="lazy"
               />
               <Image
                 src={OliLaedt}
                 alt="Oliwer Keskin heißt neue Kunden willkommen"
-                className="absolute right-0 sm:-right-5 md:-right-0 bottom-0 sm:-bottom-5 md:-bottom-10 w-[60%] sm:w-[50%] aspect-square object-cover z-20 animate-slide-in-right"
+                className="hidden sm:block sm:absolute sm:right-0 sm:-right-5 md:-right-0 sm:bottom-0 sm:-bottom-5 md:-bottom-10 sm:w-[50%] aspect-square object-cover z-20 animate-slide-in-right"
                 loading="lazy"
               />
             </div>
@@ -598,12 +642,14 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
             <ReferenzCard
               src={Bausucht}
+              mobileSrc={BausuchtMobile}
               header="Minecraft Server Webseite"
               id="01"
               url="https://www.bausucht.net/"
             />
             <ReferenzCard
               src={Veerdesign}
+              mobileSrc={VeerdesignMobile}
               header="Buchsverkaufs Webseite"
               id="02"
               url="https://veerdesign.de/"
