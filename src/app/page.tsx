@@ -1,6 +1,10 @@
+//react/next stuff
 import Image from "next/image";
 import { Metadata } from "next";
 
+//components
+import { Kontakt } from "./components/buttons/Kontakt";
+import AchievmentBadges from "./components/badges/AchievmentBadges";
 import HeroCircle from "./components/navbar/imgs/hero-shape-6.webp";
 import { HeroTitle } from "./components/hero/HeroTitle";
 import { SubAndMainHeader } from "./components/headers/SubAndMainHeader";
@@ -8,6 +12,9 @@ import { LeistungsCard } from "./components/cards/LeistungsCard";
 import { Slider } from "./components/carousel/Slider";
 import "./components/carousel/slider.css";
 import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
+import Navbar from "./components/navbar/Navbar";
+
+//images
 import MikiErklaert from "./components/imgs/Miki-erklaert-_2_-scaled.webp";
 import OliLaedt from "./components/imgs/Oli-laedt-scaled.webp";
 import { ReferenzCard } from "./components/cards/ReferenzCard";
@@ -17,9 +24,6 @@ import PreiseCard from "./components/cards/PreiseCard";
 import TeamCard from "./components/cards/TeamCard";
 import MikiPort from "./components/imgs/Miki-Port.webp";
 import OliPort from "./components/imgs/Oli-Port.webp";
-import { Kontakt } from "./components/buttons/Kontakt";
-import AchievmentBadges from "./components/badges/AchievmentBadges";
-import Navbar from "./components/navbar/Navbar";
 import Speckert from "./components/imgs/Speckert.webp";
 
 //mobile images
@@ -28,7 +32,6 @@ import MikiErklaertMobile from "./components/navbar/imgs/mobile imgs/Miki-erklae
 import OliLaedtMobile from "./components/navbar/imgs/mobile imgs/Oli-laedt-scaled.webp";
 import BausuchtMobile from "./components/navbar/imgs/mobile imgs/Bausucht.webp";
 import VeerdesignMobile from "./components/navbar/imgs/mobile imgs/Veerdesign.webp";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
