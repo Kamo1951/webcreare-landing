@@ -20,7 +20,7 @@ export default function Referenzen() {
       <div className="my-20">
         <SubAndMainHeader
           subheader="Referenzen"
-          header="Unsere aktuellsten Projekte"
+          header="Ausgewählte Projekte"
           direction="center"
           widthSize="w-md"
         />
