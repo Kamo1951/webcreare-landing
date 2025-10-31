@@ -20,6 +20,7 @@ import OliPort from "./components/imgs/Oli-Port.webp";
 import { Kontakt } from "./components/buttons/Kontakt";
 import AchievmentBadges from "./components/badges/AchievmentBadges";
 import Navbar from "./components/navbar/Navbar";
+import Speckert from "./components/imgs/Speckert.webp";
 
 //mobile images
 import HeroCicleMobile from "./components/navbar/imgs/mobile imgs/hero-shape-6.webp";
@@ -220,6 +221,9 @@ export default function Home() {
     veerdesign: {
       desktop: Veerdesign,
       mobile: VeerdesignMobile,
+    },
+    speckert: {
+      desktop: Speckert,
     },
   };
 
