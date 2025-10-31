@@ -28,6 +28,7 @@ import MikiErklaertMobile from "./components/navbar/imgs/mobile imgs/Miki-erklae
 import OliLaedtMobile from "./components/navbar/imgs/mobile imgs/Oli-laedt-scaled.webp";
 import BausuchtMobile from "./components/navbar/imgs/mobile imgs/Bausucht.webp";
 import VeerdesignMobile from "./components/navbar/imgs/mobile imgs/Veerdesign.webp";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
@@ -659,7 +660,12 @@ export default function Home() {
               url="https://veerdesign.de/"
             />
           </div>
-          <button className="p-4">Alle Referenzen einsehen</button>
+          <Link
+            href="/referenzen"
+            className="text-sm font-semibold text-[var(--accent-color)] underline-offset-4 hover:underline"
+          >
+            Zu ausgewählten Projekten
+          </Link>
         </section>
 
         <section id="preise" className="my-20" aria-labelledby="preise-heading">
