@@ -59,12 +59,12 @@ export default function UeberUns() {
                 >
                   Lass Uns Sprechen
                 </Link>
-                {/* <Link
+                <Link
                   href="/referenzen"
                   className="text-sm font-semibold text-[var(--accent-color)] underline-offset-4 hover:underline"
                 >
                   Zu ausgewählten Projekten
-                </Link> */}
+                </Link>
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
