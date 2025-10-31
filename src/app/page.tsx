@@ -661,12 +661,7 @@ export default function Home() {
             />
           </div>
           <div className="flex justify-center mt-5">
-            <Link
-              href="/referenzen"
-              className="text-sm font-semibold bg-[var(--accent-color)] p-4 underline-offset-4 hover:underline"
-            >
-              Zu ausgewählten Projekten
-            </Link>
+            <Kontakt href="/referenzen" text="Zu ausgewählten Projekten" />
           </div>
         </section>
 
