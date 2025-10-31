@@ -647,9 +647,9 @@ export default function Home() {
             <ReferenzCard
               src={Speckert}
               mobileSrc={BausuchtMobile}
-              header="Minecraft Server Webseite"
+              header="E-commerce for Art"
               id="01"
-              url="https://www.bausucht.net/"
+              url="https://www.speckert.net/"
             />
             <ReferenzCard
               src={Veerdesign}
