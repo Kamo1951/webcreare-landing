@@ -647,7 +647,7 @@ export default function Home() {
             <ReferenzCard
               src={Speckert}
               mobileSrc={BausuchtMobile}
-              header="E-commerce for Art"
+              header="E-commerce für Kunst"
               id="01"
               url="https://www.speckert.net/"
             />
@@ -659,6 +659,7 @@ export default function Home() {
               url="https://veerdesign.de/"
             />
           </div>
+          <button className="p-4">Alle Referenzen einsehen</button>
         </section>
 
         <section id="preise" className="my-20" aria-labelledby="preise-heading">
