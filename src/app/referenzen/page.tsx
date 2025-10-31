@@ -24,7 +24,7 @@ export default function Referenzen() {
           direction="center"
           widthSize="w-md"
         />
-        <div className="grid grid-cols-2 grid-rows-2 place-content-center gap-8 px-4">
+        <div className="grid grid-cols-2 grid-rows-2 place-content-center gap-8 px-10">
           <ReferenzCard
             src={Speckert}
             mobileSrc={BausuchtMobile}
