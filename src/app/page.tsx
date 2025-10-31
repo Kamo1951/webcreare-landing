@@ -645,7 +645,7 @@ export default function Home() {
           />
           <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
             <ReferenzCard
-              src={Bausucht}
+              src={Speckert}
               mobileSrc={BausuchtMobile}
               header="Minecraft Server Webseite"
               id="01"
