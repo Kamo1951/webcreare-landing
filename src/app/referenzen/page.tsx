@@ -17,14 +17,14 @@ export default function Referenzen() {
   return (
     <>
       <Navbar />
-      <div>
+      <div className="my-20">
         <SubAndMainHeader
           subheader="Referenzen"
           header="Unsere aktuellsten Projekte"
           direction="center"
           widthSize="w-md"
         />
-        <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
+        <div className="grid grid-cols-2 grid-rows-2 place-content-center gap-8 px-4">
           <ReferenzCard
             src={Speckert}
             mobileSrc={BausuchtMobile}
@@ -38,6 +38,13 @@ export default function Referenzen() {
             header="Buchsverkaufs Webseite"
             id="02"
             url="https://veerdesign.de/"
+          />
+          <ReferenzCard
+            src={Bausucht}
+            mobileSrc={BausuchtMobile}
+            header="Minecraft Server-Seite"
+            id="03"
+            url="https://bausucht.net/"
           />
         </div>
       </div>
