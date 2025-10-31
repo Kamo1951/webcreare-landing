@@ -660,12 +660,14 @@ export default function Home() {
               url="https://veerdesign.de/"
             />
           </div>
-          <Link
-            href="/referenzen"
-            className="text-sm font-semibold text-[var(--accent-color)] underline-offset-4 hover:underline"
-          >
-            Zu ausgewählten Projekten
-          </Link>
+          <div className="flex justify-center mt-5">
+            <Link
+              href="/referenzen"
+              className="text-sm font-semibold bg-[var(--accent-color)] p-4 underline-offset-4 hover:underline"
+            >
+              Zu ausgewählten Projekten
+            </Link>
+          </div>
         </section>
 
         <section id="preise" className="my-20" aria-labelledby="preise-heading">
