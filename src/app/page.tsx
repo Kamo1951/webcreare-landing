@@ -723,7 +723,7 @@ export default function Home() {
         </section>
       </main>
 
-      <div className="my-50">
+      <div className="my-50 flex justify-center">
         <p>www.webcreare.de</p>
         <br />
         <br />
