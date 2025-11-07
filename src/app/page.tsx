@@ -61,7 +61,7 @@ export default function Home() {
       text: [
         "Entwicklung",
         "Design Ideen",
-        "Markebildung",
+        "Markenbildung",
         "Digitale Lösungen",
         "Strategie",
         "Webdesign",
@@ -126,7 +126,7 @@ export default function Home() {
         "Suchmaschinen optimiert",
         "Schnellste Ladezeiten",
         "Animationen",
-        "Erweiteres Call-to-Action",
+        "Erweitertes Call-to-Action",
         "Einführung",
         "Datenschutz & rechtliches",
       ],
