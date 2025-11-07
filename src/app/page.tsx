@@ -722,6 +722,16 @@ export default function Home() {
           <AchievmentBadges items={achivementBadges} />
         </section>
       </main>
+
+      <div className="my-50">
+        <p>www.webcreare.de</p>
+        <br />
+        <br />
+        <p>+49 152 51355780</p>
+        <br />
+        <br />
+        <p>info@webcreare.de</p>
+      </div>
     </>
   );
 }
