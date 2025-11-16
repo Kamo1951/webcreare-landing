@@ -97,8 +97,8 @@ const Navbar = () => {
     { href: "/#ueberuns", label: "Über Uns" },
     { href: "/#referenzen", label: "Referenzen" },
     { href: "/#preise", label: "Preise" },
-    { href: "/#team", label: "Unser Team" },
     { href: "/#faq", label: "FAQ" },
+    { href: "/#team", label: "Unser Team" },
   ];
 
   const { resolvedTheme } = useTheme();
