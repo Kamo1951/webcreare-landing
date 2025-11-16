@@ -13,6 +13,7 @@ import { Slider } from "./components/carousel/Slider";
 import "./components/carousel/slider.css";
 import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
 import Navbar from "./components/navbar/Navbar";
+import FAQ from "./components/faq/FAQ";
 
 //images
 import MikiErklaert from "./components/imgs/Miki-erklaert-_2_-scaled.webp";
