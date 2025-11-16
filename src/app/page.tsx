@@ -32,6 +32,7 @@ import MikiErklaertMobile from "./components/navbar/imgs/mobile imgs/Miki-erklae
 import OliLaedtMobile from "./components/navbar/imgs/mobile imgs/Oli-laedt-scaled.webp";
 import BausuchtMobile from "./components/navbar/imgs/mobile imgs/Bausucht.webp";
 import VeerdesignMobile from "./components/navbar/imgs/mobile imgs/Veerdesign.webp";
+import SpeckertMobile from "./components/navbar/imgs/mobile imgs/Speckert.webp";
 
 export const metadata: Metadata = {
   title:
@@ -228,6 +229,7 @@ export default function Home() {
     },
     speckert: {
       desktop: Speckert,
+      mobile: SpeckertMobile,
     },
   };
 
