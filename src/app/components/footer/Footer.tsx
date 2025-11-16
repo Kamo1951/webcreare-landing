@@ -14,12 +14,13 @@ const Footer = () => {
     {
       id: "hilfreicheLinks",
       name: "Hilfreiche Links",
-      links: ["/", "/#ueberuns", "/#referenzen", "/#preise", "/#team"],
+      links: ["/", "/#ueberuns", "/#referenzen", "/#preise", "/#faq", "/#team"],
       linksName: [
         "WebCreare",
         "Über Uns",
         "Referenzen",
         "Preise",
+        "FAQ",
         "Unser Team",
       ],
       arrows: true,
