@@ -101,53 +101,40 @@ export default function Home() {
 
   const preiseItems = [
     {
-      id: "onePager",
-      heading: "Simpler One-Pager",
-      price: "ab 750 €",
+      id: "regional",
+      heading: "Regional - Tegernsee & Umgebung",
+      price: "60 € / Stunde",
+      subtitle: "für Unternehmen im Umkreis von 20 km rund um den Tegernsee",
       bodyText: [
-        "1 Seite (One-Pager)",
-        "Individuelles Design",
+        "Individuelles Design (One-Pager bis mehrseitige Website)",
         "Mobiloptimiert",
-        "WordPress CMS",
-        "Suchmaschinen optimiert",
+        "Einfache Pflege über WordPress CMS",
+        "Suchmaschinen optimiert (OnPage-Grundoptimierung)",
         "Schnellste Ladezeiten",
         "Animationen",
-        "Datenschutz & rechtliches",
-      ],
-    },
-    {
-      id: "business",
-      heading: "Business",
-      price: "ab 1.500 €",
-      bodyText: [
-        "2 - 6 Seiten",
-        "Individuelles Design",
-        "Mobiloptimiert",
-        "WordPress CMS",
-        "Suchmaschinen optimiert",
-        "Schnellste Ladezeiten",
-        "Animationen",
-        "Erweitertes Call-to-Action",
-        "Einführung",
-        "Datenschutz & rechtliches",
-      ],
-    },
-    {
-      id: "professionell",
-      heading: "Professionell",
-      price: "ab 3.000 €",
-      bodyText: [
-        "6 - 10 Seiten",
-        "Individuelles Design",
-        "Mobiloptimiert",
-        "WordPress CMS",
-        "Suchmaschinen optimiert",
-        "Schnellste Ladezeiten",
-        "Animationen",
-        "(Mitarbeiter)Schulung",
         "Innovative Interaktion",
         "Karriereseite",
-        "Datenschutz & rechtliches",
+        "Unterstützung bei Impressum & Datenschutz",
+        "Optional: Schulung zur eigenen Pflege der Website",
+      ],
+    },
+    {
+      id: "standard",
+      heading: "Standard - außerhalb der Region",
+      price: "80 € / Stunde",
+      subtitle:
+        "für Kunden außerhalb des 20-km-Umkreises rund um den Tegernsee",
+      bodyText: [
+        "Individuelles Design (One-Pager bis mehrseitige Website)",
+        "Mobiloptimiert",
+        "Einfache Pflege über WordPress CMS",
+        "Suchmaschinen optimiert (OnPage-Grundoptimierung)",
+        "Schnellste Ladezeiten",
+        "Animationen",
+        "Innovative Interaktion",
+        "Karriereseite",
+        "Unterstützung bei Impressum & Datenschutz",
+        "Optional: Schulung zur eigenen Pflege der Website",
       ],
     },
   ];
@@ -157,6 +144,7 @@ export default function Home() {
       id: "webseitenPflege",
       heading: "Webseiten-Pflege",
       price: "100 €",
+      subtitle: "Optional & Nur Verfügbar mit einem der Website-Pakete",
       bodyText: [
         "Inklusive Servicestunden (mindestens 2 Stunden)",
         "Schnelle Textanpassungen",
@@ -174,6 +162,7 @@ export default function Home() {
       id: "sicherheitSpeedHosting",
       heading: "Sicherheit & Speed Hosting",
       price: "15 €",
+      subtitle: "Optional & Nur Verfügbar mit einem der Website-Pakete",
       bodyText: [
         "Eigene Domains (*.de / *.com / u.v.m.)",
         "SSL-Zertifikat – 100 % DSGVO-konform",
@@ -677,11 +666,11 @@ export default function Home() {
             direction="center"
             widthSize="w-md"
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto px-4">
             <PreiseCard
               items={preiseItems}
               monatlich={false}
-              subtitle=""
+              color={true}
               buttonLink="kontakt"
               buttonLabel="Jetzt Anfragen"
             />
@@ -690,7 +679,7 @@ export default function Home() {
             <PreiseCard
               items={serviceItems}
               monatlich={true}
-              subtitle="Optional & Nur Verfügbar mit einem der Website-Pakete"
+              color={true}
               buttonLink="#preise"
               buttonLabel="Zuerst Ein Webseiten-Paket Wählen"
             />
