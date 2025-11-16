@@ -42,7 +42,7 @@ export const FAQ: React.FC<FAQProps> = ({ items }) => {
               </div>
               <div>
                 <p
-                  className={`text-[var(--paragraph-text-color)] pt-4 overflow-hidden transition-all duration-200 ease-in-out ${
+                  className={`text-[var(--paragraph-text-color)] whitespace-pre-line pt-4 overflow-hidden transition-all duration-200 ease-in-out ${
                     activeId === item.id
                       ? "max-h-100 opacity-100"
                       : "max-h-0 opacity-0 -mt-4"
