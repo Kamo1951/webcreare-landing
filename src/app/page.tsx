@@ -652,7 +652,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
             <ReferenzCard
               src={Speckert}
-              mobileSrc={BausuchtMobile}
+              mobileSrc={SpeckertMobile}
               header="E-commerce für Kunst"
               id="01"
               url="https://www.speckert.net/"
