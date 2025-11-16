@@ -6,22 +6,23 @@ export type PreisItems = {
   heading: string;
   price: string;
   bodyText: string[];
+  subtitle?: string;
 };
 
 interface PreisCardProps {
   items: PreisItems[];
-  subtitle: string;
   monatlich: boolean;
   buttonLink: string;
   buttonLabel: string;
+  color: boolean;
 }
 
 const PreiseCard: React.FC<PreisCardProps> = ({
   items,
-  subtitle,
   monatlich,
   buttonLink,
   buttonLabel,
+  color,
 }) => {
   return (
     <>
@@ -67,12 +68,12 @@ const PreiseCard: React.FC<PreisCardProps> = ({
           <div className="mb-3">
             <p
               className={clsx(
-                subtitle !== "" ? "" : "hidden",
-                "mt-2 text-[var(--accent-color)]"
+                item.subtitle ? "" : "hidden",
+                `mt-2 ${color ? "text-[var(--accent-color)]" : ""}`
               )}
               itemProp="description"
             >
-              {subtitle}
+              {item.subtitle}
             </p>
           </div>
           <ul className="text-[var(--paragraph-text-color)] text-sm md:text-base space-y-3 mb-8 flex-grow list-none">
