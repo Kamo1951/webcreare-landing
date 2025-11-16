@@ -98,6 +98,7 @@ const Navbar = () => {
     { href: "/#referenzen", label: "Referenzen" },
     { href: "/#preise", label: "Preise" },
     { href: "/#team", label: "Unser Team" },
+    { href: "/#faq", label: "FAQ" },
   ];
 
   const { resolvedTheme } = useTheme();
