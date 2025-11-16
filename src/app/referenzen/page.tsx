@@ -37,14 +37,14 @@ export default function Referenzen() {
             mobileSrc={VeerdesignMobile}
             header="Buchsverkaufs Webseite"
             id="02"
-            url="https://veerdesign.de/"
+            url="https://www.veerdesign.de/"
           />
           <ReferenzCard
             src={Bausucht}
             mobileSrc={BausuchtMobile}
             header="Minecraft Server-Seite"
             id="03"
-            url="https://bausucht.net/"
+            url="https://www.landania.net/"
           />
         </div>
       </div>
