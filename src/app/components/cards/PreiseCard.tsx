@@ -35,7 +35,7 @@ const PreiseCard: React.FC<PreisCardProps> = ({
         >
           <div className="mb-6">
             <h3
-              className="text-xl md:text-2xl font-semibold p-1 px-2 bg-[var(--accent-color)] text-white rounded w-fit"
+              className="text-lg md:text-xl lg:text-2xl font-semibold p-1 px-2 bg-[var(--accent-color)] text-white rounded w-fit"
               itemProp="name"
             >
               {item.heading}
