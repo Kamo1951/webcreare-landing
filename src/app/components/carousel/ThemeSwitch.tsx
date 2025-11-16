@@ -22,7 +22,7 @@ const ThemeSwitch = () => {
     <button
       type="button"
       onClick={handleToggle}
-      className="fixed right-2 top-1/2 z-50 flex h-[70px] w-[38px] -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border border-[var(--border-color)] bg-[var(--background-box-color)] shadow-lg transition-transform duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] sm:right-3 sm:h-[82px] sm:w-[44px]"
+      className="fixed right-2 top-1/2 z-50 flex h-[70px] w-[38px] -translate-y-1/2 items-center justify-center overflow-hidden rounded-full border border-[var(--border-color)] bg-[var(--background-box-color)] shadow-lg transition-transform duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-color)] sm:right-3 sm:h-[82px] sm:w-[44px] hover:cursor-pointer"
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <div
