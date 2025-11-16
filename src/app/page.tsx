@@ -341,9 +341,9 @@ export default function Home() {
     {
       id: 1,
       frage: "Was kostet eine typische Website?",
-      antwort: `💡 Wir kalkulieren nicht pauschal, sondern nach tatsächlichem Aufwand. Abgerechnet wird auf Stundenbasis – 60 € für Projekte im 20-km-Umkreis Tegernsee, 80 € außerhalb (jeweils netto).
+      antwort: `Wir kalkulieren nicht pauschal, sondern nach tatsächlichem Aufwand. Abgerechnet wird auf Stundenbasis – 60 € für Projekte im 20-km-Umkreis Tegernsee, 80 € außerhalb (jeweils netto).
 
-📐 Ein einfacher One-Pager benötigt ca. 15–20 Stunden:
+Ein einfacher One-Pager benötigt ca. 15–20 Stunden:
 • Regional: etwa 900–1.200 € netto
 • Außerhalb: meist 1.200–1.600 € netto
 
@@ -356,26 +356,26 @@ export default function Home() {
 • One-Pager: ca. 2–3 Wochen
 • Mehrseitige Website: ca. 4–6 Wochen
 
-📅 Zu Projektbeginn erhalten Sie einen groben Zeitplan mit allen Meilensteinen. Je schneller Inhalte, Bilder und Freigaben bereitstehen, desto zügiger gehen wir live.`,
+Zu Projektbeginn erhalten Sie einen groben Zeitplan mit allen Meilensteinen. Je schneller Inhalte, Bilder und Freigaben bereitstehen, desto zügiger gehen wir live.`,
     },
     {
       id: 3,
       frage: "Warum arbeitet ihr hauptsächlich in der Region Tegernsee?",
-      antwort: `🌄 Wir lieben kurze Wege und persönliche Zusammenarbeit. Durch den Fokus auf Tegernsee & Umgebung kennen wir die Bedürfnisse von Tourismus, Gastronomie, Handwerk & Dienstleistung sehr genau.
+      antwort: `Wir lieben kurze Wege und persönliche Zusammenarbeit. Durch den Fokus auf Tegernsee & Umgebung kennen wir die Bedürfnisse von Tourismus, Gastronomie, Handwerk & Dienstleistung sehr genau.
 
 🤝 Vor-Ort-Termine gehen schnell, Vertrauen entsteht leichter – trotzdem bleiben digitale Abstimmungen via Video-Call jederzeit möglich.`,
     },
     {
       id: 4,
       frage: "Welche Leistungen sind im Stundensatz enthalten?",
-      antwort: `🎨 Nach Freigabe arbeiten wir zum Stundensatz – inklusive:
+      antwort: `Nach Freigabe arbeiten wir zum Stundensatz – inklusive:
 • Screendesign in Figma
 • Technische Umsetzung & Responsive Design
 • OnPage-SEO & Performance-Optimierung
 • WordPress-Setups oder individuelle Entwicklung
 • Formulare, Impressum & Datenschutz (ohne Rechtsberatung)
 
-📘 Auf Wunsch erhalten Sie eine Einweisung zur eigenständigen Pflege. Die ersten Schritte (Kennenlernen + grobe Konzeption) bleiben kostenlos.`,
+Auf Wunsch erhalten Sie eine Einweisung zur eigenständigen Pflege. Die ersten Schritte (Kennenlernen + grobe Konzeption) bleiben kostenlos.`,
     },
     {
       id: 5,
