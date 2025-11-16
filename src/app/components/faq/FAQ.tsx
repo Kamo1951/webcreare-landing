@@ -24,20 +24,20 @@ export const FAQ: React.FC<FAQProps> = ({ items }) => {
           return (
             <article
               key={item.id}
-              className="flex justify-center py-2"
+              className="flex justify-center py-2 "
               aria-labelledby={`${answerId}-button`}
             >
-              <div className="w-full bg-[var(--background-box-color)] border border-[var(--border-color)] shadow-sm">
+              <div className="w-full bg-[var(--background-box-color)] border border-[var(--border-color)]">
                 <button
                   id={`${answerId}-button`}
                   aria-controls={answerId}
                   aria-expanded={isActive}
                   onClick={() => setActiveId(isActive ? null : item.id)}
-                  className="flex w-full items-center gap-4 p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--accent-color)]"
+                  className="flex w-full items-center gap-4 p-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--accent-color)] hover:cursor-pointer"
                 >
                   <span
                     aria-hidden="true"
-                    className={`transition-transform duration-300 ${
+                    className={`transition-transform duration-300 hover:cursor-pointer ${
                       isActive ? "rotate-180" : "rotate-0"
                     }`}
                   >
@@ -53,7 +53,7 @@ export const FAQ: React.FC<FAQProps> = ({ items }) => {
                       <path d="M6 9l6 6 6-6" />
                     </svg>
                   </span>
-                  <p className="text-base sm:text-lg md:text-xl font-medium">
+                  <p className="text-base sm:text-lg md:text-xl font-medium hover:cursor-pointer">
                     {item.frage}
                   </p>
                 </button>
@@ -61,10 +61,11 @@ export const FAQ: React.FC<FAQProps> = ({ items }) => {
                   id={answerId}
                   role="region"
                   aria-hidden={!isActive}
-                  className={`px-4 pb-4 text-sm sm:text-base text-[var(--paragraph-text-color)] overflow-hidden transition-all duration-300 ease-in-out ${
+                  onClick={() => setActiveId(isActive ? null : item.id)}
+                  className={`px-4 pb-4 text-sm sm:text-base text-[var(--paragraph-text-color)] overflow-hidden transition-all duration-300 ease-in-out  ${
                     isActive
                       ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0  -mt-4"
+                      : "max-h-0 opacity-0 hover:cursor-pointer -mt-4"
                   }`}
                 >
                   <p className="whitespace-pre-line ">{item.antwort}</p>
