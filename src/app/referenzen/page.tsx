@@ -10,7 +10,7 @@ import Bausucht from "../components/imgs/Bausucht.webp";
 
 //mobile images
 import VeerdesignMobile from "../components/navbar/imgs/mobile imgs/Veerdesign.webp";
-import SpeckertMobile from "../components/navbar/imgs/mobile imgs/Veerdesign.webp";
+import SpeckertMobile from "./components/navbar/imgs/mobile imgs/Speckert.webp";
 import BausuchtMobile from "../components/navbar/imgs/mobile imgs/Bausucht.webp";
 
 export default function Referenzen() {
@@ -27,7 +27,7 @@ export default function Referenzen() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-4 md:px-10 lg:px-20">
           <ReferenzCard
             src={Speckert}
-            mobileSrc={BausuchtMobile}
+            mobileSrc={SpeckertMobile}
             header="E-commerce für Kunst"
             id="01"
             url="https://www.speckert.net/"
