@@ -13,7 +13,7 @@ import { Slider } from "./components/carousel/Slider";
 import "./components/carousel/slider.css";
 import UeberUnsTabs from "./components/ueberuns/UeberUnsTabs";
 import Navbar from "./components/navbar/Navbar";
-import FAQ from "./components/faq/FAQ";
+import { FAQ } from "./components/faq/FAQ";
 
 //images
 import MikiErklaert from "./components/imgs/Miki-erklaert-_2_-scaled.webp";
@@ -334,6 +334,45 @@ export default function Home() {
       number: "2",
       numberText: "Teammitglieder",
       bodyText: "Ein frisches junges Team ist auch ein Schlüssel zum Erfolg.",
+    },
+  ];
+
+  const faqItems = [
+    {
+      id: 1,
+      frage: "Was kostet eine typische Website?",
+      antwort:
+        "Eine Website kostet bei uns nicht pauschal X Euro, sondern richtet sich nach dem tatsächlichen Aufwand. Wir arbeiten auf Stundenbasis: 60 € pro Stunde für Unternehmen im Umkreis von 20 km rund um den Tegernsee und 80 € pro Stunde für Kunden außerhalb dieser Region (jeweils netto). Ein einfacher One-Pager liegt in der Regel bei etwa 15–20 Arbeitsstunden. Für Unternehmen in der Region ergibt sich damit meist ein Budget von ca. 900–1.200 € netto, für Kunden außerhalb der Region von etwa 1.200–1.600 € netto – also typischerweise im unteren vierstelligen Bereich. Das Erstgespräch und eine erste grobe Konzeption sind für Sie kostenlos. Erst wenn Ihnen unsere Idee und die Designrichtung zusagen und Sie das Angebot freigeben, starten wir mit der Umsetzung auf Stundenbasis.",
+    },
+    {
+      id: 2,
+      frage: "Wie lange dauert es bis zur fertigen Website?",
+      antwort:
+        "Die Dauer hängt stark vom Umfang des Projekts und von der Geschwindigkeit des Feedbacks ab. Ein einfacher One-Pager kann meist innerhalb von zwei bis drei Wochen umgesetzt werden, eine mehrseitige Unternehmenswebsite dauert typischerweise vier bis sechs Wochen. Entscheidend ist, dass Inhalte, Bilder und Freigaben rechtzeitig vorliegen – dann können wir zügig und ohne Unterbrechungen arbeiten. Zu Beginn erhalten Sie einen groben Zeitplan, in dem ersichtlich ist, welche Schritte wann anstehen.",
+    },
+    {
+      id: 3,
+      frage: "Warum arbeitet ihr hauptsächlich in der Region Tegernsee?",
+      antwort:
+        "Wir haben uns bewusst auf die Region rund um den Tegernsee spezialisiert, weil uns kurze Wege und persönliche Zusammenarbeit wichtig sind. Durch den Fokus auf lokale Unternehmen verstehen wir die Besonderheiten der Region – etwa im Tourismus, in der Gastronomie oder im Handwerk – deutlich besser. Vor-Ort-Termine sind schnell möglich, was Abstimmungen und Vertrauen erleichtert. Viele Dinge lassen sich natürlich trotzdem bequem digital per Video-Call klären, aber die regionale Nähe bleibt ein klarer Vorteil.",
+    },
+    {
+      id: 4,
+      frage: "Welche Leistungen sind im Stundensatz enthalten?",
+      antwort:
+        "Sobald Sie unser Angebot freigegeben haben, rechnen wir die weitere Arbeit nach Stundensatz ab. Dazu gehören das detaillierte Screendesign in Figma, die vollständige technische Umsetzung der Website, die Optimierung für Mobilgeräte, eine suchmaschinenfreundliche Grundstruktur sowie Performance-Optimierungen für schnelle Ladezeiten. In der Regel setzen wir Projekte mit WordPress um, damit Sie Inhalte später bequem selbst verwalten können. Wenn Sie eine individuell programmierte Lösung ohne WordPress wünschen, entwickeln wir Ihre Website auf Wunsch auch komplett selbst. Außerdem richten wir Kontakt- und Anfrageformulare ein und unterstützen bei rechtlichen Pflichtseiten wie Impressum und Datenschutzerklärung, ohne jedoch eine Rechtsberatung zu ersetzen. Auf Wunsch erhalten Sie eine Einweisung, damit Sie Inhalte später selbst pflegen können. Die ersten Schritte – also das Kennenlernen und eine erste grobe Konzeption der Website – sind für Sie kostenfrei und dienen dazu, zu prüfen, ob wir zueinander passen.",
+    },
+    {
+      id: 5,
+      frage: "Was muss ich als Kunde vorbereiten?",
+      antwort:
+        "Ideal ist, wenn Sie uns zu Beginn einen kurzen Überblick über Ihr Unternehmen, Ihre Zielgruppe und Ihre Ziele mit der Website geben. Falls bereits ein Logo, Farben oder ein bestehendes Corporate Design vorhanden sind, übernehmen wir diese gerne. Texte und Bilder können Sie selbst liefern oder wir unterstützen Sie dabei, passende Inhalte zu erstellen bzw. auszuwählen. Wichtig ist vor allem eine feste Ansprechperson, die während des Projekts für Rückfragen und Freigaben zur Verfügung steht.",
+    },
+    {
+      id: 6,
+      frage: "Bietet ihr auch Betreuung nach dem Go-Live an?",
+      antwort:
+        "Ja, wir lassen Sie nach der Veröffentlichung nicht allein. Auf Wunsch übernehmen wir regelmäßige technische Wartung wie Updates, Backups und Sicherheitschecks für Ihre WordPress-Website. Inhaltliche Anpassungen, neue Seiten oder laufende Optimierungen können flexibel nach Aufwand abgerechnet oder in einem kleinen Stundenkontingent gebündelt werden. So bleibt Ihre Website nicht nur online, sondern auch langfristig aktuell und leistungsfähig.",
     },
   ];
 
@@ -685,6 +724,16 @@ export default function Home() {
               buttonLabel="Zuerst Ein Webseiten-Paket Wählen"
             />
           </div>
+        </section>
+
+        <section id="faq" aria-labelledby="faq">
+          <SubAndMainHeader
+            subheader="FAQ"
+            header="häufig gestellte Fragen"
+            direction="center"
+            widthSize="w-md"
+          />
+          <FAQ items={faqItems} />
         </section>
 
         <section id="team" className="my-20" aria-labelledby="team-heading">
