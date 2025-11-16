@@ -10,7 +10,7 @@ import Bausucht from "../components/imgs/Bausucht.webp";
 
 //mobile images
 import VeerdesignMobile from "../components/navbar/imgs/mobile imgs/Veerdesign.webp";
-import SpeckertMobile from "./components/navbar/imgs/mobile imgs/Speckert.webp";
+import SpeckertMobile from "../components/navbar/imgs/mobile imgs/Speckert.webp";
 import BausuchtMobile from "../components/navbar/imgs/mobile imgs/Bausucht.webp";
 
 export default function Referenzen() {
