@@ -786,8 +786,10 @@ So bleibt Ihre Website nicht nur online, sondern langfristig aktuell und leistun
           <AchievmentBadges items={achivementBadges} />
         </section>
       </main>
-      <div className="flex justify-center my-20">
-        <p className="text-xl">+49 174 1742819</p>
+      <div className="flex justify-center my-20 flex-col ">
+        <p className="text-xl leading-15">www.webcreare.de</p>
+        <p className="text-xl leading-15">+49 174 1742819</p>
+        <p className="text-xl leading-15">info@webcreare.de</p>
       </div>
     </>
   );
