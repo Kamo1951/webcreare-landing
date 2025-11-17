@@ -28,8 +28,8 @@ const Footer = () => {
     {
       id: "kontakt",
       name: "Kontaktieren Sie Uns",
-      links: ["mailto:info@webcreare.de", "tel:+4915156065802"],
-      linksName: ["info@webcreare.de", "+49 151 56065802"],
+      links: ["mailto:info@webcreare.de", "tel:+491741742819"],
+      linksName: ["info@webcreare.de", "+49 174 1742819"],
       arrows: false,
     },
     {
