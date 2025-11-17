@@ -147,7 +147,7 @@ export default function Kontakt() {
         </svg>
       ),
       header: "Telefonnummer",
-      subheaderTop: "(+49) 151 56065802",
+      subheaderTop: "(+49) 174 1742819",
       subheaderBottom: "info@webcreare.de",
     },
     {
