@@ -786,6 +786,9 @@ So bleibt Ihre Website nicht nur online, sondern langfristig aktuell und leistun
           <AchievmentBadges items={achivementBadges} />
         </section>
       </main>
+      <div className="flex justify-center my-20">
+        <p className="text-xl">+49 174 1742819</p>
+      </div>
     </>
   );
 }
