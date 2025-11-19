@@ -68,10 +68,10 @@ export default function UeberUns() {
               </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              <GradientPlaceholder label="Platzhalter Bild – Team" />
+              {/* <GradientPlaceholder label="Platzhalter Bild – Team" />
               <GradientPlaceholder label="Platzhalter Bild – Studio" />
               <GradientPlaceholder label="Platzhalter Bild – Projekt" />
-              <GradientPlaceholder label="Platzhalter Bild – Details" />
+              <GradientPlaceholder label="Platzhalter Bild – Details" /> */}
             </div>
           </div>
         </section>
