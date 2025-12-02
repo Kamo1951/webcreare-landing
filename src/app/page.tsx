@@ -27,6 +27,8 @@ import MikiPort from "./components/imgs/Miki-Port.webp";
 import OliPort from "./components/imgs/Oli-Port.webp";
 import Speckert from "./components/imgs/Speckert.webp";
 import Hero from "./components/imgs/Hero.webp";
+import SpeckertMockup from "./components/imgs/SpeckertMockup.webp";
+import VeerdesignMockup from "./components/imgs/VeerdesignMockup.webp";
 
 //mobile images
 import HeroCicleMobile from "./components/navbar/imgs/mobile imgs/hero-shape-6.webp";
@@ -714,15 +716,15 @@ So bleibt Ihre Website nicht nur online, sondern langfristig aktuell und leistun
           />
           <div className="flex flex-col sm:flex-row place-content-center gap-8 px-4">
             <ReferenzCard
-              src={Speckert}
-              mobileSrc={SpeckertMobile}
+              src={SpeckertMockup}
+              mobileSrc={SpeckertMockup}
               header="E-commerce für Kunst"
               id="01"
               url="https://www.speckert.net/"
             />
             <ReferenzCard
-              src={Veerdesign}
-              mobileSrc={VeerdesignMobile}
+              src={VeerdesignMockup}
+              mobileSrc={VeerdesignMockup}
               header="Buchsverkaufs Webseite"
               id="02"
               url="https://veerdesign.de/"
