@@ -60,6 +60,9 @@ export const HeroTitle: React.FC = () => {
             <span aria-hidden="true">{renderChars("Erstellen")}</span>
             <span className="sr-only">Erstellen</span>
           </span>
+          <span className="sr-only">
+            Ihre Webdesign- und Webentwicklungsagentur direkt vom Tegernsee.
+          </span>
         </h1>
       </header>
       <div className="mt-8 sm:mt-10 hero-cta">
