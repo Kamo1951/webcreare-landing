@@ -1,5 +1,8 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import bgCroppedLeft from "../footer/img/footer-bg-cropped-left.webp";
+import bgCroppedRight from "../footer/img/footer-bg-cropped-right.webp";
 
 export type FAQItems = {
   id: number;
@@ -16,6 +19,10 @@ export const FAQ: React.FC<FAQProps> = ({ items }) => {
 
   return (
     <>
+      <div className="hidden 2xl:block 2xl:absolute pointer-events-none select-none">
+        <Image src={bgCroppedLeft} alt="FAQ Banner" priority={false} />
+      </div>
+
       <div className="flex flex-col gap-4 w-full max-w-3xl mx-auto px-4">
         {items.map((item) => {
           const isActive = activeId === item.id;
@@ -74,6 +81,9 @@ export const FAQ: React.FC<FAQProps> = ({ items }) => {
             </article>
           );
         })}
+        <div className="hidden 2xl:block 2xl:absolute 2xl:right-0 pointer-events-none select-none">
+          <Image src={bgCroppedRight} alt="FAQ Banner" priority={false} />
+        </div>
       </div>
     </>
   );
