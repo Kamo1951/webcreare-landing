@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Navbar from "../components/navbar/Navbar";
+import Image from "next/image";
+import Hero from "../components/imgs/Hero.webp";
 
 const GradientPlaceholder = ({ label }: { label: string }) => (
   <div className="relative flex aspect-[3/2] w-full items-center justify-center overflow-hidden border border-white/10 bg-gradient-to-br from-[var(--accent-color)]/25 via-transparent to-[var(--background-box-color)] shadow-inner">
@@ -67,7 +69,12 @@ export default function UeberUns() {
                 </Link>
               </div>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div className="pl-10">
+              <Image
+                className="scale-150"
+                src={Hero}
+                alt="Hero Bild welches Referenzen zeigt"
+              />
               {/* <GradientPlaceholder label="Platzhalter Bild – Team" />
               <GradientPlaceholder label="Platzhalter Bild – Studio" />
               <GradientPlaceholder label="Platzhalter Bild – Projekt" />
