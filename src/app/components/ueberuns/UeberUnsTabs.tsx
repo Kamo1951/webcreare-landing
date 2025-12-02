@@ -100,7 +100,7 @@ const UeberUnsTabs: React.FC<UeberUnsTabsProps> = ({
           </span>
           <Link
             href="/ueberuns"
-            className="text-[var(--accent-color)] hover:text-white font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 flex items-center gap-1"
+            className="text-[var(--accent-color)] hover:text-[var(--accent-color-hover)] font-semibold transition-all focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)] focus:ring-offset-1 flex items-center gap-1"
             aria-label="Mehr über uns erfahren"
           >
             über uns
