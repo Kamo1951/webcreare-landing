@@ -29,6 +29,7 @@ import Speckert from "./components/imgs/Speckert.webp";
 import Hero from "./components/imgs/Hero.webp";
 import SpeckertMockup from "./components/imgs/SpeckertMockup.webp";
 import VeerdesignMockup from "./components/imgs/VeerdesignMockup.webp";
+import FAQBanner from "./components/footer/img/footer-bg-cropped.webp";
 
 //mobile images
 import HeroCicleMobile from "./components/navbar/imgs/mobile imgs/hero-shape-6.webp";
@@ -769,6 +770,17 @@ So bleibt Ihre Website nicht nur online, sondern langfristig aktuell und leistun
             direction="center"
             widthSize="w-md"
           />
+          {/* <div
+            className="absolute hidden lg:block w-2/3 left-1/2 -translate-x-1/2 pointer-events-none select-none mt-10"
+            aria-hidden="true"
+          >
+            <Image
+              src={FAQBanner}
+              alt="FAQ Banner"
+              className="w-full h-auto object-contain"
+              priority={false}
+            />
+          </div> */}
           <FAQ items={faqItems} />
         </section>
 
