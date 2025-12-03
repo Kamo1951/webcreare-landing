@@ -63,7 +63,7 @@ A short overview of the main files and folders:
 ├─ postcss.config.mjs
 ├─ README.md
 └─ tsconfig.json
-
+```
 ---
 
 ## ⚙️ Getting started
