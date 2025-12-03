@@ -34,8 +34,6 @@ Contact: info@webcreare.de · +49 151 56065802
 ## 📁 Project structure
 A short overview of the main files and folders:
 
-## Projektstruktur
-
 ```text
 .
 ├─ public/
