@@ -42,6 +42,7 @@ A short overview of the main files and folders:
 │     ├─ datenschutzerklaerung/            # Privacy policy (legal)  
 │     ├─ impressum/                        # Imprint (legal)  
 │     ├─ kontakt/                          # Contact page  
+│     ├─ referenzen/                       # Selected Projects page 
 │     ├─ ueberuns/                         # About us  
 │     ├─ favicon.ico  
 │     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)  
