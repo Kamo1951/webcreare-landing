@@ -429,16 +429,16 @@ So bleibt Ihre Website nicht nur online, sondern langfristig aktuell und leistun
               className="hidden sm:block sm:absolute sm:select-none sm:pointer-events-none sm:w-2xl sm:-mt-12 sm:-ml-14 md:w-3xl md:-mt-16 md:-ml-20 lg:w-4xl lg:-mt-20 lg:-ml-24 xl:w-5xl 2xl:w-6xl 2xl:min-w-[30vw] xl:-mt-24 xl:-ml-28"
             />
           </div>
-            <div className="pointer-events-none absolute inset-x-20 top-8 hidden lg:flex justify-end lg:top-75">
-              <div className="w-7/12 max-w-md lg:max-w-xl xl:max-w-2xl  opacity-90">
+          {/* <div className="pointer-events-none absolute inset-x-20 top-8 hidden sm:flex justify-end lg:top-75">
+            <div className="w-7/12 max-w-md lg:max-w-xl xl:max-w-2xl opacity-90">
               <Image
                 src={Hero}
                 alt="Hero Bild mit Referenzen"
                 className="w-full h-auto object-contain scale-[1.2]"
                 priority
               />
-              </div>
             </div>
+          </div> */}
           <HeroTitle />
         </section>
         <section className="pt-38" aria-labelledby="leistungen-heading">
