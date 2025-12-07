@@ -34,31 +34,34 @@ Contact: info@webcreare.de · +49 151 56065802
 ## 📁 Project structure
 A short overview of the main files and folders:
 
-├─ public/  
-├─ src/  
-│  └─ app/  
-│     ├─ allgemeinegeschäftsbedingungen/   # AGB (legal)  
-│     ├─ components/                       # UI components used by pages  
-│     ├─ datenschutzerklaerung/            # Privacy policy (legal)  
-│     ├─ impressum/                        # Imprint (legal)  
-│     ├─ kontakt/                          # Contact page  
-│     ├─ ueberuns/                         # About us  
-│     ├─ favicon.ico  
-│     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)  
-│     ├─ layout.tsx                        # Root layout + metadata  
-│     └─ page.tsx                          # Home page  
-├─ .env  
-├─ .gitignore  
-├─ eslint.config.mjs  
-├─ middleware.ts  
-├─ next-env.d.ts  
-├─ next.config.ts  
-├─ package.json  
-├─ package-lock.json  
-├─ postcss.config.mjs  
-├─ README.md  
+```text
+.
+├─ public/
+├─ src/
+│  └─ app/
+│     ├─ allgemeinegeschäftsbedingungen/   # AGB (legal)
+│     ├─ components/                       # UI components used by pages
+│     ├─ datenschutzerklaerung/            # Privacy policy (legal)
+│     ├─ impressum/                        # Imprint (legal)
+│     ├─ kontakt/                          # Contact page
+│     ├─ referenzen/                       # Selected Projects page
+│     ├─ ueberuns/                         # About us
+│     ├─ favicon.ico
+│     ├─ globals.css                       # Tailwind entry (@tailwind base; components; utilities)
+│     ├─ layout.tsx                        # Root layout + metadata
+│     └─ page.tsx                          # Home page
+├─ .env
+├─ .gitignore
+├─ eslint.config.mjs
+├─ middleware.ts
+├─ next-env.d.ts
+├─ next.config.ts
+├─ package.json
+├─ package-lock.json
+├─ postcss.config.mjs
+├─ README.md
 └─ tsconfig.json
-
+```
 ---
 
 ## ⚙️ Getting started
