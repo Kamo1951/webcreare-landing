@@ -288,11 +288,11 @@ const Navbar = () => {
                   </div>
                   <div>
                     <a
-                      href="tel:+4915156065802"
-                      aria-label="Call us at +49 151 56065802"
+                      href="tel:+491741742819"
+                      aria-label="Call us at +49 174 1742819"
                     >
                       <p className="hover:text-[var(--accent-color)] transition-colors">
-                        +49 151 56065802
+                        +49 174 1742819
                       </p>
                     </a>
                     <p>Rufen Sie Uns An</p>
