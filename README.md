@@ -4,7 +4,7 @@
 A fast, accessible, and SEO-friendly marketing website for WebCreare — a small web design & development agency. Built with Next.js (App Router) and TypeScript, focused on performance, maintainability and clear content.
 
 Live: https://webcreare.de  
-Contact: info@webcreare.de · +49 151 56065802
+Contact: info@webcreare.de · +49 174 1742819
 
 ---
 
