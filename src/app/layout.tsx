@@ -6,6 +6,7 @@ import Footer from "./components/footer/Footer";
 import ThemeSwitch from "./components/carousel/ThemeSwitch";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const jakartaSans = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -88,6 +89,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" suppressHydrationWarning>
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       <body
         className={jakartaSans.variable + " antialiased"}
         suppressHydrationWarning
