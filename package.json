@@ -9,16 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
-<<<<<<< HEAD
-    "@next/third-parties": "^16.2.1",
-    "@react-email/components": "^0.5.6",
-    "@react-email/render": "^1.3.2",
-=======
-    "@react-email/components": "^1.0.1",
-    "@react-email/render": "^2.0.0",
->>>>>>> 8e2676ff894966d0f4cff0743923f33188c1d5d6
-    "@smakss/react-scroll-direction": "^4.2.0",
+"@gsap/react": "^2.1.2",
+"@next/third-parties": "^16.2.1",
+"@react-email/components": "^0.5.6",
+"@react-email/render": "^1.3.2",
+"@smakss/react-scroll-direction": "^4.2.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
