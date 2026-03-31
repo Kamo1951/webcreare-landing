@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useActionState, useEffect, useRef } from "react";
 import { useFormStatus } from "react-dom";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 type FormState = {
   status: "idle" | "success" | "error";
@@ -19,9 +20,28 @@ export default function ContactForm({
   const [state, formAction] = useActionState(action, initialState);
   const formRef = useRef<HTMLFormElement>(null);
 
+  // Merkt sich: Nutzer hat gerade wirklich versucht zu submitten
+  const submittedRef = useRef(false);
+
   useEffect(() => {
-    if (state.status === "success") formRef.current?.reset();
-  }, [state.status]);
+    if (!submittedRef.current) return;
+
+    if (state.status === "success") {
+      sendGTMEvent({
+        event: "contact_form_submit_success",
+        form_name: "contact_form",
+        form_location: "contact_page",
+      });
+
+      formRef.current?.reset();
+      submittedRef.current = false;
+      return;
+    }
+
+    if (state.status === "error") {
+      submittedRef.current = false;
+    }
+  }, [state]);
 
   const FieldError = ({ name }: { name: string }) => {
     const msg = state.fieldErrors?.[name];
@@ -30,8 +50,15 @@ export default function ContactForm({
   };
 
   return (
-    <form ref={formRef} action={formAction} className="w-full" noValidate>
-      {/* Honeypot */}
+    <form
+      ref={formRef}
+      action={formAction}
+      className="w-full"
+      noValidate
+      onSubmit={() => {
+        submittedRef.current = true;
+      }}
+    >
       <input
         type="text"
         name="website"
@@ -143,7 +170,6 @@ export default function ContactForm({
         <FieldError name="checkbox-datenschutz" />
       </div>
 
-      {/* Globale Meldung */}
       {state.status !== "idle" && state.message && (
         <div
           className={`mb-4 text-sm px-3 py-2 border ${
@@ -163,6 +189,7 @@ export default function ContactForm({
 
 function SubmitButton() {
   const { pending } = useFormStatus();
+
   return (
     <button
       type="submit"
