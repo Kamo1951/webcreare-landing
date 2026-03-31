@@ -267,7 +267,7 @@ const Navbar = () => {
                     />
                   </div>
                   <div aria-label="Business hours">
-                    <p>Mo - Fr: 14:00 - 21:00</p>
+                    <p>Mo - Fr: 10:00 - 21:00</p>
                     <p>Sa - So: 13:00 - 18:30</p>
                   </div>
                 </div>
